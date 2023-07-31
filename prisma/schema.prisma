@@ -1,0 +1,53 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  userId            String    @id @default(cuid())
+  username          String
+  email             String    @unique
+  password          String
+  picture           String
+  following         User[]    @relation("followingRelation")
+  followingRelation User[]    @relation("followingRelation")
+  followers         User[]    @relation("followersRelation")
+  followersRelation User[]    @relation("followersRelation")
+  comments          Comment[]
+  favorites         Tweet[]
+  tweets            Tweet[]   @relation("authorRelation")
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+}
+
+model Tweet {
+  tweetId          String    @id @default(cuid())
+  html             String
+  author           User      @relation(fields: [userUserId], references: [userId], "authorRelation")
+  userUserId       String
+  retweets         Tweet[]   @relation("retweetsRelation")
+  retweetsRelation Tweet[]   @relation("retweetsRelation")
+  comments         Comment[]
+  favorites        User[]
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
+
+model Comment {
+  commentId        String    @id @default(cuid())
+  comments         Comment[] @relation("commentsRelation")
+  commentsRelation Comment[] @relation("commentsRelation")
+  tweet            Tweet     @relation(fields: [tweetId], references: [tweetId])
+  tweetId          String
+  author           User      @relation(fields: [authorId], references: [userId])
+  authorId         String
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
