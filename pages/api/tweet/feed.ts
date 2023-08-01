@@ -19,6 +19,7 @@ const handler: Handler = async (params) => {
       html: true,
       createdAt: true,
       author: { select: { userId: true, username: true, image: true } },
+      favorites: { select: { email: true } },
     },
   });
 
@@ -27,14 +28,4 @@ const handler: Handler = async (params) => {
   };
 };
 
-export default resolver(handler, {
-  isAuthorized: async (req, res) => {
-    const session = await getServerSession(
-      req as NextApiRequest,
-      res as NextApiResponse,
-      authOptions
-    );
-
-    return session && typeof session.user !== "undefined" ? true : false;
-  },
-});
+export default resolver(handler);
