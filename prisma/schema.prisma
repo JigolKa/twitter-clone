@@ -14,8 +14,8 @@ model User {
   userId            String    @id @default(cuid())
   username          String
   email             String    @unique
-  password          String
-  picture           String
+  password          String?
+  image             String?
   following         User[]    @relation("followingRelation")
   followingRelation User[]    @relation("followingRelation")
   followers         User[]    @relation("followersRelation")
@@ -30,8 +30,8 @@ model User {
 model Tweet {
   tweetId          String    @id @default(cuid())
   html             String
-  author           User      @relation(fields: [userUserId], references: [userId], "authorRelation")
-  userUserId       String
+  author           User      @relation(fields: [authorId], references: [userId], "authorRelation")
+  authorId         String
   retweets         Tweet[]   @relation("retweetsRelation")
   retweetsRelation Tweet[]   @relation("retweetsRelation")
   comments         Comment[]
@@ -50,4 +50,11 @@ model Comment {
   authorId         String
   createdAt        DateTime  @default(now())
   updatedAt        DateTime  @updatedAt
+}
+
+enum AuthenticationProvider {
+  GOOGLE
+  GITHUB
+  DISCORD
+  CREDS
 }

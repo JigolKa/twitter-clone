@@ -1,10 +1,4 @@
-import { PrismaClient, User } from "@prisma/client";
-import { IncomingMessage } from "http";
-import { NextApiRequest, NextApiResponse } from "next";
-import { NextApiRequestCookies } from "next/dist/server/api-utils";
-import { NextRequest } from "next/server";
-import { ComponentProps, Dispatch, SetStateAction } from "react";
-import { isTokenValid } from "../../utils/auth";
+import { PrismaClient } from "@prisma/client";
 import {
   PrismaClientInitializationError,
   PrismaClientKnownRequestError,
@@ -12,6 +6,11 @@ import {
   PrismaClientUnknownRequestError,
   PrismaClientValidationError,
 } from "@prisma/client/runtime/library";
+import { IncomingMessage } from "http";
+import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequestCookies } from "next/dist/server/api-utils";
+import { NextRequest } from "next/server";
+import { Dispatch, SetStateAction } from "react";
 
 export type KnownKeys<T> = {
   [K in keyof T]: string extends K
@@ -54,7 +53,9 @@ export type Handler = (
 
 export type HandlerParams = {
   body: { [key: string]: any };
-  user: User | null;
+  req: ApiRequest;
+  res: Response;
+  // user: User | null;
   setHeader: (name: string, value: string) => void;
   getCookie: (name: string) => string | undefined;
 };
@@ -70,11 +71,12 @@ export type Resolver = (
 ) => (req: ApiRequest, res: Response<ErrorResponseBody | object>) => void;
 
 export interface ResolverOptions {
-  isLoginRequired: boolean | PartialRecord<HTTPMethod, boolean>;
+  // isLoginRequired: boolean | PartialRecord<HTTPMethod, boolean>;
   authorizedMethods: HTTPMethod[];
   authorizedEnvironnements: (typeof process.env.NODE_ENV)[];
   callback: () => MaybePromise<void>;
   keys: string[];
+  isAuthorized: (req: ApiRequest, res: Response) => MaybePromise<boolean>;
 }
 
 export type PrismaError =
@@ -116,11 +118,6 @@ export type CrossServerRequest =
       cookies: NextApiRequestCookies;
     })
   | NextRequest;
-
-export type MiddlewareToken = Exclude<
-  UnwrapPromise<ReturnType<typeof isTokenValid>>,
-  false
->;
 
 export interface Session {
   email: string;

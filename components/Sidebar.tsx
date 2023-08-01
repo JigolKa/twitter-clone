@@ -7,6 +7,7 @@ import {
   GraduationCapIcon,
   Home,
   LineChartIcon,
+  LogIn,
   LucideIcon,
   Mail,
   MessageCircle,
@@ -17,6 +18,7 @@ import {
   Settings,
   TrendingUp,
 } from "lucide-react";
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -59,11 +61,6 @@ const items: ItemData[] = [
     text: "Private messages",
     path: "/messages",
   },
-  {
-    icon: QrCode,
-    text: "Get my Realter code",
-    path: "/code",
-  },
 ];
 
 type PropsWithItem = ItemProps & {
@@ -91,17 +88,18 @@ function Item({ preset: _preset, ...rest }: PropsWithItem | PropsWithNode) {
 
   const node = (
     <div
-      className={cx(
-        "group flex gap-3 items-center tracking-tight cursor-pointer rounded-full py-4  px-8 transition min-w-[18rem] font-bold text-lg",
-        {
-          search:
-            "text-gray-600 bg-gray-100 hover:bg-gray-50 transition border-2 border-spacing-2 mb-4 border-gray-300 rounded-lg",
-          undefined: "text-gray-800 hover:bg-gray-200/70",
-          current: "[&>*]:text-white bg-blue-600",
-        }[preset ?? "undefined"]
+      {...merge(
+        cx(
+          "group flex gap-3 items-center tracking-tight cursor-pointer rounded-full py-4  px-8 transition min-w-[18rem] font-bold text-lg",
+          {
+            search:
+              "text-gray-600 bg-gray-100 hover:bg-gray-50 transition border-2 border-spacing-2 mb-4 border-gray-300 rounded-lg",
+            undefined: "text-gray-800 hover:bg-gray-200/70",
+            current: "[&>*]:text-white bg-blue-600",
+          }[preset ?? "undefined"]
+        ),
+        rest
       )}
-      autoFocus={_preset === "current"}
-      {...rest}
     >
       {rest.type === "node" ? (
         rest.html
@@ -124,9 +122,11 @@ function Item({ preset: _preset, ...rest }: PropsWithItem | PropsWithNode) {
 }
 
 export default function Sidebar() {
+  const session = useSession();
+
   return (
     <div className="relative">
-      <div className="max-w-xl bg-white pl-[16rem] w-full min-h-full p-8 px-4 sticky top-0 right-0 max-h-[100vh] border-r overflow-auto">
+      <div className="max-w-xl bg-white pl-[16rem] w-full p-8 px-4 sticky top-0 left-0 max-h-[100vh] border-r overflow-auto">
         <div className="flex min-h-[calc(100vh-4rem)] flex-col justify-between h-full">
           <div className="tracking-tight">
             <div className="flex gap-4 items-center mb-8">
@@ -136,7 +136,9 @@ export default function Sidebar() {
                 height={40}
                 width={40}
               />
-              <h1 className="text-2xl font-bold tracking-tighter">Realter</h1>
+              <h1 className="text-2xl font-bold tracking-tighter">
+                Twitter clone
+              </h1>
             </div>
 
             {/* <Item
@@ -152,23 +154,42 @@ export default function Sidebar() {
             </div>
           </div>
 
-          <div className="gap-2 flex flex-col">
+          {session.data ? (
+            <div className="gap-2 flex flex-col">
+              <Item
+                item={{ icon: Settings, text: "Settings", path: "/settings" }}
+                type="item"
+              />
+              <Item
+                type="node"
+                html={
+                  <>
+                    <Image
+                      alt={`${session.data.user?.name}'s profile picture`}
+                      src={
+                        session.data.user?.image ||
+                        "https://avatars.githubusercontent.com/u/0000000?v=4"
+                      }
+                      height={36}
+                      width={36}
+                      className="bg-blue-600 rounded-full shrink-0 ring-2 ring-blue-600 group-hover:ring-blue-900"
+                    ></Image>
+                    <h4 className="font-bold tracking-tight text-md">
+                      {session.data.user?.name}
+                    </h4>
+                  </>
+                }
+                path="/account"
+              />
+            </div>
+          ) : (
             <Item
-              item={{ icon: Settings, text: "Paramètres", path: "/settings" }}
+              onClick={() => signIn()}
+              className="bg-blue-600 [&>*]:text-white [&>*]:hover:text-black"
+              item={{ text: "Login", icon: LogIn }}
               type="item"
             />
-
-            <Item
-              type="node"
-              html={
-                <>
-                  <div className="w-9 h-9 bg-blue-600 rounded-full shrink-0 ring-2 ring-gray-300 ring-offset-1 group-hover:ring-blue-950"></div>
-                  <h4 className="font-bold tracking-tight text-md">John Doe</h4>
-                </>
-              }
-              path="/account"
-            />
-          </div>
+          )}
         </div>
       </div>
     </div>

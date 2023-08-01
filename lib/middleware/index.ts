@@ -1,8 +1,6 @@
-import { User } from "@prisma/client";
+import { pick } from "../../utils";
 import { PRISMA_ERRORS, isKnownError, isPrismaError } from "../api";
 import { HTTPMethod, HandlerParams, Resolver } from "../api/types";
-import { JWTPayload, isTokenValid } from "../../utils/auth";
-import { isObject, isTrue, pick } from "../../utils";
 
 export const resolver: Resolver = (handler, options) => {
   return async (req, res) => {
@@ -11,6 +9,13 @@ export const resolver: Resolver = (handler, options) => {
       !options.authorizedEnvironnements.includes(process.env.NODE_ENV)
     ) {
       res.status(410).json({ error: "Gone" });
+      return options?.callback?.();
+    }
+
+    const authResult = await options?.isAuthorized?.(req, res);
+
+    if (typeof options?.isAuthorized === "function" && !authResult) {
+      res.status(403).json({ error: "Forbidden" });
       return options?.callback?.();
     }
 
@@ -23,38 +28,6 @@ export const resolver: Resolver = (handler, options) => {
       return options?.callback?.();
     }
 
-    let validationResult: {
-      decoded: JWTPayload & {
-        iat: number;
-        exp: number;
-      };
-      user: User;
-    } | null = null;
-
-    if (
-      isTrue(options?.isLoginRequired) ||
-      (isObject(options?.isLoginRequired) &&
-        isTrue(options?.isLoginRequired[req.method as HTTPMethod]))
-    ) {
-      try {
-        const isValid = await isTokenValid({ req });
-
-        if (!isValid) throw 403;
-
-        validationResult = isValid;
-      } catch (error) {
-        res.status(typeof error === "number" ? error : 500).json({
-          message: error === 403 ? "Forbidden" : "Internal Server Error",
-        });
-        return options?.callback?.();
-      }
-    }
-
-    console.log(
-      "🚀 ~ file: index.ts:51 ~ return ~ validationResult:",
-      validationResult
-    );
-
     const body = req.body ? pick(req.body, ...(options?.keys || [])) : {};
     if (
       options?.keys?.length &&
@@ -66,11 +39,12 @@ export const resolver: Resolver = (handler, options) => {
     }
 
     const params: HandlerParams = {
-      user: validationResult?.user ?? null,
       body,
       setHeader: (name, value) => {
         res.setHeader(name, value);
       },
+      req,
+      res,
       getCookie: (name) => {
         return req.cookies[name];
       },

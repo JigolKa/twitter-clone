@@ -1,3 +1,13 @@
+import { signIn, useSession, signOut } from "next-auth/react";
+import Feed from "~/components/Feed";
+
 export default function Home() {
-  return;
+  const session = useSession();
+
+  return (
+    <>
+      <h1 className="text-4xl font-bold tracking-tighter">Home</h1>
+      <Feed className="mt-6" />
+    </>
+  );
 }

@@ -1,6 +1,6 @@
 import Router from "next/router";
 import { JSXElementConstructor } from "react";
-import { ApiRequest, MiddlewareToken } from "~/lib/api/types";
+import { ApiRequest } from "~/lib/api/types";
 
 export function shuffle<T>(arr: T[]): T[] {
   const newArray = [...arr];
@@ -84,11 +84,6 @@ export const fetcher = async (url: string) => {
   if (!res.ok) {
     const error = new SWRError("An error occurred while fetching the data.");
 
-    switch (res.status) {
-      case 403:
-        Router.push("/login");
-    }
-
     error.info = await res.json();
     error.status = res.status;
     throw error;
@@ -96,15 +91,6 @@ export const fetcher = async (url: string) => {
 
   return res.json();
 };
-
-export const filter = <T extends unknown>(arr: T[]): T[] =>
-  arr.filter((value, index, array) => array.indexOf(value) === index);
-
-export function parseToken(req: ApiRequest) {
-  return JSON.parse(
-    (req.headers["x-data"] as string) ?? "{}"
-  ) as MiddlewareToken;
-}
 
 export const retrieveIP = (req: ApiRequest): string | undefined =>
   (req.headers["x-forwarded-for"] as string) || req.connection.remoteAddress;

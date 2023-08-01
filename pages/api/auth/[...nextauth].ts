@@ -4,30 +4,66 @@ import FacebookProvider from "next-auth/providers/facebook";
 import GithubProvider from "next-auth/providers/github";
 import TwitterProvider from "next-auth/providers/twitter";
 import Auth0Provider from "next-auth/providers/auth0";
+import DiscordProvider from "next-auth/providers/discord";
+import prisma from "~/prisma/db";
+import { omit } from "~/utils";
 
-// For more information on each option (and a full list of options) go to
-// https://next-auth.js.org/configuration/options
+const discordScopes = ["identify", "email"].join(" ");
+
 export const authOptions: NextAuthOptions = {
-  // https://next-auth.js.org/configuration/providers/oauth
   providers: [
-    // GithubProvider({
-    //   clientId: process.env.GITHUB_ID,
-    //   clientSecret: process.env.GITHUB_SECRET,
-    // }),
-    // GoogleProvider({
-    //   clientId: process.env.GOOGLE_ID,
-    //   clientSecret: process.env.GOOGLE_SECRET,
-    // }),
-    // TwitterProvider({
-    //   clientId: process.env.TWITTER_ID,
-    //   clientSecret: process.env.TWITTER_SECRET,
-    //   version: "2.0",
-    // }),
+    GithubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID!,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    }),
+    DiscordProvider({
+      clientId: process.env.DISCORD_CLIENT_ID!,
+      clientSecret: process.env.DISCORD_CLIENT_SECRET!,
+      authorization: { params: { scope: discordScopes } },
+    }),
   ],
   callbacks: {
-    async jwt({ token }) {
-      token.userRole = "admin";
-      return token;
+    signIn: async ({ user }) => {
+      const emails = (
+        await prisma.user.findMany({ select: { email: true } })
+      ).map((v) => v.email);
+      console.log(
+        "🚀 ~ file: [...nextauth].ts:29 ~ signIn: ~ emails:",
+        emails,
+        user
+      );
+
+      if (emails.includes(user.email ?? "")) return true;
+
+      const _ = await prisma.user.create({
+        data: {
+          ...omit(user, "email", "id", "name"),
+          username: user.name || user.email!,
+          email: user.email!,
+        },
+      });
+
+      return true;
+    },
+
+    session: async ({ session }) => {
+      const user = await prisma.user.findFirst({
+        where: {
+          email: session.user?.email!,
+        },
+      });
+
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          userId: user?.userId,
+        },
+      };
     },
   },
 };

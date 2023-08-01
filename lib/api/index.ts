@@ -1,7 +1,5 @@
-import { Prisma } from "@prisma/client";
-import { pick } from "../../utils";
-import { PrismaError } from "./types";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
+import { PrismaError } from "./types";
 
 export function isPrismaError(err: unknown): err is PrismaError {
   return typeof (err as PrismaError).message !== "undefined";
