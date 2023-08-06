@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
-import { FetchedTweetSample } from "~/components/Feed";
 import prisma from "~/prisma/db";
 import { authOptions } from "../auth/[...nextauth]";
+import { FetchedTweetSample } from "~/components/Tweet";
 
 export default async function handler(
   req: NextApiRequest,
