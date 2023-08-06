@@ -10,51 +10,86 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Account {
+  id                String   @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
 model User {
-  userId            String    @id @default(cuid())
-  username          String
-  email             String    @unique
-  password          String?
-  image             String?
-  following         User[]    @relation("followingRelation")
-  followingRelation User[]    @relation("followingRelation")
-  followers         User[]    @relation("followersRelation")
-  followersRelation User[]    @relation("followersRelation")
-  comments          Comment[]
-  favorites         Tweet[]
-  tweets            Tweet[]   @relation("authorRelation")
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  tweets        Tweet[]   @relation("authorRelation")
+  retweets      Retweet[]
+  likes         Tweet[]
+  followedBy    User[]    @relation("UserFollows")
+  following     User[]    @relation("UserFollows")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([identifier, token])
+}
+
+model Tweet {
+  id                String    @id @default(cuid())
+  message           String
+  author            User      @relation(fields: [authorId], references: [id], "authorRelation")
+  authorId          String
+  rootTweet         Tweet?    @relation(fields: [rootTweetId], references: [id], "rootTweetRelation")
+  rootTweetId       String?
+  comments          Tweet[]   @relation("commentsRelation")
+  commentsRelation  Tweet[]   @relation("commentsRelation")
+  retweets          Retweet[]
+  likes             User[]
+  rootTweetRelation Tweet[]   @relation("rootTweetRelation")
   createdAt         DateTime  @default(now())
   updatedAt         DateTime  @updatedAt
 }
 
-model Tweet {
-  tweetId          String    @id @default(cuid())
-  html             String
-  author           User      @relation(fields: [authorId], references: [userId], "authorRelation")
-  authorId         String
-  retweets         Tweet[]   @relation("retweetsRelation")
-  retweetsRelation Tweet[]   @relation("retweetsRelation")
-  comments         Comment[]
-  favorites        User[]
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
-}
-
-model Comment {
-  commentId        String    @id @default(cuid())
-  comments         Comment[] @relation("commentsRelation")
-  commentsRelation Comment[] @relation("commentsRelation")
-  tweet            Tweet     @relation(fields: [tweetId], references: [tweetId])
-  tweetId          String
-  author           User      @relation(fields: [authorId], references: [userId])
-  authorId         String
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
-}
-
-enum AuthenticationProvider {
-  GOOGLE
-  GITHUB
-  DISCORD
-  CREDS
+model Retweet {
+  id        String   @id @default(cuid())
+  tweet     Tweet    @relation(fields: [tweetId], references: [id])
+  tweetId   String
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  isDeleted Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

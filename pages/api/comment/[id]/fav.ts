@@ -22,21 +22,16 @@ export default async function handler(
     return res.status(403).json({ message: "Forbidden" });
   }
 
-  const tweet = await prisma.tweet.findFirst({
+  const comment = await prisma.tweet.findFirst({
     where: {
       id: id as string,
     },
     include: {
-      likes: {
-        select: {
-          id: true,
-          email: true,
-        },
-      },
+      likes: true,
     },
   });
 
-  if (!tweet) {
+  if (!comment) {
     return res.status(404).json({ message: "Not Found" });
   }
 
@@ -44,25 +39,14 @@ export default async function handler(
     where: {
       email: session.user.email!,
     },
-    select: {
-      id: true,
-      email: true,
-    },
   }))!;
 
-  let emails = Array.from(new Set(tweet.likes)) as {
-    email?: string;
-    id?: string;
-  }[];
-  console.log("🚀 ~ file: fav.ts:43 ~ emails:", emails);
+  let emails = Array.from(new Set(comment.likes));
 
-  const isLiked = emails.filter((v) => v.email === user.email).length > 0;
-  console.log("🚀 ~ file: fav.ts:60 ~ isLiked:", isLiked);
-
-  if (isLiked) {
+  if (emails.filter((v) => v.email === user.email).length > 0) {
     emails = emails.filter((v) => v.email !== user.email);
   } else {
-    emails.push({ id: user.id });
+    emails.push(user);
   }
 
   const updatedTweet = await prisma.tweet.update({
@@ -71,7 +55,7 @@ export default async function handler(
     },
     data: {
       likes: {
-        set: emails,
+        set: emails as any,
       },
     },
     include: {

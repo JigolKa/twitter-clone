@@ -1,5 +1,4 @@
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import swr from "swr";
 import { fetcher } from "..";
 
@@ -40,7 +39,6 @@ export function useForceUpdate() {
 
 export function useSWR<T>(url?: string | null) {
   const res = swr<T>(url, fetcher);
-  console.log("🚀 ~ file: index.ts:131 ~ useSWR ~ res:", res);
 
   return res;
 }

@@ -1,34 +1,17 @@
 import {
-  Book,
-  BookMarked,
-  BookOpenCheck,
-  ChevronsUpDownIcon,
   Flame,
-  GraduationCapIcon,
   Home,
-  LineChartIcon,
   LogIn,
   LucideIcon,
-  Mail,
   MessageCircle,
-  QrCode,
-  School,
   Search,
-  SearchIcon,
   Settings,
-  TrendingUp,
 } from "lucide-react";
 import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactNode, useContext } from "react";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "~/components/ui/popover";
-import { Separator } from "~/components/ui/separator";
+import { ReactNode } from "react";
 import { BasicProps } from "~/types";
 import { cx, merge } from "~/utils";
 

@@ -1,6 +1,5 @@
-import Router from "next/router";
+import { NextApiRequest } from "next";
 import { JSXElementConstructor } from "react";
-import { ApiRequest } from "~/lib/api/types";
 
 export function shuffle<T>(arr: T[]): T[] {
   const newArray = [...arr];
@@ -92,8 +91,16 @@ export const fetcher = async (url: string) => {
   return res.json();
 };
 
-export const retrieveIP = (req: ApiRequest): string | undefined =>
+export const retrieveIP = (req: NextApiRequest): string | undefined =>
   (req.headers["x-forwarded-for"] as string) || req.connection.remoteAddress;
+
+export function nestedCheck<K extends string, T>(
+  arr: { [key in K]: T }[],
+  key: K,
+  value: T
+) {
+  return arr.map((v) => v[key]).includes(value);
+}
 
 export function serialize<T>(data: T): T {
   return JSON.parse(JSON.stringify(data)) as T;

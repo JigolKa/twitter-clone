@@ -1,24 +1,20 @@
-import { NextApiRequest } from "next";
-import { Handler } from "~/lib/api/types";
-import { resolver } from "~/lib/middleware";
+import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "~/prisma/db";
 
-const handler: Handler = async (params) => {
-  const { html } = params.body;
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const { message } = req.body;
 
   const tweet = await prisma.tweet.create({
     data: {
-      html,
+      message,
       author: {
         connect: {
-          userId: "",
+          id: "",
         },
       },
     },
   });
-};
-
-export default resolver(handler, {
-  authorizedMethods: ["POST"],
-  keys: ["html"],
-});
+}

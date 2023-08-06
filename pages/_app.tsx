@@ -1,3 +1,4 @@
+import { SessionProvider } from "next-auth/react";
 import { Router } from "next/router";
 import nProgress from "nprogress";
 import { Toaster } from "react-hot-toast";
@@ -5,7 +6,6 @@ import Sidebar from "~/components/Sidebar";
 import "~/styles/globals.css";
 import { AppProps } from "~/types";
 import "../styles/loading.scss";
-import { SessionProvider } from "next-auth/react";
 // import { Provider } from "next-auth/client";
 
 Router.events.on("routeChangeStart", nProgress.start);

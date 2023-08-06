@@ -1,31 +1,35 @@
+import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
-import { Handler } from "~/lib/api/types";
-import { resolver } from "~/lib/middleware";
+import { FetchedTweetSample } from "~/components/Feed";
 import prisma from "~/prisma/db";
 import { authOptions } from "../auth/[...nextauth]";
-import { NextApiRequest, NextApiResponse } from "next";
 
-const handler: Handler = async (params) => {
-  const session = await getServerSession(
-    params.req as NextApiRequest,
-    params.res as NextApiResponse,
-    authOptions
-  );
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const session = await getServerSession(req, res, authOptions);
 
   const tweets = await prisma.tweet.findMany({
     take: 15,
-    select: {
-      tweetId: true,
-      html: true,
-      createdAt: true,
-      author: { select: { userId: true, username: true, image: true } },
-      favorites: { select: { email: true } },
+    include: {
+      likes: { select: { email: true } },
+      comments: { select: { id: true } },
+      retweets: { select: { user: { select: { email: true } } } },
+      author: {
+        select: {
+          id: true,
+          image: true,
+          name: true,
+        },
+      },
     },
   });
 
-  return {
-    data: tweets,
-  };
-};
-
-export default resolver(handler);
+  return res.json(
+    tweets.map((v) => ({
+      ...v,
+      retweets: v.retweets.map((k) => ({ email: k.user.email })),
+    })) as FetchedTweetSample[]
+  );
+}

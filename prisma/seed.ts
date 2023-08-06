@@ -1,12 +1,12 @@
-import { hash } from "argon2";
-import { PrismaClient } from "@prisma/client";
+import { Prisma, PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
 interface User {
-  username: string;
+  username?: string;
+  name?: string;
   email: string;
-  password: string;
+  password?: string;
   image?: string;
 }
 let users: User[] = [
@@ -325,13 +325,16 @@ function shuffle<T>(array: T[]) {
   return array;
 }
 
-const flags = ["tweets"];
-(async () => {
-  if (flags.includes("users")) {
+type Flag = "users" | "tweets";
+
+const flags: Flag[] = ["users", "tweets"];
+
+const functions: Record<Flag, () => Promise<Prisma.BatchPayload>> = {
+  users: async () => {
     for (let i = 0; i < users.length; i++) {
       users[i] = {
-        ...users[i],
-        password: await hash(users[i].password),
+        name: users[i].username,
+        email: users[i].email,
         image: `https://i.pravatar.cc/150?u=${users[i].email}`,
       };
     }
@@ -339,13 +342,15 @@ const flags = ["tweets"];
     const data = await prisma?.user.createMany({
       data: users,
     });
-    console.log("🚀 ~ file: seed.ts:75 ~ data:", data);
-  } else if (flags.includes("tweets")) {
-    let ids = (await prisma.user.findMany()).map((v) => v.userId);
+
+    return data;
+  },
+  tweets: async () => {
+    let ids = (await prisma.user.findMany()).map((v) => v.id);
 
     for (let i = 0; i < tweets.length; i++) {
       tweets[i] = {
-        html: tweets[i].text,
+        message: tweets[i].text,
         authorId: ids[0],
       } as any;
 
@@ -355,6 +360,16 @@ const flags = ["tweets"];
     const data = await prisma.tweet.createMany({
       data: tweets as any,
     });
-    console.log("🚀 ~ file: seed.ts:358 ~ data:", data);
+
+    return data;
+  },
+};
+
+(async () => {
+  for (let i = 0; i < flags.length; i++) {
+    const flag = flags[i];
+    const payload = await functions[flag]();
+
+    console.log(flag, "gave", payload);
   }
 })();
