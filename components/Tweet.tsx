@@ -1,8 +1,17 @@
 import { Tweet } from "@prisma/client";
 import axios from "axios";
-import { Heart, MessageCircle, Repeat2 } from "lucide-react";
+import {
+  Flag,
+  GripHorizontalIcon,
+  Heart,
+  LineChart,
+  MessageCircle,
+  Repeat2,
+  Share,
+  Trash,
+} from "lucide-react";
 import { Session } from "next-auth";
-import { signIn, useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
@@ -12,6 +21,21 @@ import { DetailedTweet } from "~/pages/tweet/[id]";
 import { BasicProps } from "~/types";
 import { cx, merge, nestedCheck } from "~/utils";
 import { Button } from "./ui/button";
+import { Skeleton } from "./ui/skeleton";
+import { useSession } from "~/utils/hooks";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "~/components/ui/dropdown-menu";
 
 const iconProps: Record<string, number> = { height: 18, width: 18 };
 
@@ -25,6 +49,7 @@ export type DetailedTweetProps = TweetProps & {
 };
 type TweetProps = BasicProps & {
   mutateKey?: string;
+  disableBodyLink?: boolean;
 };
 
 export interface FetchedTweetSample extends Tweet {
@@ -70,6 +95,7 @@ function DetailedHeader({
 }: BasicProps & Pick<DetailedTweetProps, "tweet">) {
   const [isSubscribed, setSubscribed] = useState(false);
   const session = useSession();
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (!session || !session?.data) return;
@@ -84,10 +110,16 @@ function DetailedHeader({
       .post(`/api/user/${tweet.author.id}/sub`)
       .then(() => setSubscribed((p) => !p));
 
+  const isAuthor = session.data?.user?.id === tweet.author.id;
+
+  useEffect(() => {
+    console.log("🚀 ~ file: Tweet.tsx:113 ~ isAuthor:", isAuthor);
+  });
+
   return (
     <div {...merge("flex w-full justify-between items-center", rest)}>
       <Link
-        href={`/profile/${tweet.author.name}`}
+        href={`/profile/${tweet.author.id}`}
         className="flex items-center gap-4 group"
       >
         <Image
@@ -98,19 +130,56 @@ function DetailedHeader({
           alt={`${tweet.author.name}'s profile picture`}
           height={40}
           width={40}
-          className="rounded-full "
+          className="rounded-full"
         />
         <h3 className="text-xl font-bold tracking-tight group-hover:underline">
           {tweet.author.name}
         </h3>
       </Link>
-      <Button
-        variant={isSubscribed ? "outline" : "default"}
-        onClick={subscribe}
-        className="rounded-full !h-9"
-      >
-        {isSubscribed ? "Subscribed" : "Subscribe"}
-      </Button>
+
+      <div className="flex gap-2">
+        {!isAuthor && (
+          <Button
+            variant={isSubscribed ? "outline" : "default"}
+            onClick={subscribe}
+            className="rounded-full"
+          >
+            {isSubscribed ? "Subscribed" : "Subscribe"}
+          </Button>
+        )}
+
+        <DropdownMenu open={isMenuOpen} onOpenChange={setMenuOpen}>
+          <DropdownMenuTrigger asChild>
+            <Button size="icon" variant="outline">
+              <GripHorizontalIcon className="h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" className="w-[200px]">
+            <DropdownMenuItem>
+              <Share className="mr-2 h-4 w-4" />
+              Share
+            </DropdownMenuItem>
+            {!isAuthor && (
+              <DropdownMenuItem className="text-red-600">
+                <Flag className="mr-2 h-4 w-4" />
+                Report
+              </DropdownMenuItem>
+            )}
+            {isAuthor && (
+              <>
+                <DropdownMenuItem>
+                  <LineChart className="mr-2 h-4 w-4" />
+                  Analytics
+                </DropdownMenuItem>
+                <DropdownMenuItem className="text-red-600">
+                  <Trash className="mr-2 h-4 w-4" />
+                  Delete
+                </DropdownMenuItem>
+              </>
+            )}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </div>
   );
 }
@@ -139,10 +208,43 @@ function SimpleHeader({ tweet }: Pick<SimpleTweetProps, "tweet">) {
   );
 }
 
+export function TweetSkeleton({
+  preset = "feed",
+  ...rest
+}: BasicProps & { preset: "feed" | "detailed" }) {
+  return (
+    <div {...rest}>
+      <div className="flex items-center gap-4">
+        <Skeleton
+          className={cx(
+            "rounded-full",
+            preset === "feed" ? "h-8 w-8" : "h-10 w-10"
+          )}
+        />
+        <Skeleton
+          className={cx("w-[250px]", preset === "feed" ? "h-3" : "h-4")}
+        />
+      </div>
+
+      <div
+        className={cx(
+          "grid gap-2 mt-4",
+          preset === "feed" ? "[&>*]:h-2.5" : "[&>*]:h-3.5"
+        )}
+      >
+        <Skeleton className="w-full" />
+        <Skeleton className="w-full" />
+        <Skeleton className="w-2/3" />
+      </div>
+    </div>
+  );
+}
+
 export function TweetElement({
   preset,
   tweet,
   mutateKey,
+  disableBodyLink,
   ...rest
 }: DetailedTweetProps | SimpleTweetProps) {
   const { data } = useSession();
@@ -182,8 +284,8 @@ export function TweetElement({
     <div
       {...merge(
         cx(
-          "w-full p-4 bg-white transition first:rounded-t last:rounded-b",
-          preset === "feed" && "hover:bg-gray-50"
+          "w-full bg-white transition first:rounded-t last:rounded-b",
+          preset === "feed" && "hover:bg-gray-50 p-4"
         ),
         rest
       )}
@@ -194,7 +296,15 @@ export function TweetElement({
         <DetailedHeader tweet={tweet} />
       )}
 
-      {preset === "feed" ? <Link href={tweetLink}>{body}</Link> : body}
+      {preset === "feed" ? (
+        !disableBodyLink ? (
+          <Link href={tweetLink}>{body}</Link>
+        ) : (
+          body
+        )
+      ) : (
+        body
+      )}
 
       <div className="flex mt-4 items-center gap-12 max-w-fit w-full justify-between [&>*]:flex [&>*]:items-center [&>*]:gap-2 [&>*]:text-sm [&>*]:font-semibold [&>*]:p-2 [&>*]:rounded-lg hover:[&>*]:bg-gray-200 [&>*]:cursor-pointer">
         {tweet.comments ? (
@@ -205,7 +315,7 @@ export function TweetElement({
         ) : null}
 
         {tweet.retweets ? (
-          <div
+          <button
             className={cx(isRetweeted && "text-green-600")}
             onClick={retweet}
           >
@@ -217,15 +327,20 @@ export function TweetElement({
               className={cx(isRetweeted && "fill-green-600")}
             />
             <span>{tweet.retweets.length}</span>
-          </div>
+          </button>
         ) : null}
 
         {tweet.likes ? (
-          <div className={cx(isLiked && "text-red-600")} onClick={like}>
+          <button className={cx(isLiked && "text-red-600")} onClick={like}>
             <Heart {...iconProps} className={cx(isLiked && "fill-red-600")} />
             <span>{tweet.likes.length}</span>
-          </div>
+          </button>
         ) : null}
+
+        <Link href={`${tweetLink}/hits`} title="Views">
+          <LineChart {...iconProps} />
+          <span>{0}</span>
+        </Link>
       </div>
     </div>
   );

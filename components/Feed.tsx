@@ -1,16 +1,29 @@
 import { BasicProps } from "~/types";
 import { merge } from "~/utils";
-import { useSWR } from "~/utils/hooks";
 import { FetchedTweetSample, TweetElement } from "./Tweet";
+
+type FeedProps = BasicProps & {
+  tweets: FetchedTweetSample[];
+  mutateKey?: string;
+  disableBodyLink?: boolean;
+};
 
 export default function Feed({
   tweets,
+  mutateKey,
+  disableBodyLink,
   ...rest
-}: BasicProps & { tweets: FetchedTweetSample[] }) {
+}: FeedProps) {
   return (
     <div {...merge("flex flex-col divide-y max-w-3xl", rest)}>
       {tweets.map((v) => (
-        <TweetElement tweet={v} key={v.id} preset="feed" />
+        <TweetElement
+          tweet={v}
+          disableBodyLink={disableBodyLink}
+          key={v.id}
+          preset="feed"
+          mutateKey={mutateKey}
+        />
       ))}
     </div>
   );

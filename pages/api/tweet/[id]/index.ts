@@ -8,21 +8,6 @@ export const userInfos = {
   image: true,
 } as const;
 
-export const tweetLikeFilter = {
-  author: { select: { ...userInfos, followedBy: true } },
-  favorites: { select: { userId: true } },
-  retweets: { select: { retweeterId: true } },
-  comments: {
-    select: {
-      createdAt: true,
-      commentId: true,
-      message: true,
-      favorites: { select: { userId: true } },
-      author: { select: userInfos },
-    },
-  },
-} as const;
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse

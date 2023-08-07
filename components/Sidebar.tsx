@@ -108,7 +108,7 @@ export default function Sidebar() {
   const session = useSession();
 
   return (
-    <div className="relative">
+    <div className="relative min-h-full">
       <div className="max-w-xl bg-white pl-[16rem] w-full p-8 px-4 sticky top-0 left-0 max-h-[100vh] border-r overflow-auto">
         <div className="flex min-h-[calc(100vh-4rem)] flex-col justify-between h-full">
           <div className="tracking-tight">

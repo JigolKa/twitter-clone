@@ -1,35 +1,10 @@
 import { useState } from "react";
 import swr from "swr";
 import { fetcher } from "..";
-
-type UseToggleProps = {
-  defaultState: boolean;
-};
-export function useToggle(
-  { defaultState }: UseToggleProps = { defaultState: false }
-) {
-  const [isLoading, setLoading] = useState<boolean>(defaultState);
-
-  const toggle: () => void = () => setLoading((p) => !p);
-
-  return [isLoading, { toggle, set: setLoading }] as const;
-}
-
-export function useIncrement() {
-  const [index, setIndex] = useState(0);
-
-  const add = (n: number) => setIndex((p) => p + n);
-
-  return [index, { increment: () => add(1), add }] as const;
-}
-
-export function useArray<T extends unknown>(defaultState: T[]) {
-  const [arr, setArr] = useState<T[]>(defaultState);
-
-  const push = (item: T) => setArr((p) => [...p, item]);
-
-  return [arr, { push }] as const;
-}
+import {
+  useSession as NextAuthUseSession,
+  SessionContextValue,
+} from "next-auth/react";
 
 export function useForceUpdate() {
   const [_, setValue] = useState(0);
@@ -41,4 +16,19 @@ export function useSWR<T>(url?: string | null) {
   const res = swr<T>(url, fetcher);
 
   return res;
+}
+
+export function useSession() {
+  return NextAuthUseSession() as SessionContextValue & {
+    data: {
+      user: Session | null;
+    };
+  };
+}
+
+interface Session {
+  id: string;
+  email: string;
+  name: string;
+  image: string;
 }

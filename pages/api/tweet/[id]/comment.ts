@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
 import prisma from "~/prisma/db";
-import { SessionContext } from "~/types";
 import { authOptions } from "../../auth/[...nextauth]";
 
 export default async function handler(
@@ -19,24 +18,40 @@ export default async function handler(
   }
 
   const { id } = req.query;
-  const { data } = (await getServerSession(
-    req as NextApiRequest,
-    res as NextApiResponse,
-    authOptions
-  )) as SessionContext;
-  console.log("🚀 ~ file: tweet.ts:28 ~ session:", data);
+  const session = await getServerSession(req, res, authOptions);
 
-  if (!data || typeof data.user === "undefined") {
+  if (!session || typeof session.user === "undefined") {
     return res.status(403).json({ message: "Forbidden" });
   }
 
-  const tweet = await prisma.tweet.create({
+  const comment = await prisma.tweet.create({
     data: {
-      authorId: data.user.userId,
-      rootTweetId: id as string,
       message,
+      author: {
+        connect: {
+          email: session.user.email!,
+        },
+      },
+      rootTweet: {
+        connect: {
+          id: id as string,
+        },
+      },
     },
   });
 
-  return res.json(tweet);
+  const updatedTweet = await prisma.tweet.update({
+    where: {
+      id: id as string,
+    },
+    data: {
+      comments: {
+        connect: {
+          id: comment.id,
+        },
+      },
+    },
+  });
+
+  return res.json(updatedTweet);
 }

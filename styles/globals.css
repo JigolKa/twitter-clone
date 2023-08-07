@@ -12,6 +12,11 @@ body {
   overflow-x: hidden;
 }
 
+body,
+#__next {
+  min-height: 100%;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

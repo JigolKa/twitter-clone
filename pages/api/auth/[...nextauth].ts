@@ -24,6 +24,17 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   adapter: PrismaAdapter(prisma),
+  callbacks: {
+    session: async ({ user, session }) => {
+      const infos = await prisma.user.findFirst({
+        where: {
+          email: user.email,
+        },
+      });
+
+      return { ...session, user: { ...session?.user, id: infos?.id } };
+    },
+  },
 };
 
 export default NextAuth(authOptions);

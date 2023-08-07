@@ -1,7 +1,18 @@
-import { useSession } from "next-auth/react";
+import { User } from "@prisma/client";
+import axios from "axios";
+import { signIn, useSession } from "next-auth/react";
+import Head from "next/head";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 import Feed from "~/components/Feed";
-import { FetchedTweetSample, TweetElement } from "~/components/Tweet";
+import {
+  FetchedTweetSample,
+  TweetElement,
+  TweetSkeleton,
+} from "~/components/Tweet";
+import { Button } from "~/components/ui/button";
+import { Textarea } from "~/components/ui/textarea";
 import { useSWR } from "~/utils/hooks";
 
 export type DetailedTweet = Omit<FetchedTweetSample, "comments"> & {
@@ -15,68 +26,94 @@ export type DetailedTweet = Omit<FetchedTweetSample, "comments"> & {
 
 export default function Tweet() {
   const router = useRouter();
-  const { data } = useSWR<DetailedTweet>(
+  const { data, mutate } = useSWR<DetailedTweet>(
     router.query ? `/api/tweet/${router.query.id}` : null
   );
+  const [message, setMessage] = useState("");
+  const [isLoading, setLoading] = useState(false);
+  const { data: user } = useSession();
+  const toggle = () => setLoading((p) => !p);
 
-  const session = useSession();
+  const comment = () => {
+    if (!user) {
+      return signIn();
+    }
 
-  return data ? (
+    toggle();
+
+    axios
+      .post(`/api/tweet/${router.query.id}/comment`, {
+        message,
+      })
+      .finally(() => mutate())
+      .catch((e) => {
+        console.error(e);
+        toast.error("An error occured. Please try again later");
+      });
+
+    toggle();
+  };
+
+  return (
     <>
-      <TweetElement tweet={data} preset="detailed" />
+      <Head>
+        <title>
+          {data
+            ? `${data.author.name} on Twitter Clone - ${data.message.slice(
+                0,
+                30
+              )}${data.message.length > 30 && "..."}`
+            : "Twitter Clone"}
+        </title>
+      </Head>
+
+      {data ? (
+        <TweetElement tweet={data} preset="detailed" />
+      ) : (
+        <TweetSkeleton preset="detailed" />
+      )}
       <h2 className="text-3xl tracking-tight font-bold mt-8">Comments</h2>
 
-      <Feed tweets={data.comments} className="mt-4" />
-    </>
-  ) : null;
-}
+      {data ? (
+        <Feed
+          disableBodyLink
+          mutateKey={`/api/tweet/${router.query.id}`}
+          tweets={data.comments}
+          className="mt-2"
+        />
+      ) : (
+        <div className="grid gap-8 mt-4">
+          {new Array(4).fill(0).map((_, i) => (
+            <TweetSkeleton preset="feed" key={i} />
+          ))}
+        </div>
+      )}
 
-/**
- * 
- * (
-    <>
-      <div className="flex w-full justify-between items-center">
-        <Link
-          href={`/profile/${data.author.name}`}
-          className="flex items-center gap-4 group"
-        >
-          <Image
-            src={
-              data.author.image ??
-              "https://avatars.githubusercontent.com/u/0000000?v=4"
-            }
-            alt={`${data.author.name}'s profile picture`}
-            height={40}
-            width={40}
-            className="rounded-full"
-          />
-          <h3 className="text-xl font-bold tracking-tight group-hover:underline">
-            {data.author.name}
+      {data && (
+        <>
+          <h3 className="text-2xl font-bold tracking-tight mt-8">
+            Comment this Tweet
           </h3>
-        </Link>
-        <Button
-          variant={isSubscribed ? "outline" : "default"}
-          onClick={subscribe}
-          className="rounded-full !h-9"
-        >
-          {isSubscribed ? "Subscribed" : "Subscribe"}
-        </Button>
-      </div>
-      <p className="mt-6 text-lg max-w-prose">{data.message}</p>
-      <Separator className="mt-6" />
-      <Separator className="mt-2" />
-
-      <h2 className="text-3xl tracking-tight font-bold mt-8">Comments</h2>
-
-      <div className="flex flex-col gap-4 mt-4">
-        {data.comments?.map((v) => (
-          <TweetElement
-            mutateKey={`/api/tweet/${router.query.id}`}
-            tweet={v}
-            key={v.id}
-          />
-        ))}
-      </div>
+          <div className="grid gap-2 mt-4">
+            <Textarea
+              className="min-h-[8rem]"
+              placeholder="What are your thoughts?"
+              value={message}
+              onChange={(e) => setMessage(e.currentTarget.value)}
+            />
+            <div className="w-full flex justify-end">
+              <Button
+                isLoading={isLoading}
+                onClick={() => {
+                  comment();
+                }}
+              >
+                Submit
+              </Button>
+            </div>
+          </div>
+        </>
+      )}
     </>
-  ) 
-*/
+  );
+}
