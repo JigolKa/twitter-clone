@@ -17,25 +17,18 @@ import Link from "next/link";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { mutate } from "swr";
-import { DetailedTweet } from "~/pages/tweet/[id]";
-import { BasicProps } from "~/types";
-import { cx, merge, nestedCheck } from "~/utils";
-import { Button } from "./ui/button";
-import { Skeleton } from "./ui/skeleton";
-import { useSession } from "~/utils/hooks";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
+import { DetailedTweet } from "~/pages/tweet/[id]";
+import { BasicProps } from "~/types";
+import { cx, merge, nestedCheck } from "~/utils";
+import { useSession } from "~/utils/hooks";
+import { Button } from "./ui/button";
+import { Skeleton } from "./ui/skeleton";
 
 const iconProps: Record<string, number> = { height: 18, width: 18 };
 
@@ -67,6 +60,7 @@ export interface FetchedTweetSample extends Tweet {
     image?: string;
     name?: string;
   };
+  hits?: number;
 }
 
 const factory =
@@ -166,16 +160,10 @@ function DetailedHeader({
               </DropdownMenuItem>
             )}
             {isAuthor && (
-              <>
-                <DropdownMenuItem>
-                  <LineChart className="mr-2 h-4 w-4" />
-                  Analytics
-                </DropdownMenuItem>
-                <DropdownMenuItem className="text-red-600">
-                  <Trash className="mr-2 h-4 w-4" />
-                  Delete
-                </DropdownMenuItem>
-              </>
+              <DropdownMenuItem className="text-red-600">
+                <Trash className="mr-2 h-4 w-4" />
+                Delete
+              </DropdownMenuItem>
             )}
           </DropdownMenuContent>
         </DropdownMenu>
@@ -306,16 +294,24 @@ export function TweetElement({
         body
       )}
 
-      <div className="flex mt-4 items-center gap-12 max-w-fit w-full justify-between [&>*]:flex [&>*]:items-center [&>*]:gap-2 [&>*]:text-sm [&>*]:font-semibold [&>*]:p-2 [&>*]:rounded-lg hover:[&>*]:bg-gray-200 [&>*]:cursor-pointer">
-        {tweet.comments ? (
-          <Link href={tweetLink}>
-            <MessageCircle {...iconProps} />
-            <span>{tweet.comments.length}</span>
-          </Link>
-        ) : null}
+      <div className="flex mt-4 items-center gap-12 max-w-fit w-full justify-between">
+        {tweet.comments &&
+          (preset === "feed" ? (
+            <Link href={tweetLink}>
+              <ActionButton>
+                <MessageCircle {...iconProps} />
+                <span>{tweet.comments.length}</span>
+              </ActionButton>
+            </Link>
+          ) : (
+            <ActionButton>
+              <MessageCircle {...iconProps} />
+              <span>{tweet.comments.length}</span>
+            </ActionButton>
+          ))}
 
         {tweet.retweets ? (
-          <button
+          <ActionButton
             className={cx(isRetweeted && "text-green-600")}
             onClick={retweet}
           >
@@ -327,21 +323,39 @@ export function TweetElement({
               className={cx(isRetweeted && "fill-green-600")}
             />
             <span>{tweet.retweets.length}</span>
-          </button>
+          </ActionButton>
         ) : null}
 
         {tweet.likes ? (
-          <button className={cx(isLiked && "text-red-600")} onClick={like}>
+          <ActionButton
+            className={cx(isLiked && "text-red-600")}
+            onClick={like}
+          >
             <Heart {...iconProps} className={cx(isLiked && "fill-red-600")} />
             <span>{tweet.likes.length}</span>
-          </button>
+          </ActionButton>
         ) : null}
 
-        <Link href={`${tweetLink}/hits`} title="Views">
-          <LineChart {...iconProps} />
-          <span>{0}</span>
-        </Link>
+        {tweet.hits && (
+          <ActionButton className="hover:!bg-transparent">
+            <LineChart {...iconProps} />
+            <span>{tweet.hits}</span>
+          </ActionButton>
+        )}
       </div>
     </div>
+  );
+}
+
+function ActionButton({ children, ...rest }: BasicProps<"button">) {
+  return (
+    <button
+      {...merge<"button">(
+        "flex items-center gap-2 text-sm font-semibold p-2 rounded-lg hover:bg-gray-200 cursor-pointer",
+        rest
+      )}
+    >
+      {children}
+    </button>
   );
 }

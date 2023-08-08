@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import prisma from "~/prisma/db";
-import { feedInclude } from "../../tweet/feed";
 import { FetchedTweetSample } from "~/components/Tweet";
+import prisma from "~/prisma/db";
 import { UnwrapPromise } from "~/types";
+import { feedInclude } from "../../tweet/feed";
 
 export default async function handler(
   req: NextApiRequest,

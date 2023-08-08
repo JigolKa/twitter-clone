@@ -1,9 +1,9 @@
-import { User } from "@prisma/client";
 import axios from "axios";
+import { GetServerSidePropsContext } from "next";
 import { signIn, useSession } from "next-auth/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "react-hot-toast";
 import Feed from "~/components/Feed";
 import {
@@ -13,6 +13,7 @@ import {
 } from "~/components/Tweet";
 import { Button } from "~/components/ui/button";
 import { Textarea } from "~/components/ui/textarea";
+import { createRedisInstance } from "~/lib/redis";
 import { useSWR } from "~/utils/hooks";
 
 export type DetailedTweet = Omit<FetchedTweetSample, "comments"> & {
@@ -21,10 +22,15 @@ export type DetailedTweet = Omit<FetchedTweetSample, "comments"> & {
       email: string;
     }[];
   };
+  hits?: number;
   comments: FetchedTweetSample[];
 };
 
-export default function Tweet() {
+interface TweetProps {
+  hits: number;
+}
+
+export default function Tweet({ hits }: TweetProps) {
   const router = useRouter();
   const { data, mutate } = useSWR<DetailedTweet>(
     router.query ? `/api/tweet/${router.query.id}` : null
@@ -68,7 +74,7 @@ export default function Tweet() {
       </Head>
 
       {data ? (
-        <TweetElement tweet={data} preset="detailed" />
+        <TweetElement tweet={{ ...data, hits }} preset="detailed" />
       ) : (
         <TweetSkeleton preset="detailed" />
       )}
@@ -116,4 +122,27 @@ export default function Tweet() {
       )}
     </>
   );
+}
+
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+  const redis = createRedisInstance();
+
+  const id = ctx.query.id as string;
+
+  const value = await redis.get(id);
+  console.log("🚀 ~ file: [id].tsx:86 ~ getServerSideProps ~ value:", value);
+
+  if (!value) {
+    await redis.set(id, 1);
+  } else {
+    await redis.incr(id);
+  }
+
+  await redis.quit();
+
+  return {
+    props: {
+      hits: value ? +value + 1 : 1,
+    },
+  };
 }

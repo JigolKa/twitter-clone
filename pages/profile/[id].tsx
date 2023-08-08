@@ -1,12 +1,12 @@
+import axios from "axios";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import Feed from "~/components/Feed";
+import { Button } from "~/components/ui/button";
 import { useSWR, useSession } from "~/utils/hooks";
 import { Profile } from "../api/user/[id]";
-import { useEffect, useState } from "react";
-import { Button } from "~/components/ui/button";
-import axios from "axios";
-import Link from "next/link";
-import Feed from "~/components/Feed";
 
 export default function Profile() {
   const { query } = useRouter();

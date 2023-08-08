@@ -1,10 +1,10 @@
-import { useState } from "react";
-import swr from "swr";
-import { fetcher } from "..";
 import {
   useSession as NextAuthUseSession,
   SessionContextValue,
 } from "next-auth/react";
+import { useState } from "react";
+import swr from "swr";
+import { fetcher } from "..";
 
 export function useForceUpdate() {
   const [_, setValue] = useState(0);

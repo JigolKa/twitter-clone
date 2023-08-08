@@ -140,7 +140,11 @@ export default function Sidebar() {
           {session.data ? (
             <div className="gap-2 flex flex-col">
               <Item
-                item={{ icon: Settings, text: "Settings", path: "/settings" }}
+                item={{
+                  icon: Settings,
+                  text: "Settings",
+                  path: "/account/settings",
+                }}
                 type="item"
               />
               <Item
