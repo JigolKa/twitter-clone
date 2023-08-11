@@ -1,0 +1,2266 @@
+{
+  "default": {
+    "trendingSearchesDays": [
+      {
+        "date": "20230809",
+        "formattedDate": "Wednesday, August 9, 2023",
+        "trendingSearches": [
+          {
+            "title": {
+              "query": "Wintzenheim",
+              "exploreLink": "/trends/explore?q=Wintzenheim&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "100K+",
+            "relatedQueries": [
+              {
+                "query": "incendie alsace",
+                "exploreLink": "/trends/explore?q=incendie+alsace&date=now+7-d&geo=FR"
+              },
+              {
+                "query": "incendie wintzenheim",
+                "exploreLink": "/trends/explore?q=incendie+wintzenheim&date=now+7-d&geo=FR"
+              },
+              {
+                "query": "Alsace",
+                "exploreLink": "/trends/explore?q=Alsace&date=now+7-d&geo=FR"
+              }
+            ],
+            "image": {
+              "newsUrl": "https://www.francetvinfo.fr/france/grand-est/haut-rhin/direct-incendie-d-un-gite-a-wintzenheim-11-personnes-manquent-a-l-appel-elisabeth-borne-se-rend-sur-place_5997632.html",
+              "source": "Franceinfo",
+              "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcQuDJqlCQUhpU3ZNZ61NmNLUL8u_2Cku5uSOwTVRl2EhnkJ6UuN2pzwSV-TZlh1HOz7grVNaL8l"
+            },
+            "articles": [
+              {
+                "title": "DIRECT. Incendie d&#39;un gîte à Wintzenheim : le bilan s&#39;élève à 11 ...",
+                "timeAgo": "8h ago",
+                "source": "Franceinfo",
+                "image": {
+                  "newsUrl": "https://www.francetvinfo.fr/france/grand-est/haut-rhin/direct-incendie-d-un-gite-a-wintzenheim-11-personnes-manquent-a-l-appel-elisabeth-borne-se-rend-sur-place_5997632.html",
+                  "source": "Franceinfo",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcQuDJqlCQUhpU3ZNZ61NmNLUL8u_2Cku5uSOwTVRl2EhnkJ6UuN2pzwSV-TZlh1HOz7grVNaL8l"
+                },
+                "url": "https://www.francetvinfo.fr/france/grand-est/haut-rhin/direct-incendie-d-un-gite-a-wintzenheim-11-personnes-manquent-a-l-appel-elisabeth-borne-se-rend-sur-place_5997632.html",
+                "snippet": "L&#39;incendie s&#39;est déclaré mercredi matin dans ce lieu où séjournaient 28 personnes en situation de handicap, venues passer leurs vacances dans le Haut-Rhin."
+              },
+              {
+                "title": "Incendie en Alsace : onze morts confirmés à Wintzenheim",
+                "timeAgo": "6h ago",
+                "source": "France Bleu",
+                "image": {
+                  "newsUrl": "https://www.francebleu.fr/infos/faits-divers-justice/wintzenheim-incendie-dans-un-gite-plusieurs-personnes-manquent-a-l-appel-3636380",
+                  "source": "France Bleu",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcS2W1WpWiN0gXniB9KyWDaLBXipDb1XoQR2W8j7rcW4e0kWgMcCRU_PY0FcxYBE42hgXuuYlxIt"
+                },
+                "url": "https://www.francebleu.fr/infos/faits-divers-justice/wintzenheim-incendie-dans-un-gite-plusieurs-personnes-manquent-a-l-appel-3636380",
+                "snippet": "Onze personnes sont mortes ce mercredi matin dans l&#39;incendie d&#39;un gîte à Wintzenheim (Haut-Rhin). Les causes du départ de feu ne sont pas encore connues."
+              },
+              {
+                "title": "Incendie à Wintzenheim : le gîte était en surcapacité, souligne la ...",
+                "timeAgo": "5h ago",
+                "source": "Le Journal du dimanche",
+                "image": {
+                  "newsUrl": "https://www.lejdd.fr/societe/incendie-wintzenheim-le-gite-etait-en-surcapacite-souligne-la-mairie-137644",
+                  "source": "Le Journal du dimanche",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcT48k5Gur9rg1Jp0ZaTsqGVuU_GY8r6QtEOSC6H4qWCrJvjmK0gyNMuN4YHKg2Cj5FIsxV42F_Y"
+                },
+                "url": "https://www.lejdd.fr/societe/incendie-wintzenheim-le-gite-etait-en-surcapacite-souligne-la-mairie-137644",
+                "snippet": "Selon l&#39;adjoint au maire de Wintzenheim, l&#39;hébergement disposait « d&#39;une capacité d&#39;accueil maximale de 16personnes ». Or, la préfecture du Haut-Rhin a&nbsp;..."
+              },
+              {
+                "title": "Incendie meurtrier d&#39;un gîte accueillant des personnes handicapées ...",
+                "timeAgo": "4h ago",
+                "source": "Ouest-France",
+                "image": {
+                  "newsUrl": "https://www.ouest-france.fr/faits-divers/incendie/incendie-meurtrier-dun-gite-accueillant-des-personnes-handicapees-a-wintzenheim-ce-que-lon-sait-5112bb8a-36bc-11ee-a86b-79aa2cf45607",
+                  "source": "Ouest-France",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcSs4gYTjGaT-dcfibVyw0JSoHec0LQTIOpzER8YuqaLSEputFyQR_Jf4eY-PS0mc8d0t8w2P_3A"
+                },
+                "url": "https://www.ouest-france.fr/faits-divers/incendie/incendie-meurtrier-dun-gite-accueillant-des-personnes-handicapees-a-wintzenheim-ce-que-lon-sait-5112bb8a-36bc-11ee-a86b-79aa2cf45607",
+                "snippet": "Un incendie meurtrier s&#39;est déclaré dans un gîte de vacances accueillant des personnes en situation de handicap mental ce mercredi 9 août 2023, causant la&nbsp;..."
+              },
+              {
+                "title": "Incendie à Wintzenheim : point de situation à 12h00 - Communiqués ...",
+                "timeAgo": "10h ago",
+                "source": "haut-rhin.gouv.fr",
+                "url": "https://www.haut-rhin.gouv.fr/Actualites/Espace-presse/Communiques-de-presse-2023/Incendie-a-Wintzenheim-point-de-situation-a-12h00",
+                "snippet": "Un incendie s&#39;est déclaré vers 6h30 au 2 rue principale à Wintzenheim, dans un gîte privé situé à La Forge, 300m<sup>2</sup> ont été embrasés sur un bâtiment de 500m2."
+              },
+              {
+                "title": "Wintzenheim : ce que l&#39;on sait de l&#39;incendie tragique en Alsace qui a ...",
+                "timeAgo": "6h ago",
+                "source": "Le HuffPost",
+                "image": {
+                  "newsUrl": "https://www.huffingtonpost.fr/faits-divers/article/wintzenheim-ce-que-l-on-sait-de-l-incendie-tragique-en-alsace-qui-a-fait-9-morts_221619.html",
+                  "source": "Le HuffPost",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcTIKDFoifY_I2QymegGXxa6hdLi5aTS7EinifsD0MtdrPHshJzd7JEtjJvanEbG-H-qF_H7Ch7B"
+                },
+                "url": "https://www.huffingtonpost.fr/faits-divers/article/wintzenheim-ce-que-l-on-sait-de-l-incendie-tragique-en-alsace-qui-a-fait-9-morts_221619.html",
+                "snippet": "Le feu a pris à l&#39;aube dans un gîte de vacances accueillant des personnes en situation de handicap mental léger."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Wintzenheim#Wintzenheim"
+          },
+          {
+            "title": {
+              "query": "Panathinaikos",
+              "exploreLink": "/trends/explore?q=Panathinaikos&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "20K+",
+            "relatedQueries": [
+              {
+                "query": "Ligue des champions",
+                "exploreLink": "/trends/explore?q=Ligue+des+champions&date=now+7-d&geo=FR"
+              },
+              {
+                "query": "marseille panathinaikos",
+                "exploreLink": "/trends/explore?q=marseille+panathinaikos&date=now+7-d&geo=FR"
+              }
+            ],
+            "image": {
+              "newsUrl": "https://www.footmercato.net/a3709835708003109930-panathinaikos-om-les-compositions-officielles",
+              "source": "Foot Mercato",
+              "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcTUu5uyLSWedixPFWyat8HvJVTQiG1UzsxSjP5kkoaJrd1uu79yL-2h-ls4jObggtmwO0z8cIsc"
+            },
+            "articles": [
+              {
+                "title": "Panathinaïkós - OM : les compositions officielles",
+                "timeAgo": "3h ago",
+                "source": "Foot Mercato",
+                "image": {
+                  "newsUrl": "https://www.footmercato.net/a3709835708003109930-panathinaikos-om-les-compositions-officielles",
+                  "source": "Foot Mercato",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcTUu5uyLSWedixPFWyat8HvJVTQiG1UzsxSjP5kkoaJrd1uu79yL-2h-ls4jObggtmwO0z8cIsc"
+                },
+                "url": "https://www.footmercato.net/a3709835708003109930-panathinaikos-om-les-compositions-officielles",
+                "snippet": "La saison de Ligue 1 n&#39;a pas encore déjà mais les joueurs de Marcelino jouent leur saison européenne. Avec une 3ème place à l&#39;issue de la saison 22/23, les&nbsp;..."
+              },
+              {
+                "title": "Panathinaïkos-OM : revivez la défaite marseillaise face aux Grecs ...",
+                "timeAgo": "3h ago",
+                "source": "Franceinfo",
+                "image": {
+                  "newsUrl": "https://www.francetvinfo.fr/sports/foot/ligue-des-champions/direct-panathinaikos-om-les-phoceens-dans-la-fournaise-athenienne-suivez-le-troisieme-tour-preliminaire-de-la-ligue-des-champions_5994500.html",
+                  "source": "Franceinfo",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcRzrxJD6ssCopuR2ILPH5MxJ2SDiO0KZfO66yv8f5c18qtzyfWBvWYtz5ZPn8w1byUCnmakvWxF"
+                },
+                "url": "https://www.francetvinfo.fr/sports/foot/ligue-des-champions/direct-panathinaikos-om-les-phoceens-dans-la-fournaise-athenienne-suivez-le-troisieme-tour-preliminaire-de-la-ligue-des-champions_5994500.html",
+                "snippet": "Grâce à une superbe action collective conclue par Bernard, les Grecs ont dominé l&#39;OM (1-0), mercredi à Athènes, lors du match aller."
+              },
+              {
+                "title": "Panathinaïkos – Marseille : sur quelle chaîne et à quelle heure voir ...",
+                "timeAgo": "11h ago",
+                "source": "Ouest-France",
+                "image": {
+                  "newsUrl": "https://www.ouest-france.fr/sport/football/olympique-de-marseille/panathinaikos-marseille-sur-quelle-chaine-et-a-quelle-heure-voir-le-match-de-ldc-en-direct-75086fd6-3689-11ee-a86b-79aa2cf45607",
+                  "source": "Ouest-France",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcSZj2L13wzXViC4oiReC95Xqqcb8JEuYohGOdz8LeGGqOOedFOsVx6y51ErYxYFSKaJO38i2OaQ"
+                },
+                "url": "https://www.ouest-france.fr/sport/football/olympique-de-marseille/panathinaikos-marseille-sur-quelle-chaine-et-a-quelle-heure-voir-le-match-de-ldc-en-direct-75086fd6-3689-11ee-a86b-79aa2cf45607",
+                "snippet": "Pour disputer une deuxième Ligue des Champions consécutive, l&#39;Olympique de Marseille doit franchir deux tours de barrages. Le premier acte est une double&nbsp;..."
+              },
+              {
+                "title": "Panathinaïkos - OM en direct : L&#39;OM réduit à dix",
+                "timeAgo": "2h ago",
+                "source": "L'Équipe.fr",
+                "image": {
+                  "newsUrl": "https://www.lequipe.fr/Football/match-direct/ligue-des-champions/2023-2024/panathinaikos-om-live/598961",
+                  "source": "L'Équipe.fr",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcTn0QicQOGXKWxywcrSNxj7EnLJm3SuZyyFhkAWG-Znvax0VFierhLxmpvPKlLc3d56qYTpIvEc"
+                },
+                "url": "https://www.lequipe.fr/Football/match-direct/ligue-des-champions/2023-2024/panathinaikos-om-live/598961",
+                "snippet": "Bernard ouvre son compteur cette saison en Ligue des champions pour sa 3e apparition avec le Panathinaïkos. Première passe décisive délivrée par Fotis Ioannidis&nbsp;..."
+              },
+              {
+                "title": "Panathinaikos - Olympique de Marseille en direct - Ligue des ...",
+                "timeAgo": "2h ago",
+                "source": "Eurosport.fr",
+                "image": {
+                  "newsUrl": "https://www.eurosport.fr/football/ligue-des-champions/2023-2024/live-panathinaikos-olympique-de-marseille_mtc1438423/live.shtml",
+                  "source": "Eurosport.fr",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcRQPpaYcOU3sxRZVVCIhKHeT_tSD3oB44x7nPBi-xSXPiaitqHKsAsIBb7mKWYPNxj6OvRbe5Qw"
+                },
+                "url": "https://www.eurosport.fr/football/ligue-des-champions/2023-2024/live-panathinaikos-olympique-de-marseille_mtc1438423/live.shtml",
+                "snippet": "Eurosport est votre source privilégiée pour les dernières mises à jour des matches de Ligue des champions. Obtenez le résumé complet du Panathinaikos&nbsp;..."
+              },
+              {
+                "title": "En direct : Panathinaïkos – OM",
+                "timeAgo": "1h ago",
+                "source": "SO FOOT",
+                "image": {
+                  "newsUrl": "https://www.sofoot.com/articles/en-direct-panathinaikos-om",
+                  "source": "SO FOOT",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcQS0yMGtKmeetPIuSvB0bsXR2AcSl-oLkDFhggxCp1471LvBylZ0IX67v9Sp-TNpbUUVafkq1kY"
+                },
+                "url": "https://www.sofoot.com/articles/en-direct-panathinaikos-om",
+                "snippet": "KONDOGBIA EXCLU ! Le milieu de terrain est coupable d&#39;une semelle… Rien à dire, ça vaut un jaune, bien plus que celui qu&#39;il avait pris en début de match."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Panathinaikos#Panathinaikos"
+          },
+          {
+            "title": {
+              "query": "Tory Lanez",
+              "exploreLink": "/trends/explore?q=Tory+Lanez&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "20K+",
+            "relatedQueries": [
+              {
+                "query": "Megan Thee Stallion",
+                "exploreLink": "/trends/explore?q=Megan+Thee+Stallion&date=now+7-d&geo=FR"
+              }
+            ],
+            "image": {
+              "newsUrl": "https://www.bfmtv.com/people/musique/tir-sur-megan-thee-stallion-le-rappeur-tory-lanez-condamne-a-dix-ans-de-prison_AD-202308090164.html",
+              "source": "BFMTV",
+              "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcRZfv3XuRO6D5cBCVQzHoMJQMTI3AKA6XAtMu3YBRZd671dDWqXHz_L8BtwAr8MDFdJPgtTK7qk"
+            },
+            "articles": [
+              {
+                "title": "Tir sur Megan Thee Stallion: le rappeur Tory Lanez condamné à dix ...",
+                "timeAgo": "13h ago",
+                "source": "BFMTV",
+                "image": {
+                  "newsUrl": "https://www.bfmtv.com/people/musique/tir-sur-megan-thee-stallion-le-rappeur-tory-lanez-condamne-a-dix-ans-de-prison_AD-202308090164.html",
+                  "source": "BFMTV",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcRZfv3XuRO6D5cBCVQzHoMJQMTI3AKA6XAtMu3YBRZd671dDWqXHz_L8BtwAr8MDFdJPgtTK7qk"
+                },
+                "url": "https://www.bfmtv.com/people/musique/tir-sur-megan-thee-stallion-le-rappeur-tory-lanez-condamne-a-dix-ans-de-prison_AD-202308090164.html",
+                "snippet": "Deux ans après la dispute qui s&#39;est conclue par un coup de feu dans les pieds de Megan Thee Stallion, le rappeur canadien a été condamné à une peine de&nbsp;..."
+              },
+              {
+                "title": "Tory Lanez : le rappeur condamné à 10 ans de prison pour avoir tiré ...",
+                "timeAgo": "11h ago",
+                "source": "CNEWS",
+                "image": {
+                  "newsUrl": "https://www.cnews.fr/people/2023-08-09/tory-lanez-le-rappeur-condamne-10-ans-de-prison-pour-avoir-tire-sur-la-chanteuse",
+                  "source": "CNEWS",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcSJgVGOJ69s_ddLiHvhwHRV8Q4mUFTScfgmfHSngOwUjC5FI7Ab45m-S5wxvODbApopUv9eA4hX"
+                },
+                "url": "https://www.cnews.fr/people/2023-08-09/tory-lanez-le-rappeur-condamne-10-ans-de-prison-pour-avoir-tire-sur-la-chanteuse",
+                "snippet": "Le rappeur canadien Tory Lanez a été condamné à dix ans de prison pour avoir tiré dans les pieds de la chanteuse Megan Thee Stallion."
+              },
+              {
+                "title": "Los Angeles : Tory Lanez condamné à dix ans de prison pour avoir ...",
+                "timeAgo": "19h ago",
+                "source": "20minutes.fr",
+                "image": {
+                  "newsUrl": "https://www.20minutes.fr/arts-stars/culture/4048442-20230809-los-angeles-tory-lanez-condamne-dix-ans-prison-avoir-tire-pieds-megan-thee-stallion",
+                  "source": "20minutes.fr",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcSOtMGG7KTAVFsomoQ6-q8_mDMCww3awoiRLhH4R3C2wG9sBIAJK0AdsxdCu1kJfLXf94yx-l3N"
+                },
+                "url": "https://www.20minutes.fr/arts-stars/culture/4048442-20230809-los-angeles-tory-lanez-condamne-dix-ans-prison-avoir-tire-pieds-megan-thee-stallion",
+                "snippet": "Le rappeur Tory Lanez avait tiré dans les pieds de la chanteuse Megan Thee Stallion lors d&#39;une dispute en 2020."
+              },
+              {
+                "title": "Tory Lanez condamné à 10 ans de prison pour avoir tiré sur Megan ...",
+                "timeAgo": "7h ago",
+                "source": "Booska-p",
+                "image": {
+                  "newsUrl": "https://www.booska-p.com/musique/rap-us/tory-lanez-condamne-a-10-ans-de-prison-pour-avoir-tire-sur-megan-thee-sallion/",
+                  "source": "Booska-p",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcShWeSA8P42A-avqU-Hn5BqI41JltVHgDE1pOuMP-_VwaAi6NLMh-ZmF2_vxXeiuyjpqWtBjQ48"
+                },
+                "url": "https://www.booska-p.com/musique/rap-us/tory-lanez-condamne-a-10-ans-de-prison-pour-avoir-tire-sur-megan-thee-sallion/",
+                "snippet": "L&#39;affaire Tory Lanez-Megan Thee Stallion a pris fin mardi 8 juillet avec le verdict final rendu par le tribunal de Los Angeles. Le rappeur canadien a été&nbsp;..."
+              },
+              {
+                "title": "Le rappeur Tory Lanez condamné à 10 ans de prison pour avoir tiré ...",
+                "timeAgo": "11h ago",
+                "source": "Télé 7 Jours",
+                "image": {
+                  "newsUrl": "https://www.programme-television.org/news/people/justice/le-rappeur-tory-lanez-condamne-a-10-ans-de-prison-pour-avoir-tire-sur-la-chanteuse-megan-thee-stallion-4714554",
+                  "source": "Télé 7 Jours",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcRlzig544YhAikOfAi6tdUTj2wxPRD_khLWuzkLtVG8ojQ84yMe4s7EvKWwTWLzwH1cr0gaK34o"
+                },
+                "url": "https://www.programme-television.org/news/people/justice/le-rappeur-tory-lanez-condamne-a-10-ans-de-prison-pour-avoir-tire-sur-la-chanteuse-megan-thee-stallion-4714554",
+                "snippet": "C&#39;est une affaire qui fait grand bruit du côté des États-Unis. Tout commence le 12 juillet 2020, lorsque Tory Lanez et Megan Thee Stallion quittent une soirée&nbsp;..."
+              },
+              {
+                "title": "Tory Lanez condamné à 10 ans de prison pour avoir tiré sur Megan ...",
+                "timeAgo": "10h ago",
+                "source": "Vanity Fair France",
+                "image": {
+                  "newsUrl": "https://www.vanityfair.fr/article/tory-lanez-condamne-10-ans-prison-pour-avoir-tire-megan-thee-stallion",
+                  "source": "Vanity Fair France",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcS6JqaGmu2yFTRJ_3xJ_g0mnM81CChWOBe6QBkTfvET-2thwEV1RSz1dNmvK_C57ydc29Ww6Jfm"
+                },
+                "url": "https://www.vanityfair.fr/article/tory-lanez-condamne-10-ans-prison-pour-avoir-tire-megan-thee-stallion",
+                "snippet": "Le verdict du procès de Tory Lanez a été rendu. Le rappeur a été condamné à 10 ans de prison pour avoir tiré sur son ex-compagne, la chanteuse Megan Thee&nbsp;..."
+              },
+              {
+                "title": "Dix ans de prison pour le rappeur Tory Lanez, qui avait tiré dans les ...",
+                "timeAgo": "14h ago",
+                "source": "Sud Ouest",
+                "image": {
+                  "newsUrl": "https://www.sudouest.fr/international/dix-ans-de-prison-pour-le-rappeur-tory-lanez-qui-avait-tire-dans-les-pieds-de-meghan-thee-stallion-lors-d-une-dispute-16214686.php",
+                  "source": "Sud Ouest",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcTgCvk180JVSHZLuNZYxnQZk_70x6l5aj6nqbeATfg_stSaV-h20-VYyIQkmC4MnAftLntb9-lo"
+                },
+                "url": "https://www.sudouest.fr/international/dix-ans-de-prison-pour-le-rappeur-tory-lanez-qui-avait-tire-dans-les-pieds-de-meghan-thee-stallion-lors-d-une-dispute-16214686.php",
+                "snippet": "Lors du procès, la chanteuse a raconté que son ex-amant lui avait proposé « un million de dollars » pour se taire, après lui avoir tiré dessus Le rappeur&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Tory+Lanez#Tory%20Lanez"
+          },
+          {
+            "title": {
+              "query": "20 ans d'écart",
+              "exploreLink": "/trends/explore?q=20+ans+d'%C3%A9cart&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "10K+",
+            "relatedQueries": [
+              {
+                "query": "virginie efira",
+                "exploreLink": "/trends/explore?q=virginie+efira&date=now+7-d&geo=FR"
+              }
+            ],
+            "image": {
+              "newsUrl": "https://www.ouest-france.fr/medias/tf1/20-ans-decart-une-comedie-intemporelle-sur-tf1-f9e9f6c2-33b2-11ee-9211-51712959b8da",
+              "source": "Ouest-France",
+              "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcRcynH65lDrOh4106rUe_MeNiNmRxO-FV28XdB1a9do1bRCuQlZpWN-ar13EURDTrpVTxpcQyoT"
+            },
+            "articles": [
+              {
+                "title": "« 20 ans d&#39;écart », une comédie intemporelle sur TF1",
+                "timeAgo": "10h ago",
+                "source": "Ouest-France",
+                "image": {
+                  "newsUrl": "https://www.ouest-france.fr/medias/tf1/20-ans-decart-une-comedie-intemporelle-sur-tf1-f9e9f6c2-33b2-11ee-9211-51712959b8da",
+                  "source": "Ouest-France",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcRcynH65lDrOh4106rUe_MeNiNmRxO-FV28XdB1a9do1bRCuQlZpWN-ar13EURDTrpVTxpcQyoT"
+                },
+                "url": "https://www.ouest-france.fr/medias/tf1/20-ans-decart-une-comedie-intemporelle-sur-tf1-f9e9f6c2-33b2-11ee-9211-51712959b8da",
+                "snippet": "Quand Alice (Virginie Efira), 38 ans, croise le chemin de Balthazar (Pierre Niney), à peine 20 ans, rien ne les prédit à un avenir amoureux. Mais Alice y trouve&nbsp;..."
+              },
+              {
+                "title": "20 ans d&#39;écart (TF1) Virginie Efira : &quot;J&#39;ai déjà eu des relations avec ...",
+                "timeAgo": "5h ago",
+                "source": "Télé 7 Jours",
+                "image": {
+                  "newsUrl": "https://www.programme-television.org/news/cinema/films-comedie/20-ans-d-ecart-tf1-la-lecon-de-seduction-de-virginie-efira-4266499",
+                  "source": "Télé 7 Jours",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcRNfLczhxKP8J82Z9OqY_Zwm-2ooclzmOWVeVFI6ZJLwM5ATSldZfmPex4Kvujmpni_gb5LBCFe"
+                },
+                "url": "https://www.programme-television.org/news/cinema/films-comedie/20-ans-d-ecart-tf1-la-lecon-de-seduction-de-virginie-efira-4266499",
+                "snippet": "ARCHIVE. Dans cette comédie diffusée ce soir sur TF1, Virginie Efira s&#39;éprend d&#39;un étudiant joué par Pierre Niney. Retour sur un tournage marqué par la&nbsp;..."
+              },
+              {
+                "title": "Programme TV du mercredi 9 août : « 20 ans d&#39;écart », « La Petite ...",
+                "timeAgo": "11h ago",
+                "source": "Le Parisien",
+                "image": {
+                  "newsUrl": "https://www.leparisien.fr/culture-loisirs/tv/programme-tv-du-mercredi-9-aout-20-ans-decart-la-petite-bande-les-traitres-notre-selection-09-08-2023-6B5PRAWCTVFGFJ575XP4JNJANA.php",
+                  "source": "Le Parisien",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcSJ6TXe2JUuEcltYlM1cQfMzvuAShlhXmUmj-4DfcOTyQZbX_KToglfuOe6hjkpHKy6zst4Q8nn"
+                },
+                "url": "https://www.leparisien.fr/culture-loisirs/tv/programme-tv-du-mercredi-9-aout-20-ans-decart-la-petite-bande-les-traitres-notre-selection-09-08-2023-6B5PRAWCTVFGFJ575XP4JNJANA.php",
+                "snippet": "Une comédie avec Virginie Efira et Pierre Niney, une autre portée par de jeunes comédiens épatants, une promenade à la source de la Seine…"
+              },
+              {
+                "title": "<b>20 ans d&#39;écart</b> : 10 ans plus tard, les retrouvailles de Virginie Efira et ...",
+                "timeAgo": "4h ago",
+                "source": "Premiere.fr",
+                "url": "https://www.premiere.fr/Cinema/News-Cinema/_0-ans-decart-10-ans-plus-tard-les-retrouvailles-de-Virginie-Efira-et-Pierre-Niney-dans-LOL",
+                "snippet": ""
+              },
+              {
+                "title": "20 ans d&#39;écart : quel âge Pierre Niney et Virginie Efira ont-ils ...",
+                "timeAgo": "3h ago",
+                "source": "Serieously",
+                "image": {
+                  "newsUrl": "https://www.serieously.com/20-ans-decart-age-pierre-niney-virginie-efira/",
+                  "source": "Serieously",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcRBOOgh1qqJbx4gO8daZ2ygdIvrAjOBwou7ZlOghw0b3lBbBVa1F_cvX9N_rrk9jyIshmgLre0x"
+                },
+                "url": "https://www.serieously.com/20-ans-decart-age-pierre-niney-virginie-efira/",
+                "snippet": "Diffusé ce mercredi 9 août sur TF1, le film 20 ans d&#39;écart réunit Virginie Efira et Pierre Niney. Les deux acteurs jouent Alice et Balthazar qui tombent&nbsp;..."
+              },
+              {
+                "title": "Quiz Cinéma : essayez de reconnaître au moins 6 films !",
+                "timeAgo": "2h ago",
+                "source": "AlloCiné",
+                "image": {
+                  "newsUrl": "https://www.allocine.fr/article/fichearticle_gen_carticle=1000036760.html",
+                  "source": "AlloCiné",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcS8Pj8OkCHMhxldLOSCBp6JIgV8MqWFRUVvVAc8wVkzk38zVfjwK7PT4JTHfz_MFWiTwjawAMkD"
+                },
+                "url": "https://www.allocine.fr/article/fichearticle_gen_carticle=1000036760.html",
+                "snippet": "10 ans d&#39;écart depuis la sortie de 20 ans d&#39;écart, l&#39;un des rôles ayant révélé Virginie Efira sur grand écran. À l&#39;occasion de sa diffusion ce soir sur TF1,&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=20+ans+d'%C3%A9cart#20%20ans%20d'%C3%A9cart"
+          },
+          {
+            "title": {
+              "query": "Sixto Rodriguez",
+              "exploreLink": "/trends/explore?q=Sixto+Rodriguez&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "10K+",
+            "relatedQueries": [
+              {
+                "query": "Sugar Man",
+                "exploreLink": "/trends/explore?q=Sugar+Man&date=now+7-d&geo=FR"
+              }
+            ],
+            "image": {
+              "newsUrl": "https://www.lemonde.fr/disparitions/article/2023/08/09/sixto-rodriguez-star-meconnue-revenue-a-la-lumiere-grace-a-un-documentaire-est-mort_6184926_3382.html",
+              "source": "Le Monde",
+              "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcQRkJxEI4DcLQ56itVF5YXZKX-EmZfdB1eFBHpWyDR6FMiSrR7mQ80IZ4O63GuAaHGhu6Uju9ba"
+            },
+            "articles": [
+              {
+                "title": "Sixto Rodriguez, star méconnue revenue à la lumière grâce à un ...",
+                "timeAgo": "6h ago",
+                "source": "Le Monde",
+                "image": {
+                  "newsUrl": "https://www.lemonde.fr/disparitions/article/2023/08/09/sixto-rodriguez-star-meconnue-revenue-a-la-lumiere-grace-a-un-documentaire-est-mort_6184926_3382.html",
+                  "source": "Le Monde",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcQRkJxEI4DcLQ56itVF5YXZKX-EmZfdB1eFBHpWyDR6FMiSrR7mQ80IZ4O63GuAaHGhu6Uju9ba"
+                },
+                "url": "https://www.lemonde.fr/disparitions/article/2023/08/09/sixto-rodriguez-star-meconnue-revenue-a-la-lumiere-grace-a-un-documentaire-est-mort_6184926_3382.html",
+                "snippet": "Ouvrier à Detroit, star en Afrique du Sud, l&#39;auteur-compositeur américain, longtemps oublié dans son pays, avait connu un retour en grâce à la suite du&nbsp;..."
+              },
+              {
+                "title": "L&#39;artiste Sixto Rodriguez, rendu célèbre grâce au documentaire ...",
+                "timeAgo": "5h ago",
+                "source": "BFMTV",
+                "image": {
+                  "newsUrl": "https://www.bfmtv.com/people/musique/l-artiste-sixto-rodriguez-rendu-celebre-grace-au-documentaire-sugar-man-est-mort-a-81-ans_AN-202308090389.html",
+                  "source": "BFMTV",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcQbxbrkL0yKTvmeo_kkLcjEJhbXYUz2qOPvF8mRoB_bguRjjJts1i_F6CPe-GqTkluedtqI17PE"
+                },
+                "url": "https://www.bfmtv.com/people/musique/l-artiste-sixto-rodriguez-rendu-celebre-grace-au-documentaire-sugar-man-est-mort-a-81-ans_AN-202308090389.html",
+                "snippet": "Le chanteur qui a connu le succès sur le tard grâce au documentaire &quot;Sugar Man&quot;, oscarisé en 2013, est mort à l&#39;âge de 81 ans."
+              },
+              {
+                "title": "Le chanteur américain Sixto Rodriguez, surnommé &quot;Sugar Man&quot;, est ...",
+                "timeAgo": "5h ago",
+                "source": "Franceinfo",
+                "image": {
+                  "newsUrl": "https://www.francetvinfo.fr/culture/musique/le-chanteur-americain-sixto-rodriguez-surnomme-sugar-man-est-mort-a-l-age-de-81-ans_5997923.html",
+                  "source": "Franceinfo",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcTS4mzDexW4x35u6uZLfu8JHYCVGAMvKJoGAa0A24hV7RkCQ_kw4TlGFtJ8x2vDGgWogRTTkGwH"
+                },
+                "url": "https://www.francetvinfo.fr/culture/musique/le-chanteur-americain-sixto-rodriguez-surnomme-sugar-man-est-mort-a-l-age-de-81-ans_5997923.html",
+                "snippet": "Redécouvert en 2013 après un documentaire oscarisé retraçant sa vie et sa carrière, le chanteur et compositeur est mort aux Etats-Unis mardi 8 août."
+              },
+              {
+                "title": "Mort à 81 ans du chanteur Sixto Rodriguez, héros du documentaire ...",
+                "timeAgo": "4h ago",
+                "source": "Le Point",
+                "image": {
+                  "newsUrl": "https://www.lepoint.fr/musique/mort-a-81-ans-du-chanteur-sixto-rodriguez-heros-du-documentaire-sugar-man-09-08-2023-2531143_38.php",
+                  "source": "Le Point",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcQrG9IpRzzh5Rh1Y35eWMLx5JRD2Q1SkBaogM3-nz7Az0Tt9EgSIlCVOhdkNSdDCPkczXZv3ga3"
+                },
+                "url": "https://www.lepoint.fr/musique/mort-a-81-ans-du-chanteur-sixto-rodriguez-heros-du-documentaire-sugar-man-09-08-2023-2531143_38.php",
+                "snippet": "Le chanteur américain Sixto Diaz Rodriguez, longtemps oublié, avait retrouvé la lumière grâce à un documentaire oscarisé sorti en 2012."
+              },
+              {
+                "title": "Le chanteur Sixto Rodriguez, héros du documentaire «Sugar Man ...",
+                "timeAgo": "5h ago",
+                "source": "Europe1",
+                "image": {
+                  "newsUrl": "https://www.europe1.fr/culture/le-chanteur-sixto-rodriguez-heros-du-documentaire-sugar-man-est-mort-4197920",
+                  "source": "Europe1",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcQMUopkW5-WheGDrn8aWeNFFdbOVumnGGmB4MQ-3sSuO2Jx4JPyRJrzD_z-MAgEuVRKIjzVE2Ia"
+                },
+                "url": "https://www.europe1.fr/culture/le-chanteur-sixto-rodriguez-heros-du-documentaire-sugar-man-est-mort-4197920",
+                "snippet": "Le chanteur américain Sixto Rodriguez, héros du documentaire &quot;Searching For Sugar Man&quot; et interprète du titre &quot;Sugar Man&quot;, est mort à 81 ans,&nbsp;..."
+              },
+              {
+                "title": "Le musicien Sixto Rodriguez, « Sugar Man », est mort à l&#39;âge de 81 ...",
+                "timeAgo": "5h ago",
+                "source": "20minutes.fr",
+                "image": {
+                  "newsUrl": "https://www.20minutes.fr/arts-stars/culture/4048545-20230809-musicien-sixto-rodriguez-sugar-man-mort-age-81-ans",
+                  "source": "20minutes.fr",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcQ4i8IrY7zsrnF-rSov5GxlZa8JchOvUmt-CB3RCjfIdkxOjtdA29TToOvjYc-soWFo4Q4R0uaj"
+                },
+                "url": "https://www.20minutes.fr/arts-stars/culture/4048545-20230809-musicien-sixto-rodriguez-sugar-man-mort-age-81-ans",
+                "snippet": "Oublié pendant des décennies, le chanteur américain d&#39;origine mexicaine, a connu la gloire après le documentaire oscarisé « Searching for Sugar Man » en&nbsp;..."
+              },
+              {
+                "title": "Mort de Sixto Rodriguez : «Sugar Man», le film documentaire ...",
+                "timeAgo": "5h ago",
+                "source": "CNEWS",
+                "image": {
+                  "newsUrl": "https://www.cnews.fr/divertissement/2023-08-09/mort-de-sixto-rodriguez-sugar-man-le-film-documentaire-epoustouflant-sur",
+                  "source": "CNEWS",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcTO_-_Q2RF2RV7DPopjbi0RChIt80vxTn1Jaw5IbNKcscqelT_0tTl7yTmpqRPKpzhfkSpUuTKZ"
+                },
+                "url": "https://www.cnews.fr/divertissement/2023-08-09/mort-de-sixto-rodriguez-sugar-man-le-film-documentaire-epoustouflant-sur",
+                "snippet": "En 2012, le réalisateur suédois Malik Bendjelloul racontait l&#39;incroyable histoire de Sixto Rodriguez dans le documentaire «Sugar Man»."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Sixto+Rodriguez#Sixto%20Rodriguez"
+          },
+          {
+            "title": {
+              "query": "Lil Tay",
+              "exploreLink": "/trends/explore?q=Lil+Tay&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "10K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.leparisien.fr/faits-divers/mort-de-lil-tay-jeune-rappeuse-et-influenceuse-a-lage-de-14-ans-09-08-2023-ADWHXZBB35CYHGK5ZD72OZO4NM.php",
+              "source": "Le Parisien",
+              "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcTK-naStSz5fwy_0siAAa4MY3_V5kSaAk4mswQET9Wku3bhitVCFICG--PeZ4MTJZtKmk4S1Gk8"
+            },
+            "articles": [
+              {
+                "title": "Mort de Lil Tay, jeune rappeuse et influenceuse, à l&#39;âge de 14 ans",
+                "timeAgo": "2h ago",
+                "source": "Le Parisien",
+                "image": {
+                  "newsUrl": "https://www.leparisien.fr/faits-divers/mort-de-lil-tay-jeune-rappeuse-et-influenceuse-a-lage-de-14-ans-09-08-2023-ADWHXZBB35CYHGK5ZD72OZO4NM.php",
+                  "source": "Le Parisien",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcTK-naStSz5fwy_0siAAa4MY3_V5kSaAk4mswQET9Wku3bhitVCFICG--PeZ4MTJZtKmk4S1Gk8"
+                },
+                "url": "https://www.leparisien.fr/faits-divers/mort-de-lil-tay-jeune-rappeuse-et-influenceuse-a-lage-de-14-ans-09-08-2023-ADWHXZBB35CYHGK5ZD72OZO4NM.php",
+                "snippet": "La Canadienne Lil Tay, de son vrai nom Claire Hope, est décédée brutalement avec son frère dans des circonstances qui restent à éclaircir."
+              },
+              {
+                "title": "Mort de Lil Tay : la jeune rappeuse et influenceuse est décédée à l ...",
+                "timeAgo": "1h ago",
+                "source": "Voici",
+                "image": {
+                  "newsUrl": "https://www.voici.fr/news-people/mort-de-lil-tay-la-jeune-rappeuse-est-decedee-a-lage-de-14-ans-763272",
+                  "source": "Voici",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcSIsr4uqF1XtcLbcior2Peg6kIonhhzDgT4YAUd9FWcwVJt6LVoYQxCM0a7S21NrQBFuRQgO7iR"
+                },
+                "url": "https://www.voici.fr/news-people/mort-de-lil-tay-la-jeune-rappeuse-est-decedee-a-lage-de-14-ans-763272",
+                "snippet": "Carnet noir. Lil Tay, une jeune rappeuse originaire du Canada, est décédée soudainement à l&#39;âge de 14 ans. Une information partagée ce mercredi 9 a..."
+              },
+              {
+                "title": "La jeune rappeuse Lil Tay est morte &quot;soudainement&quot; à l&#39;âge de 14 ans",
+                "timeAgo": "3h ago",
+                "source": "Télé Loisirs.fr",
+                "url": "https://www.programme-tv.net/news/people/333518-la-jeune-rappeuse-lil-tay-est-morte-soudainement-a-lage-de-14-ans/",
+                "snippet": "Devenue célèbre sur les réseaux sociaux et sur YouTube en 2017 alors qu&#39;elle n&#39;avait que neuf ans, Lil Tay est décédée à l&#39;âge de 14 ans, &quot;soudainement&quot;,&nbsp;..."
+              },
+              {
+                "title": "La jeune rappeuse et influenceuse de 14 ans, Lil Tay, est décédée",
+                "timeAgo": "2h ago",
+                "source": "Le Sac de chips",
+                "image": {
+                  "newsUrl": "https://www.lesacdechips.com/2023/08/09/la-jeune-rappeuse-et-influenceuse-de-14-ans-lil-tay-est-decedee",
+                  "source": "Le Sac de chips",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcTsOyzG3ctWbJTDBdnIk_CNr6LT1l1bTevlzapxz5h36buctwDi2iHVvXzWzw5zd3PLszOrxyYk"
+                },
+                "url": "https://www.lesacdechips.com/2023/08/09/la-jeune-rappeuse-et-influenceuse-de-14-ans-lil-tay-est-decedee",
+                "snippet": "Lil Tay, une adolescente de Vancouver connue sur les réseaux sociaux, est morte à 14 ans."
+              },
+              {
+                "title": "La sensation du web Lil Tay meurt à 14 ans",
+                "timeAgo": "2h ago",
+                "source": "TVA Nouvelles",
+                "image": {
+                  "newsUrl": "https://www.tvanouvelles.ca/2023/08/09/la-sensation-du-web-lil-tay-meurt-a-14-ans",
+                  "source": "TVA Nouvelles",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcR0w67tfpS0c7jYLFBfVK3K3UvyjCHreHKKBXOLOpJo5BsuXIzuN7dr9CkP0Yv_bNihE65dWmLa"
+                },
+                "url": "https://www.tvanouvelles.ca/2023/08/09/la-sensation-du-web-lil-tay-meurt-a-14-ans",
+                "snippet": "Lil Tay, une adolescente de Vancouver qui avait connu son heure de gloire sur les réseaux sociaux en 2017, est morte à 14 ans."
+              },
+              {
+                "title": "Décès choquant de Lil Tay, la vidéaste canadienne, à seulement 14 ...",
+                "timeAgo": "3h ago",
+                "source": "Indigo Buzz",
+                "image": {
+                  "newsUrl": "https://indigobuzz.fr/2023/08/deces-choquant-de-lil-tay-la-videaste-canadienne-a-seulement-14-ans.html",
+                  "source": "Indigo Buzz",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcTc8IRMNIfY5AYgU46xBSJit7xJXeYfvxx5cZDFz15bvOytxD7rF4ID9nIWVeWVCAkdevdFxzFZ"
+                },
+                "url": "https://indigobuzz.fr/2023/08/deces-choquant-de-lil-tay-la-videaste-canadienne-a-seulement-14-ans.html",
+                "snippet": "Dans un choc soudain sur Internet, la vidéaste canadienne Lil Tay, de son vrai nom Claire Hope, est décédée à l&#39;âge tragiquement jeune de 14 ans."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Lil+Tay#Lil%20Tay"
+          },
+          {
+            "title": {
+              "query": "Al-Nassr",
+              "exploreLink": "/trends/explore?q=Al-Nassr&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "10K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.footmercato.net/a7218431573293831652-cacc-al-nassr-et-cristiano-ronaldo-en-finale",
+              "source": "Foot Mercato",
+              "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcRMnq0GMLsZPPe7qFVdgDTJJ_8wAtFLLbZTIWeiPZxtrkkPST_JeOb0ZEYrQ-W7KaG8aPh8W0jE"
+            },
+            "articles": [
+              {
+                "title": "CACC : Al-Nassr et Cristiano Ronaldo en finale !",
+                "timeAgo": "3h ago",
+                "source": "Foot Mercato",
+                "image": {
+                  "newsUrl": "https://www.footmercato.net/a7218431573293831652-cacc-al-nassr-et-cristiano-ronaldo-en-finale",
+                  "source": "Foot Mercato",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcRMnq0GMLsZPPe7qFVdgDTJJ_8wAtFLLbZTIWeiPZxtrkkPST_JeOb0ZEYrQ-W7KaG8aPh8W0jE"
+                },
+                "url": "https://www.footmercato.net/a7218431573293831652-cacc-al-nassr-et-cristiano-ronaldo-en-finale",
+                "snippet": "Après avoir battu le Raja Casablanca marocain lors du tour précédent, Al-Nassr affrontait Al Shorta pour cette demi-finale de la Coupe arabe des (."
+              },
+              {
+                "title": "Arab Cup : le duo Mané-Ronaldo envoie Al-Nassr en finale !",
+                "timeAgo": "2h ago",
+                "source": "Afrik-Foot",
+                "image": {
+                  "newsUrl": "https://www.afrik-foot.com/coupe-arabe-mane-ronaldo-al-nassr-finale",
+                  "source": "Afrik-Foot",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcTIT_G5BdY4K4jtuIvumG-yuAJW8IfGlri0tjdFX_5nM8WdYFAVbhMqPz2p30fijnv3tKawD4x_"
+                },
+                "url": "https://www.afrik-foot.com/coupe-arabe-mane-ronaldo-al-nassr-finale",
+                "snippet": "Sadio Mané, qui a déjà effectué 3 apparitions sous les couleurs de son nouveau club d&#39;Al-Nassr (Arabie saoudite), n&#39;a pas encore marqué."
+              },
+              {
+                "title": "Mercato : Mané s&#39;engage avec le club saoudien d&#39;Al-Nassr ...",
+                "timeAgo": "3h ago",
+                "source": "Africanews Français",
+                "image": {
+                  "newsUrl": "https://fr.africanews.com/2023/08/09/mercato-mane-sengage-avec-le-club-saoudien-dal-nassr/",
+                  "source": "Africanews Français",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcS0KgAkxlZrXPQY60jsh2r5nFPpnBihdJumenvmOMGY_unHJOnGAz-VLWuu8ME0ch6_Njt9DGKi"
+                },
+                "url": "https://fr.africanews.com/2023/08/09/mercato-mane-sengage-avec-le-club-saoudien-dal-nassr/",
+                "snippet": ""
+              },
+              {
+                "title": "Arabie Saoudite : Cristiano Ronaldo qualifie Al-Nassr",
+                "timeAgo": "3h ago",
+                "source": "But! Football Club",
+                "image": {
+                  "newsUrl": "https://www.butfootballclub.fr/foot-etranger/autres-championnats/arabie-saoudite-cristiano-ronaldo-qualifie-al-nassr-828801",
+                  "source": "But! Football Club",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcT1ScCsasyboHVipbjjVrbukr9MJ0QdMv97wlplaNkbLYvLzGqeyxOC2LpUO3XI77cyII8rM8UI"
+                },
+                "url": "https://www.butfootballclub.fr/foot-etranger/autres-championnats/arabie-saoudite-cristiano-ronaldo-qualifie-al-nassr-828801",
+                "snippet": "CR7 porte son équipe... Zapping But! Football Club Top 10 : les joueurs les plus fidèles en Ligue 1. Al-Nassr disputait sa demi-finale de Coupe arabe des&nbsp;..."
+              },
+              {
+                "title": "Cristiano Ronaldo propulse Al-Nassr en finale de la Ligue arabe ...",
+                "timeAgo": "1h ago",
+                "source": "RTBF",
+                "image": {
+                  "newsUrl": "https://www.rtbf.be/article/cristiano-ronaldo-propulse-al-nassr-en-finale-de-la-ligue-arabe-des-champions-11238786",
+                  "source": "RTBF",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcS4C6_wt0N62_pJk1auf_4AEOLXDp0FDxxKZ70xgZvCZ8q2bUx9pojsSuK2LywM3-EQneTqeCtV"
+                },
+                "url": "https://www.rtbf.be/article/cristiano-ronaldo-propulse-al-nassr-en-finale-de-la-ligue-arabe-des-champions-11238786",
+                "snippet": "En demi-finale, la formation saoudienne, désormais composée de stars, a affronté les Irakiens d&#39;Al-Shortaz, qui ont chèrement défendu leur chance jusqu&#39;à ce que&nbsp;..."
+              },
+              {
+                "title": "Mané Explique Pourquoi Il A Choisi Al-Nassr",
+                "timeAgo": "5h ago",
+                "source": "Foot Africa",
+                "image": {
+                  "newsUrl": "https://foot-africa.com/fr/afrique/senegal/mane-choisi-al-nassr/",
+                  "source": "Foot Africa",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcRH8aQ8r7vP4it-3sX3lW1RL4ug9NZvKMds9afYQwb6LYmEe_5f3je-bMGzThKsuSYQs6qA_SaG"
+                },
+                "url": "https://foot-africa.com/fr/afrique/senegal/mane-choisi-al-nassr/",
+                "snippet": "L&#39;international sénégalais Sadio Mané a dévoilé les raisons qui l&#39;ont poussé à opter pour le club saoudien Al-Nassr lors de cette fenêtre des transferts."
+              },
+              {
+                "title": "CACC : Cristiano Ronaldo envoie Al-Nassr en finale",
+                "timeAgo": "2h ago",
+                "source": "Foot11.com",
+                "image": {
+                  "newsUrl": "https://foot11.com/news/cacc-cristiano-ronaldo-envoie-al-nassr-en-finale-292966",
+                  "source": "Foot11.com",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcRnZIamQtPabffHVQm16nrT6d69pe87rfYJXdoGTcHC6LFqWAUNNk1lAOSmlf70KAewQbLanDOz"
+                },
+                "url": "https://foot11.com/news/cacc-cristiano-ronaldo-envoie-al-nassr-en-finale-292966",
+                "snippet": "News. Auteur d&#39;un but sur penalty, Cristiano Ronaldo a donné la victoire à Al Nassr en demi-finale de la Coupe arabe des clubs champions, contre le..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Al-Nassr#Al-Nassr"
+          },
+          {
+            "title": {
+              "query": "Julie Pietri",
+              "exploreLink": "/trends/explore?q=Julie+Pietri&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "10K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.europe1.fr/emissions/le-club-de-lete/le-club-de-lete-avec-julie-pietri-et-ophelie-meunier-4197730",
+              "source": "Europe1",
+              "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcS-bgojM_E0oy7GFRU4DHx8r1A8rgHAhBd-9C7VaEpF3GTgMFcovH3J7dB4Znkb0RmHdFkHjttI"
+            },
+            "articles": [
+              {
+                "title": "Le club de l&#39;été avec Julie Pietri et Ophélie Meunier",
+                "timeAgo": "1d ago",
+                "source": "Europe1",
+                "image": {
+                  "newsUrl": "https://www.europe1.fr/emissions/le-club-de-lete/le-club-de-lete-avec-julie-pietri-et-ophelie-meunier-4197730",
+                  "source": "Europe1",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcS-bgojM_E0oy7GFRU4DHx8r1A8rgHAhBd-9C7VaEpF3GTgMFcovH3J7dB4Znkb0RmHdFkHjttI"
+                },
+                "url": "https://www.europe1.fr/emissions/le-club-de-lete/le-club-de-lete-avec-julie-pietri-et-ophelie-meunier-4197730",
+                "snippet": "Mais aussi de belles et nombreuses dotations pour les auditeurs avec &quot;Le plic ploc&quot; ! Un jeu durant lequel chaque jour, ils seront invités à deviner, dans un&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Julie+Pietri#Julie%20Pietri"
+          },
+          {
+            "title": {
+              "query": "Saint Amour",
+              "exploreLink": "/trends/explore?q=Saint+Amour&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "10K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.tf1.fr/tf1/jt-13h/videos/saint-amour-vos-plus-belles-romances-72649831.html",
+              "source": "TF1",
+              "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcQpWM5TJymPBk1NhuNoX8r_CY6UOATLvJw3Bs35JaTSht8S38lTcXN9oyk3QOOCNVqvwcLJwcOg"
+            },
+            "articles": [
+              {
+                "title": "Saint Amour, vos plus belles romances - Journal de 13 heures | TF1",
+                "timeAgo": "7h ago",
+                "source": "TF1",
+                "image": {
+                  "newsUrl": "https://www.tf1.fr/tf1/jt-13h/videos/saint-amour-vos-plus-belles-romances-72649831.html",
+                  "source": "TF1",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcQpWM5TJymPBk1NhuNoX8r_CY6UOATLvJw3Bs35JaTSht8S38lTcXN9oyk3QOOCNVqvwcLJwcOg"
+                },
+                "url": "https://www.tf1.fr/tf1/jt-13h/videos/saint-amour-vos-plus-belles-romances-72649831.html",
+                "snippet": "[VIDÉO] Extrait ▶️ 1m44s - Le savez-vous ? Nous célébrons aujourd&#39;hui la Saint Amour. C&#39;est un prénom rare, mais 128 filles le portent quand même dans&nbsp;..."
+              },
+              {
+                "title": "VIDÉO - La Saint-Amour, jour idéal pour déclarer sa flamme",
+                "timeAgo": "4h ago",
+                "source": "TF1 INFO",
+                "image": {
+                  "newsUrl": "https://www.tf1info.fr/societe/video-tf1-la-saint-amour-jour-ideal-pour-declarer-sa-flamme-2266160.html",
+                  "source": "TF1 INFO",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcRs78PjZ2glyNnFThT5m4NPF9jisfgG6KvDxA3jKUwI7TUNtilCTvYz1CNybe-DiDOx2Cs-952D"
+                },
+                "url": "https://www.tf1info.fr/societe/video-tf1-la-saint-amour-jour-ideal-pour-declarer-sa-flamme-2266160.html",
+                "snippet": "On fête la Saint-Amour ce mercredi 9 août. Sur la plage de Palavas-les-Flots (Hérault), certains s&#39;en donnent à cœur joie. &quot;J&#39;ai hâte de vivre de nouvelles&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Saint+Amour#Saint%20Amour"
+          },
+          {
+            "title": {
+              "query": "GTA 6",
+              "exploreLink": "/trends/explore?q=GTA+6&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "10K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.tomshardware.fr/la-date-de-sortie-de-gta-6-se-precise-il-va-falloir-se-montrer-patient/",
+              "source": "Tom's Hardware",
+              "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcTXnyX2EmgStfEz_3gjnZwLEdL6lULnTvlfmHh8DCQDqoXkibWQ0RoruF5P82uJNoIm0QYdTsCD"
+            },
+            "articles": [
+              {
+                "title": "La date de sortie de GTA 6 se précise, ce n&#39;est pas encore pour tout ...",
+                "timeAgo": "8h ago",
+                "source": "Tom's Hardware",
+                "image": {
+                  "newsUrl": "https://www.tomshardware.fr/la-date-de-sortie-de-gta-6-se-precise-il-va-falloir-se-montrer-patient/",
+                  "source": "Tom's Hardware",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcTXnyX2EmgStfEz_3gjnZwLEdL6lULnTvlfmHh8DCQDqoXkibWQ0RoruF5P82uJNoIm0QYdTsCD"
+                },
+                "url": "https://www.tomshardware.fr/la-date-de-sortie-de-gta-6-se-precise-il-va-falloir-se-montrer-patient/",
+                "snippet": "Décidément, les jeux de Rockstar Games multiplient les annonces en ce moment. Après Red Dead Redemption qui va bientôt arriver sur Nintendo Switch et PS4, c&#39;est&nbsp;..."
+              },
+              {
+                "title": "GTA 6 : sa date de sortie se confirme, encore un peu de patience !",
+                "timeAgo": "9h ago",
+                "source": "Tom's Guide",
+                "image": {
+                  "newsUrl": "https://www.tomsguide.fr/gta-6-sa-date-de-sortie-se-confirme-encore-un-peu-de-patience/",
+                  "source": "Tom's Guide",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcTrpbejkISR3msR6ygefppHX8cIOa8ICr4DWUtxxfPYiuYAm0CwrYTlDtYqE7y_udYZIrEfi1Md"
+                },
+                "url": "https://www.tomsguide.fr/gta-6-sa-date-de-sortie-se-confirme-encore-un-peu-de-patience/",
+                "snippet": "La date de lancement de GTA 6 se précise. Dans ses dernières projections financières, Take-Two a anticipé des revenus foisonnants pour l&#39;exercice 2025."
+              },
+              {
+                "title": "GTA 6 : la carte du jeu vient de leak, découvrez les folles surprises",
+                "timeAgo": "10h ago",
+                "source": "LeBigData",
+                "image": {
+                  "newsUrl": "https://www.lebigdata.fr/gta-6-la-carte-jeu-vient-de-leak",
+                  "source": "LeBigData",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcTkrDqk2it_M5ClzccB-_C4twdHQ5XAsJOYbIYr9kwOxkuApD17xXCgd-UH97hntA_pTqt5ccuC"
+                },
+                "url": "https://www.lebigdata.fr/gta-6-la-carte-jeu-vient-de-leak",
+                "snippet": "L&#39;attente monte pour GTA 6, la suite attendue de GTA V de Rockstar Games, alimentée par rumeurs et fuites."
+              },
+              {
+                "title": "GTA 6 : c&#39;est bientôt la fin d&#39;une attente vieille de plus de 10 ans, la ...",
+                "timeAgo": "11h ago",
+                "source": "jeuxvideo.com",
+                "image": {
+                  "newsUrl": "https://www.jeuxvideo.com/news/1786645/gta-6-c-est-bientot-la-fin-d-une-attente-vieille-de-plus-de-10-ans-la-sortie-serait-pour-bientot.htm",
+                  "source": "jeuxvideo.com",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcSdFEpYZ3NIXcFQ6PEyGEkfAXsdNSeT_jO-WtAjwLLBdnn4Z-85Fo2RDNxjSCW_A8AgikdwsucS"
+                },
+                "url": "https://www.jeuxvideo.com/news/1786645/gta-6-c-est-bientot-la-fin-d-une-attente-vieille-de-plus-de-10-ans-la-sortie-serait-pour-bientot.htm",
+                "snippet": "Rockstar Games a fait son retour dans l&#39;actualité ces dernières semaines, notamment avec les rumeurs, les fuites et les informations autour de Red Dead&nbsp;..."
+              },
+              {
+                "title": "GTA 6 : Le jeu arrivera-t-il en 2024 ? - LCDG",
+                "timeAgo": "6h ago",
+                "source": "La Crème Du Gaming",
+                "image": {
+                  "newsUrl": "https://www.lacremedugaming.fr/actus/news/gta-6-le-jeu-arrivera-t-il-en-2024-179096.html",
+                  "source": "La Crème Du Gaming",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcS-OPsXu1a8wP8tg_Frp_JhtAR66AgBA3W1g-gInq6a3oEDq7XvjHqI04a0FxZ9DwggRSQqnZLd"
+                },
+                "url": "https://www.lacremedugaming.fr/actus/news/gta-6-le-jeu-arrivera-t-il-en-2024-179096.html",
+                "snippet": "Take-Two Interactive, le propriétaire de Rockstar Games a peut-être vendu la mèche pour GTA 6 lors de sa dernière conférence."
+              },
+              {
+                "title": "GTA 6 d&#39;ici mars 2025 ? Take-Two compte toujours exploser ses ...",
+                "timeAgo": "9h ago",
+                "source": "Xboxygen",
+                "image": {
+                  "newsUrl": "https://www.xboxygen.com/News/45925-GTA-6-d-ici-mars-2025-Take-Two-compte-toujours-exploser-ses-revenus-l-an-prochain",
+                  "source": "Xboxygen",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcTl80RupNSfAIIphpOfgd9-L72KYVOS5dO2U7yc5Vnn6s9OFayu2D7J1sDSHvNJ8dmn6r2Ybd3V"
+                },
+                "url": "https://www.xboxygen.com/News/45925-GTA-6-d-ici-mars-2025-Take-Two-compte-toujours-exploser-ses-revenus-l-an-prochain",
+                "snippet": "L&#39;heure est aux bilans financiers, et celui de Take-Two vient ajouter du gain à moudre quant à la date de sortie de GTA 6. La franchise GTA se porte très&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=GTA+6#GTA%206"
+          },
+          {
+            "title": {
+              "query": "Lac du Salagou",
+              "exploreLink": "/trends/explore?q=Lac+du+Salagou&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "5K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.tf1info.fr/voyages/video-tourisme-en-herault-ambiance-western-au-bord-du-lac-de-salagou-2266164.html",
+              "source": "TF1 INFO",
+              "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcQ6jb-1NEg3HxXSjch6w09f88PL30kLXmNIfh5HLE_RKT353Ndg0zNzVs05dvj4yyZB30al1cn4"
+            },
+            "articles": [
+              {
+                "title": "VIDÉO - Tourisme en Hérault : ambiance western au bord du lac de ...",
+                "timeAgo": "4h ago",
+                "source": "TF1 INFO",
+                "image": {
+                  "newsUrl": "https://www.tf1info.fr/voyages/video-tourisme-en-herault-ambiance-western-au-bord-du-lac-de-salagou-2266164.html",
+                  "source": "TF1 INFO",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcQ6jb-1NEg3HxXSjch6w09f88PL30kLXmNIfh5HLE_RKT353Ndg0zNzVs05dvj4yyZB30al1cn4"
+                },
+                "url": "https://www.tf1info.fr/voyages/video-tourisme-en-herault-ambiance-western-au-bord-du-lac-de-salagou-2266164.html",
+                "snippet": "[VIDÉO] ▶️ Autour du lac du Salagou, dans l&#39;Hérault, on admire la splendeur de ce patrimoine naturel. Là, les vacanciers portent des chapeaux de cowboy,&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Lac+du+Salagou#Lac%20du%20Salagou"
+          },
+          {
+            "title": {
+              "query": "Caroline Wozniacki",
+              "exploreLink": "/trends/explore?q=Caroline+Wozniacki&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "5K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.lequipe.fr/Tennis/Actualites/Retour-gagnant-pour-caroline-wozniacki-a-montreal-apres-trois-ans-d-absence/1412618",
+              "source": "L'Équipe.fr",
+              "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcR1Zed7Dlafti1MXz9BJAT1IJ1Ymy8PxoU1w2MpsdYPYzqt0wKFde8zO5Gvpod7bIIKNsQONtBz"
+            },
+            "articles": [
+              {
+                "title": "Retour gagnant pour Caroline Wozniacki à Montréal, après trois ans ...",
+                "timeAgo": "1d ago",
+                "source": "L'Équipe.fr",
+                "image": {
+                  "newsUrl": "https://www.lequipe.fr/Tennis/Actualites/Retour-gagnant-pour-caroline-wozniacki-a-montreal-apres-trois-ans-d-absence/1412618",
+                  "source": "L'Équipe.fr",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcR1Zed7Dlafti1MXz9BJAT1IJ1Ymy8PxoU1w2MpsdYPYzqt0wKFde8zO5Gvpod7bIIKNsQONtBz"
+                },
+                "url": "https://www.lequipe.fr/Tennis/Actualites/Retour-gagnant-pour-caroline-wozniacki-a-montreal-apres-trois-ans-d-absence/1412618",
+                "snippet": "Caroline Wozniacki a franchi, mardi, le premier tour de l&#39;Open de Montréal, face à Kimberly Birrell (6-2, 6-2). Son retour à la compétition, après trois ans&nbsp;..."
+              },
+              {
+                "title": "WTA 1000 Montréal. Caroline Wozniacki signe un retour gagnant ...",
+                "timeAgo": "1d ago",
+                "source": "Ouest-France",
+                "image": {
+                  "newsUrl": "https://www.ouest-france.fr/sport/tennis/wta-1000-montreal-caroline-wozniacki-signe-un-retour-gagnant-apres-trois-ans-sans-jouer-73c2c32c-3622-11ee-8f22-de1852f71158",
+                  "source": "Ouest-France",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcSskHVAMYOzHzHgm11p9tYfKfR7PUeDGzYPmzc6Ieu_T5xWstHoa82sw1YKQ9KN5lP3jZ-RNbBz"
+                },
+                "url": "https://www.ouest-france.fr/sport/tennis/wta-1000-montreal-caroline-wozniacki-signe-un-retour-gagnant-apres-trois-ans-sans-jouer-73c2c32c-3622-11ee-8f22-de1852f71158",
+                "snippet": "Ex-n°1 mondiale, Caroline Wozniacki s&#39;est imposée 6-2, 6-2 mardi face à l&#39;Australienne Kimberly Birell au premier tour du tournoi WTA de Montréal,&nbsp;..."
+              },
+              {
+                "title": "Caroline Wozniacki : un retour réussi et un grand défi - Roland ...",
+                "timeAgo": "6h ago",
+                "source": "Roland-Garros",
+                "image": {
+                  "newsUrl": "https://www.rolandgarros.com/fr-fr/article/caroline-wozniacki-come-back-victoire-birrell-montreal-vondrousova",
+                  "source": "Roland-Garros",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcQK_xKq32a-HeBaV5m48UhdfdYLgQklKLSoe7RGzy7bCKnQym3hP1DlKBnDPdjUT9XEESyaKnEv"
+                },
+                "url": "https://www.rolandgarros.com/fr-fr/article/caroline-wozniacki-come-back-victoire-birrell-montreal-vondrousova",
+                "snippet": "Tombeuse avec brio de Kimberly Birrell pour son grand retour à la compétition du côté de Montréal, la Danoise affronte Marketa Vondrousova au deuxième tour."
+              },
+              {
+                "title": "Caroline Wozniacki s&#39;impose à son retour au jeu",
+                "timeAgo": "18h ago",
+                "source": "Le Devoir",
+                "image": {
+                  "newsUrl": "https://www.ledevoir.com/sports/795891/caroline-wozniacki-s-impose-a-son-retour-au-jeu",
+                  "source": "Le Devoir",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcTiPryOUCxfG1sFAZ5080ALF013Kd6-oFhQ6QAub9-6nsQDQs13Ez1OR3oe4mZUP0E5TrCexgzg"
+                },
+                "url": "https://www.ledevoir.com/sports/795891/caroline-wozniacki-s-impose-a-son-retour-au-jeu",
+                "snippet": "L&#39;ancienne no 1 mondiale a battu l&#39;Australienne Kimberly Birrell 6-2, 6-2 au premier tour à l&#39;Omnium Banque Nationale."
+              },
+              {
+                "title": "Tennis : retour gagnant de Wozniacki après une pause de trois ans ...",
+                "timeAgo": "1d ago",
+                "source": "Franceinfo",
+                "image": {
+                  "newsUrl": "https://www.francetvinfo.fr/sports/tennis/wta/tennis-retour-gagnant-de-wozniacki-apres-une-pause-de-trois-ans-et-deux-maternites_5996609.html",
+                  "source": "Franceinfo",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcSrCCGvufr5rbx0-he_xUwi4vikpBp16OTH78XCUZT_-cKJS_Tg8dD9LnDmtiypJP4BCOx5ymT8"
+                },
+                "url": "https://www.francetvinfo.fr/sports/tennis/wta/tennis-retour-gagnant-de-wozniacki-apres-une-pause-de-trois-ans-et-deux-maternites_5996609.html",
+                "snippet": "Caroline Wozniacki s&#39;est imposée face à l&#39;Australienne Kimberly Birell au premier tour de Montréal, pour son premier match depuis trois ans et une pause&nbsp;..."
+              },
+              {
+                "title": "Caroline Garcia met Caroline Wozniacki en garde : &quot; Le tennis à ...",
+                "timeAgo": "10h ago",
+                "source": "Tennis World FR",
+                "image": {
+                  "newsUrl": "https://www.tennisworldfr.com/tennis/news/Wta/21758/caroline-garcia-met-caroline-wozniacki-en-garde--le-tennis-a-change-/",
+                  "source": "Tennis World FR",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcR3iTNBsrz2tKXiupcL0TW266TNmywSBPVoKkgf1Gvj5yH9qTWqboqPgeho2_1I7dqBnHaFxmu5"
+                },
+                "url": "https://www.tennisworldfr.com/tennis/news/Wta/21758/caroline-garcia-met-caroline-wozniacki-en-garde--le-tennis-a-change-/",
+                "snippet": "Caroline Garcia a prévenu Caroline Wozniacki que certaines choses ont changé depuis la dernière fois qu&#39;elle a joué sur le circuit WTA."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Caroline+Wozniacki#Caroline%20Wozniacki"
+          },
+          {
+            "title": {
+              "query": "Gran Turismo",
+              "exploreLink": "/trends/explore?q=Gran+Turismo&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "5K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.lepoint.fr/pop-culture/que-vaut-gran-turismo-le-film-inspire-du-jeu-video-de-sport-auto-09-08-2023-2531045_2920.php",
+              "source": "Le Point",
+              "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcRuFOJJn2tlJKnqaLP8bXBlXd96AnN0UQtWNpXYmJHPizDoDYMlgG9mAaM4aLHy7MaVP0xmanu_"
+            },
+            "articles": [
+              {
+                "title": "Que vaut « Gran Turismo », le film inspiré du jeu vidéo de sport auto ?",
+                "timeAgo": "13h ago",
+                "source": "Le Point",
+                "image": {
+                  "newsUrl": "https://www.lepoint.fr/pop-culture/que-vaut-gran-turismo-le-film-inspire-du-jeu-video-de-sport-auto-09-08-2023-2531045_2920.php",
+                  "source": "Le Point",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcRuFOJJn2tlJKnqaLP8bXBlXd96AnN0UQtWNpXYmJHPizDoDYMlgG9mAaM4aLHy7MaVP0xmanu_"
+                },
+                "url": "https://www.lepoint.fr/pop-culture/que-vaut-gran-turismo-le-film-inspire-du-jeu-video-de-sport-auto-09-08-2023-2531045_2920.php",
+                "snippet": "Surprise : l&#39;adaptation de ce grand succès vidéoludique sur PlayStation est une petite réussite qui signe le retour en piste d&#39;un cinéaste passionnant."
+              },
+              {
+                "title": "Gran Turismo : le nouveau film Sony choque, c&#39;est la polémique",
+                "timeAgo": "11h ago",
+                "source": "Gameblog.fr",
+                "image": {
+                  "newsUrl": "https://www.gameblog.fr/geek/ed/news/gran-turismo-sony-choque-polemique-443907",
+                  "source": "Gameblog.fr",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcQop_SZd7tS2F538ZhQKnFgpQWL7Lp144q3NTaFoBGDMkCbzbS_-nfTBLyt4hZm0e-CjQiSnO4S"
+                },
+                "url": "https://www.gameblog.fr/geek/ed/news/gran-turismo-sony-choque-polemique-443907",
+                "snippet": "Gran Turismo vient à peine de sortir qu&#39;il est déjà en pleine polémique suite à la gestion scénaristique d&#39;un événement bien particulier."
+              },
+              {
+                "title": "« Gran Turismo », de Neill Blomkamp : le mariage raté des jeux ...",
+                "timeAgo": "10h ago",
+                "source": "Le Monde",
+                "image": {
+                  "newsUrl": "https://www.lemonde.fr/culture/article/2023/08/09/gran-turismo-de-neill-blomkamp-le-mariage-rate-des-jeux-video-et-du-cinema_6184911_3246.html",
+                  "source": "Le Monde",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcSHWbfqNtvoNLcSkExJQDO5upTppSeT-XiamEzKQJkdiK73vYkxevbpbPv3R6Reitt8xNh2_PYL"
+                },
+                "url": "https://www.lemonde.fr/culture/article/2023/08/09/gran-turismo-de-neill-blomkamp-le-mariage-rate-des-jeux-video-et-du-cinema_6184911_3246.html",
+                "snippet": "Dans son adaptation, le réalisateur de « District 9 » peine à convaincre, faute de scénario probant."
+              },
+              {
+                "title": "Notre avis express sur « Gran Turismo »",
+                "timeAgo": "11h ago",
+                "source": "20minutes.fr",
+                "image": {
+                  "newsUrl": "https://www.20minutes.fr/economie/auto/4048479-20230809-avis-express-gran-turismo-film",
+                  "source": "20minutes.fr",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcRC86_XicSXs6pC7V14H6h2pY73843-M_Cnb-s9afkFQNp0TEmCLoveC1X92gw_Cdj35S2rgTnD"
+                },
+                "url": "https://www.20minutes.fr/economie/auto/4048479-20230809-avis-express-gran-turismo-film",
+                "snippet": "Derrière Gran Turismo (le film) se cache l&#39;histoire de Jann Mardenborough, un amateur de jeu vidéo qui rêvait de course automobile et qui, grâce à la Nissan GT&nbsp;..."
+              },
+              {
+                "title": "VIDEO - Gran Turismo, découverte en exclusivité des coulisses du film",
+                "timeAgo": "6h ago",
+                "source": "Turbo.fr",
+                "image": {
+                  "newsUrl": "https://www.turbo.fr/video/video-gran-turismo-decouverte-en-exclusivite-des-coulisses-du-film-191678",
+                  "source": "Turbo.fr",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcSxu2TkHUq90ngE6gdH-iVcKZHUFg18p-slaAC_23EQLFNdm4ajz4IzHC98ge5bVlIo2zyx2hF1"
+                },
+                "url": "https://www.turbo.fr/video/video-gran-turismo-decouverte-en-exclusivite-des-coulisses-du-film-191678",
+                "snippet": "Qui aurait cru qu&#39;il était possible d&#39;adapter Gran Turismo, la simulation de conduite qui fait référence sur Playstation, mais qui donc n&#39;a ni histoire ni&nbsp;..."
+              },
+              {
+                "title": "Gran Turismo de Neill Blomkamp (Film) : la critique Télérama",
+                "timeAgo": "13h ago",
+                "source": "Télérama.fr",
+                "image": {
+                  "newsUrl": "https://www.telerama.fr/cinema/gran-turismo-apres-un-demarrage-diesel-un-film-qui-tient-la-route_cri-7027758.php",
+                  "source": "Télérama.fr",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcQZfvkUyiDzrOXPprW-FiWHdhA28iw2Ge30t1wRdlA-MaOtcqyfZNqujmhA2nD74cSq6JNQxaMe"
+                },
+                "url": "https://www.telerama.fr/cinema/gran-turismo-apres-un-demarrage-diesel-un-film-qui-tient-la-route_cri-7027758.php",
+                "snippet": "Tiré de l&#39;histoire vraie d&#39;un jeune Anglais passé du simulateur de conduite “Gran Turismo” aux vrais circuits, ce film un peu lent au démarrage nous attrape&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Gran+Turismo#Gran%20Turismo"
+          },
+          {
+            "title": {
+              "query": "Caroline Garcia",
+              "exploreLink": "/trends/explore?q=Caroline+Garcia&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "5K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://rmcsport.bfmtv.com/tennis/wta/montreal-tres-nerveuse-lors-de-sa-defaite-contre-bouzkova-caroline-garcia-a-frole-la-disqualification_AV-202308090221.html",
+              "source": "BFMTV.COM",
+              "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcRpeN84EGHnfUXz1Dfi4xBoDiFoh2zdNfUfLoAHGIgHLNWptuZpAQrcGRpXXOPudpffFUO96TqT"
+            },
+            "articles": [
+              {
+                "title": "Montréal: très nerveuse lors de sa défaite contre Bouzkova, Caroline ...",
+                "timeAgo": "12h ago",
+                "source": "BFMTV.COM",
+                "image": {
+                  "newsUrl": "https://rmcsport.bfmtv.com/tennis/wta/montreal-tres-nerveuse-lors-de-sa-defaite-contre-bouzkova-caroline-garcia-a-frole-la-disqualification_AV-202308090221.html",
+                  "source": "BFMTV.COM",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcRpeN84EGHnfUXz1Dfi4xBoDiFoh2zdNfUfLoAHGIgHLNWptuZpAQrcGRpXXOPudpffFUO96TqT"
+                },
+                "url": "https://rmcsport.bfmtv.com/tennis/wta/montreal-tres-nerveuse-lors-de-sa-defaite-contre-bouzkova-caroline-garcia-a-frole-la-disqualification_AV-202308090221.html",
+                "snippet": "Caroline Garcia a été éliminée face à la Tchèque Marie Bouzkova dès son entrée en lice au tournoi de Montréal, ce mercredi au Canada."
+              },
+              {
+                "title": "WTA - Montréal - Frustrée, Caroline Garcia a frôlé la disqualification...",
+                "timeAgo": "7h ago",
+                "source": "Tennis Actu",
+                "image": {
+                  "newsUrl": "https://www.tennisactu.net/news-wta-montreal-frustree-caroline-garcia-a-frole-la-disqualification-104423.html",
+                  "source": "Tennis Actu",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcRtX7YK7LFVF9oPvU1m-TGnhc-4DFB8BIdjGrmh7_3PHgRsQpiRDNvNr_KBebmLHI-yYMilo8QB"
+                },
+                "url": "https://www.tennisactu.net/news-wta-montreal-frustree-caroline-garcia-a-frole-la-disqualification-104423.html",
+                "snippet": "Que se passe-t-il dans la tête de Caro en ce moment ? Dernière représentante française, Caroline Garcia n&#39;a pas fait l."
+              },
+              {
+                "title": "VIDEO. Tennis : très tendue, Caroline Garcia manque de tirer dans ...",
+                "timeAgo": "10h ago",
+                "source": "ladepeche.fr",
+                "image": {
+                  "newsUrl": "https://www.ladepeche.fr/2023/08/09/video-tennis-tres-tendue-caroline-garcia-manque-de-tirer-dans-la-tete-dun-ramasseur-de-balle-et-frole-la-disqualification-11387002.php",
+                  "source": "ladepeche.fr",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcQJp6yXAHKHr0pO2YryhU8YK_n0pi37k2wsie6LMQIgy7FGEmKAa6dt9W0h79ryUaOjARVdXjcM"
+                },
+                "url": "https://www.ladepeche.fr/2023/08/09/video-tennis-tres-tendue-caroline-garcia-manque-de-tirer-dans-la-tete-dun-ramasseur-de-balle-et-frole-la-disqualification-11387002.php",
+                "snippet": "Hier à Montréal en 16e de finale du tournoi canadien, la Française Caroline Garcia a perdu son sang-froid. Malmenée par la Tchéque Marie Bouzkova,&nbsp;..."
+              },
+              {
+                "title": "WTA - Montreal 2023 - LIVE - Les résultats - Caroline Garcia en ...",
+                "timeAgo": "6h ago",
+                "source": "ski-nordique.net",
+                "image": {
+                  "newsUrl": "https://www.ski-nordique.net/wta-montreal-2023-live-les-resultats-caroline-garcia-en-plein-doute.6614853-72348.html",
+                  "source": "ski-nordique.net",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcRl5jEtzF6mq4SneV8GrU29eBbkpJM7q5ApBwvcoYx0plg7m3nsQbTcIFRoPYSwsfXimZHxohjG"
+                },
+                "url": "https://www.ski-nordique.net/wta-montreal-2023-live-les-resultats-caroline-garcia-en-plein-doute.6614853-72348.html",
+                "snippet": "Tennis - Retrouvez sur cette page les infos, le tableau, le suivi LIVE, les vidéos et les résultats du tournoi WTA 1000 de Montreal prévu du 7 au 13 août."
+              },
+              {
+                "title": "Tennis : la lyonnaise Caroline Garcia éliminée du tournoi de Montréal",
+                "timeAgo": "11h ago",
+                "source": "Lyon Mag",
+                "image": {
+                  "newsUrl": "https://www.lyonmag.com/article/131517/tennis-la-lyonnaise-caroline-garcia-eliminee-du-tournoi-de-montreal",
+                  "source": "Lyon Mag",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcTtRVtQSiIDtq96LAWOTZmDf7OYqExl2t4xx-fuw1ZSmyOV3FWkhOzblSJ1smElLN9HdcD4sCIV"
+                },
+                "url": "https://www.lyonmag.com/article/131517/tennis-la-lyonnaise-caroline-garcia-eliminee-du-tournoi-de-montreal",
+                "snippet": "La Lyonnaise aurait pourtant pu y croire face à la tchèque Marie Bouzkova pour les 16e de finale qui se sont déroulés dans la nuit de mardi à mercredi."
+              },
+              {
+                "title": "Tennis / WTA – Caroline Garcia proche de la disqualification",
+                "timeAgo": "10h ago",
+                "source": "Sport Business Mag -",
+                "image": {
+                  "newsUrl": "https://www.sportbusinessmag.com/zap-sport/tennis-wta-caroline-garcia-proche-de-la-disqualification/",
+                  "source": "Sport Business Mag -",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcQz1HE754J0Wq-jYU8GdO4uloS3Idskx73GnO7T0upUXZkCa9nlnzWNi8bPK8Zdin5ig1a_KAXQ"
+                },
+                "url": "https://www.sportbusinessmag.com/zap-sport/tennis-wta-caroline-garcia-proche-de-la-disqualification/",
+                "snippet": "Caroline Garcia (n°6) connait une conjoncture compliquée ces dernières semaines. Elle s&#39;est inclinée hier face à la Tchèque Marie Bouzkova (n°39) lors du&nbsp;..."
+              },
+              {
+                "title": "Caroline Garcia prend déjà la porte au tournoi de Montréal",
+                "timeAgo": "11h ago",
+                "source": "LyonCapitale.fr",
+                "image": {
+                  "newsUrl": "https://www.lyoncapitale.fr/actualite/la-lyonnaise-caroline-garcia-prend-deja-la-porte-au-tournoi-de-montreal",
+                  "source": "LyonCapitale.fr",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcREsjBGoyFKmMK34f6xfKQxbgCpSfT23o0UAe9mXZO4k0Z6Hbmb2KQoU7MxlyYL0eklNXi1amWr"
+                },
+                "url": "https://www.lyoncapitale.fr/actualite/la-lyonnaise-caroline-garcia-prend-deja-la-porte-au-tournoi-de-montreal",
+                "snippet": "Tête de série numéro 5, la Lyonnaise Caroline Garcia s&#39;est inclinée dès son entrée au tournoi WTA 1000 de Montréal."
+              },
+              {
+                "title": "Tennis : Caroline Garcia éliminée dès le premier tour à Montréal",
+                "timeAgo": "12h ago",
+                "source": "Sport.fr",
+                "image": {
+                  "newsUrl": "https://www.sport.fr/tennis/tennis-caroline-garcia-eliminee-des-le-premier-tour-a-montreal-1061282.shtm",
+                  "source": "Sport.fr",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcR83Ezo1TE7TvrwfG47ZYMw9fV2rCQkpOBlwaEL8F2FcCFQtrNm7MqFvYW6CLYdtK8PVnQRwLzA"
+                },
+                "url": "https://www.sport.fr/tennis/tennis-caroline-garcia-eliminee-des-le-premier-tour-a-montreal-1061282.shtm",
+                "snippet": ""
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Caroline+Garcia#Caroline%20Garcia"
+          }
+        ]
+      },
+      {
+        "date": "20230808",
+        "formattedDate": "Tuesday, August 8, 2023",
+        "trendingSearches": [
+          {
+            "title": {
+              "query": "Bryan Randall",
+              "exploreLink": "/trends/explore?q=Bryan+Randall&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "50K+",
+            "relatedQueries": [
+              {
+                "query": "sandra bullock",
+                "exploreLink": "/trends/explore?q=sandra+bullock&date=now+7-d&geo=FR"
+              }
+            ],
+            "image": {
+              "newsUrl": "https://www.nicematin.com/people/grand-amour-de-sandra-bullock-bryan-randall-sest-eteint-a-lage-de-57-ans-865811",
+              "source": "Nice-Matin",
+              "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcSs3N0zxfHtHG8iPR_ANAZtmzfuNYzw8aEuttKqG-PGXXGFD1zQNmwWt9eVvm1i429J7SpR66aV"
+            },
+            "articles": [
+              {
+                "title": "&quot;Grand amour&quot; de Sandra Bullock, Bryan Randall s&#39;est éteint à l&#39;âge ...",
+                "timeAgo": "1d ago",
+                "source": "Nice-Matin",
+                "image": {
+                  "newsUrl": "https://www.nicematin.com/people/grand-amour-de-sandra-bullock-bryan-randall-sest-eteint-a-lage-de-57-ans-865811",
+                  "source": "Nice-Matin",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcSs3N0zxfHtHG8iPR_ANAZtmzfuNYzw8aEuttKqG-PGXXGFD1zQNmwWt9eVvm1i429J7SpR66aV"
+                },
+                "url": "https://www.nicematin.com/people/grand-amour-de-sandra-bullock-bryan-randall-sest-eteint-a-lage-de-57-ans-865811",
+                "snippet": "Il était &quot;l&#39;amour de [sa] vie&quot;, comme l&#39;actrice le déclarait elle-même. Son partenaire de vie depuis maintenant huit ans. Le photographe et compagnon de&nbsp;..."
+              },
+              {
+                "title": "Bryan Randall, le compagnon de Sandra Bullock, est mort après un ...",
+                "timeAgo": "1d ago",
+                "source": "Le HuffPost",
+                "image": {
+                  "newsUrl": "https://www.huffingtonpost.fr/people/article/bryan-randall-le-compagnon-de-sandra-bullock-est-mort-apres-un-combat-contre-la-maladie-de-charcot_221569.html",
+                  "source": "Le HuffPost",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcRXhylCDeruMLTOfSP6UO4HOKsN3IloP8tohqXRKOrlo3dFW5griIiS9BoSewaSzdmujHFBHeem"
+                },
+                "url": "https://www.huffingtonpost.fr/people/article/bryan-randall-le-compagnon-de-sandra-bullock-est-mort-apres-un-combat-contre-la-maladie-de-charcot_221569.html",
+                "snippet": "Sandra Bullock et lui s&#39;étaient rencontrés en 2015, lors de l&#39;anniversaire du fils de l&#39;actrice hollywoodienne."
+              },
+              {
+                "title": "Sandra Bullock : ce gros sacrifice qu&#39;elle avait fait pour Bryan ...",
+                "timeAgo": "11h ago",
+                "source": "Voici",
+                "image": {
+                  "newsUrl": "https://www.voici.fr/news-people/sandra-bullock-ce-gros-sacrifice-quelle-avait-fait-pour-bryan-randall-avant-sa-mort-763216",
+                  "source": "Voici",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcQgKkmRjeZ_LRtv_VMNbquplAhHElNLHOBp3qcQ4-jmZ6-6azf_88ykcqTzO-R2XAins3DGtpm3"
+                },
+                "url": "https://www.voici.fr/news-people/sandra-bullock-ce-gros-sacrifice-quelle-avait-fait-pour-bryan-randall-avant-sa-mort-763216",
+                "snippet": "La mort de Bryan Randall est un coup de massue pour Sandra Bullock. Compagne dévouée jusqu&#39;à la mort de son cher et tendre, l&#39;actrice américaine av..."
+              },
+              {
+                "title": "Sandra Bullock : son compagnon, le photographe Bryan Randall ...",
+                "timeAgo": "1d ago",
+                "source": "Sud Ouest",
+                "image": {
+                  "newsUrl": "https://www.sudouest.fr/culture/people/sandra-bullock-son-compagnon-le-photographe-bryan-randall-est-mort-a-57-ans-16209972.php",
+                  "source": "Sud Ouest",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcS3hhV7mpnBu1lA5pFw_bXnlF-cUSc0GhWfyxCMZXHdAIDSQmBrArJUqPP0FLVQ3AcyLm0Ao-qX"
+                },
+                "url": "https://www.sudouest.fr/culture/people/sandra-bullock-son-compagnon-le-photographe-bryan-randall-est-mort-a-57-ans-16209972.php",
+                "snippet": "Sandra Bullock a perdu « l&#39;amour de sa vie » samedi 5 août. Le photographe Bryan Randall est mort des suites de la maladie de Charcot Après trois ans de&nbsp;..."
+              },
+              {
+                "title": "Cette vidéo de Sandra Bullock et Bryan Randall amoureux, dansant ...",
+                "timeAgo": "11h ago",
+                "source": "Le Figaro",
+                "image": {
+                  "newsUrl": "https://madame.lefigaro.fr/celebrites/actu-people/cette-video-de-sandra-bullock-et-bryan-randall-amoureux-dansant-un-slow-le-soir-de-leur-ceremonie-de-voeux-20230809",
+                  "source": "Le Figaro",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcQ2LpvCvdEBUV_6Uk4aOstV0NGiducwlstwpq5bxxJVkGI4Dsu03YB1kQcMtpM_M10-mfeSzeO5"
+                },
+                "url": "https://madame.lefigaro.fr/celebrites/actu-people/cette-video-de-sandra-bullock-et-bryan-randall-amoureux-dansant-un-slow-le-soir-de-leur-ceremonie-de-voeux-20230809",
+                "snippet": "Quatre jours après le décès du photographe, survenu le samedi 5 août, le Daily Mail a mis au jour une séquence datée de 2017, dans laquelle l&#39;artiste et&nbsp;..."
+              },
+              {
+                "title": "Sandra Bullock : son compagnon Bryan Randall est mort à 57 ans",
+                "timeAgo": "1d ago",
+                "source": "Paris Match",
+                "image": {
+                  "newsUrl": "https://www.parismatch.com/people/sandra-bullock-son-compagnon-bryan-randall-est-mort-57-ans-228155",
+                  "source": "Paris Match",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcQC8rWm2HJz4g6ks-VOKZX2oa2uXBOJK927-1_sDTeM4gpCgeApzbPvik6AnPdzlOs4IgCPv2ny"
+                },
+                "url": "https://www.parismatch.com/people/sandra-bullock-son-compagnon-bryan-randall-est-mort-57-ans-228155",
+                "snippet": "Il était « l&#39;amour de sa vie » depuis plus de huit ans. Samedi dernier, le photographe Bryan Randall, conjoint de Sandra Bullock, est décédé des suites de&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Bryan+Randall#Bryan%20Randall"
+          },
+          {
+            "title": {
+              "query": "Equipe de France feminine",
+              "exploreLink": "/trends/explore?q=Equipe+de+France+feminine&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "50K+",
+            "relatedQueries": [
+              {
+                "query": "eugenie le sommer",
+                "exploreLink": "/trends/explore?q=eugenie+le+sommer&date=now+7-d&geo=FR"
+              },
+              {
+                "query": "equipe de france",
+                "exploreLink": "/trends/explore?q=equipe+de+france&date=now+7-d&geo=FR"
+              },
+              {
+                "query": "eugénie le sommer",
+                "exploreLink": "/trends/explore?q=eug%C3%A9nie+le+sommer&date=now+7-d&geo=FR"
+              },
+              {
+                "query": "équipe de france féminine de football",
+                "exploreLink": "/trends/explore?q=%C3%A9quipe+de+france+f%C3%A9minine+de+football&date=now+7-d&geo=FR"
+              }
+            ],
+            "image": {
+              "newsUrl": "https://rmcsport.bfmtv.com/football/equipe-de-france/equipe-de-france-feminine-la-deuxieme-vie-d-eugenie-le-sommer_AV-202308090364.html",
+              "source": "BFMTV.COM",
+              "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcQyrsNdRTR0wXIBP782cCfH4P1ns6x0ckN66BnsUaY0oG8itWvqTmVxce3CLItABrz-MJ9wL_Bz"
+            },
+            "articles": [
+              {
+                "title": "Equipe de France féminine: la renaissance d&#39;Eugénie Le Sommer",
+                "timeAgo": "6h ago",
+                "source": "BFMTV.COM",
+                "image": {
+                  "newsUrl": "https://rmcsport.bfmtv.com/football/equipe-de-france/equipe-de-france-feminine-la-deuxieme-vie-d-eugenie-le-sommer_AV-202308090364.html",
+                  "source": "BFMTV.COM",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcQyrsNdRTR0wXIBP782cCfH4P1ns6x0ckN66BnsUaY0oG8itWvqTmVxce3CLItABrz-MJ9wL_Bz"
+                },
+                "url": "https://rmcsport.bfmtv.com/football/equipe-de-france/equipe-de-france-feminine-la-deuxieme-vie-d-eugenie-le-sommer_AV-202308090364.html",
+                "snippet": "Avec déjà trois buts à son actif depuis le début de la compétition, Eugénie Le Sommer réalise une Coupe du monde féminine 2023 époustouflante."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Equipe+de+France+feminine#Equipe%20de%20France%20feminine"
+          },
+          {
+            "title": {
+              "query": "Mouches noires Espagne",
+              "exploreLink": "/trends/explore?q=Mouches+noires+Espagne&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "50K+",
+            "relatedQueries": [
+              {
+                "query": "espagne mouches noires",
+                "exploreLink": "/trends/explore?q=espagne+mouches+noires&date=now+7-d&geo=FR"
+              }
+            ],
+            "image": {
+              "newsUrl": "https://www.francetvinfo.fr/monde/espagne/gare-a-sa-morsure-en-espagne-la-mouche-noire-prolifere_5997509.html",
+              "source": "Franceinfo",
+              "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcQp5ER3NI6SqxbLfVt0PVhsP0hhix4Y8wnoS9NWFsM1JUso80OOIk-nDqMUAAoLthfPvHTa9IFF"
+            },
+            "articles": [
+              {
+                "title": "Gare à sa morsure : en Espagne, la mouche noire prolifère",
+                "timeAgo": "9h ago",
+                "source": "Franceinfo",
+                "image": {
+                  "newsUrl": "https://www.francetvinfo.fr/monde/espagne/gare-a-sa-morsure-en-espagne-la-mouche-noire-prolifere_5997509.html",
+                  "source": "Franceinfo",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcQp5ER3NI6SqxbLfVt0PVhsP0hhix4Y8wnoS9NWFsM1JUso80OOIk-nDqMUAAoLthfPvHTa9IFF"
+                },
+                "url": "https://www.francetvinfo.fr/monde/espagne/gare-a-sa-morsure-en-espagne-la-mouche-noire-prolifere_5997509.html",
+                "snippet": "Après le moustique tigre, la mouche noire… L&#39;insecte sévit actuellement en Espagne. Il ne propage pas de maladies mais sa morsure est douloureuse."
+              },
+              {
+                "title": "C&#39;est quoi cette mouche noire qui prolifère en Espagne?",
+                "timeAgo": "2h ago",
+                "source": "L'Union",
+                "image": {
+                  "newsUrl": "https://www.lunion.fr/id510433/article/2023-08-09/cest-quoi-cette-mouche-noire-qui-prolifere-en-espagne",
+                  "source": "L'Union",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcTb57lPoyMHdaBI45QsRJ1nf8WQP1URpNUreldOGAhIA84BGd4FQ_opcq5Vxm4eEMoBicQPj2M2"
+                },
+                "url": "https://www.lunion.fr/id510433/article/2023-08-09/cest-quoi-cette-mouche-noire-qui-prolifere-en-espagne",
+                "snippet": "Ces dernières semaines, les mouches noires prolifèrent en Espagne. L&#39;Association nationale des sociétés de santé environnementale appelle à la vigilance&nbsp;..."
+              },
+              {
+                "title": "Espagne: les autorités mettent en garde contre la prolifération des ...",
+                "timeAgo": "1d ago",
+                "source": "BFMTV",
+                "image": {
+                  "newsUrl": "https://www.bfmtv.com/sante/espagne-les-autorites-mettent-en-garde-contre-la-proliferation-des-mouches-noires-dans-le-pays_AN-202308080186.html",
+                  "source": "BFMTV",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcTfgqvFirI5uKpnSyIFJIPgYAyZGsrV8K1qGiTT2O7yKWRzKlBC64bdRKEan4DkyyZOf1Z0Kcv3"
+                },
+                "url": "https://www.bfmtv.com/sante/espagne-les-autorites-mettent-en-garde-contre-la-proliferation-des-mouches-noires-dans-le-pays_AN-202308080186.html",
+                "snippet": "Vous vous apprêtez à passer vos vacances en Espagne ou vous séjournez actuellement dans la péninsule ibérique? Gare aux mouches noires!"
+              },
+              {
+                "title": "Espagne : les autorités alertent sur la prolifération de morsures de ...",
+                "timeAgo": "1d ago",
+                "source": "Le Figaro",
+                "image": {
+                  "newsUrl": "https://www.lefigaro.fr/sciences/espagne-les-autorites-alertent-sur-la-proliferation-de-morsures-de-mouches-noires-20230807",
+                  "source": "Le Figaro",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcQV0_3Xao6C9Ru6gYCWebhKNb8ug2LJ3DuEFAVxUMi2N9deEveufufyQgYwHg8vwr5BIeUj1vRD"
+                },
+                "url": "https://www.lefigaro.fr/sciences/espagne-les-autorites-alertent-sur-la-proliferation-de-morsures-de-mouches-noires-20230807",
+                "snippet": "Les morsures de la mouche Simulie, qui peuvent causer des hospitalisations, se multiplient à la faveur du réchauffement climatique."
+              },
+              {
+                "title": "La hausse du nombre de mouches noires, insectes mordeurs ...",
+                "timeAgo": "1d ago",
+                "source": "Sciences et Avenir",
+                "image": {
+                  "newsUrl": "https://www.sciencesetavenir.fr/animaux/arthropodes/la-mouche-noire-inquiete-l-espagne_173041",
+                  "source": "Sciences et Avenir",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcSyXe-vdCoFor3T9Kv4jaGncdwf_0ThKHR2OcpyQzKkkIyqOw-VVZLpa88_p_MueT1AKrhHQy2L"
+                },
+                "url": "https://www.sciencesetavenir.fr/animaux/arthropodes/la-mouche-noire-inquiete-l-espagne_173041",
+                "snippet": "L&#39;Espagne est en alerte : la mouche noire étend son territoire dans le pays, causant parfois des hospitalisations à cause de ses morsures qui peuvent&nbsp;..."
+              },
+              {
+                "title": "Les mouches noires prolifèrent en Espagne et leurs morsures ...",
+                "timeAgo": "1d ago",
+                "source": "Ouest-France",
+                "image": {
+                  "newsUrl": "https://www.ouest-france.fr/europe/espagne/les-mouches-noires-proliferent-en-espagne-et-leurs-morsures-peuvent-etre-dangereuses-9688786c-35bd-11ee-8f22-de1852f71158",
+                  "source": "Ouest-France",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcT8g-bCMo7gPOyGysNjrL25kksr2JYJTMryWAo8dw0YvJAsTw-zPqsaimp6Zfp0IO8hZENhZtnj"
+                },
+                "url": "https://www.ouest-france.fr/europe/espagne/les-mouches-noires-proliferent-en-espagne-et-leurs-morsures-peuvent-etre-dangereuses-9688786c-35bd-11ee-8f22-de1852f71158",
+                "snippet": "En Espagne, l&#39;Association nationale des sociétés de santé environnementale (Anecpla) alerte depuis samedi 5 août 2023 sur la prolifération des mouches&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Mouches+noires+Espagne#Mouches%20noires%20Espagne"
+          },
+          {
+            "title": {
+              "query": "M6",
+              "exploreLink": "/trends/explore?q=M6&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "20K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.francelive.fr/article/france-live/les-traitres-m6-confirme-la-preparation-dune-saison-3-nous-allons-evidemment-repartir-8142538/",
+              "source": "FranceLive.fr",
+              "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcSc82d_JrqH0Yti9pn2A7FMoYbbqz4_PqSbMnxRYKPcaBO_xVzb57jN3cwV58q-YSXZTSc_i6tq"
+            },
+            "articles": [
+              {
+                "title": "&quot;Les Traîtres&quot;. M6 confirme la préparation d&#39;une saison 3 : &quot;Nous ...",
+                "timeAgo": "2h ago",
+                "source": "FranceLive.fr",
+                "image": {
+                  "newsUrl": "https://www.francelive.fr/article/france-live/les-traitres-m6-confirme-la-preparation-dune-saison-3-nous-allons-evidemment-repartir-8142538/",
+                  "source": "FranceLive.fr",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcSc82d_JrqH0Yti9pn2A7FMoYbbqz4_PqSbMnxRYKPcaBO_xVzb57jN3cwV58q-YSXZTSc_i6tq"
+                },
+                "url": "https://www.francelive.fr/article/france-live/les-traitres-m6-confirme-la-preparation-dune-saison-3-nous-allons-evidemment-repartir-8142538/",
+                "snippet": "La finale du jeu &quot;Les Traitres&quot; est diffusée ce mercredi 9 août 2023. Une deuxième saison couronnée de succès, de quoi donner des idées à M6 qui a déjà&nbsp;..."
+              },
+              {
+                "title": "Les Traîtres sur M6 : ce qu&#39;il faut savoir avant la finale diffusée ce ...",
+                "timeAgo": "4h ago",
+                "source": "actu.fr",
+                "image": {
+                  "newsUrl": "https://actu.fr/loisirs-culture/les-traitres-sur-m6-ce-qu-il-faut-savoir-avant-la-finale-diffusee-ce-mercredi-soir_59949108.html",
+                  "source": "actu.fr",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcTwlusjvIeTgTzyDPyWWsZn9vEr-Y0yL6pFzFE7RAAgLQqN_DlNVcjtVQk_DUehRrIY4eUn34My"
+                },
+                "url": "https://actu.fr/loisirs-culture/les-traitres-sur-m6-ce-qu-il-faut-savoir-avant-la-finale-diffusee-ce-mercredi-soir_59949108.html",
+                "snippet": "Voici les six loyaux encore en compétition : Andy, Vincent Cespedes, Tom Pernaut, Nathalie Marquay, Gennifer Demey et Jean Lassalle. Vidéos : en ce moment sur&nbsp;..."
+              },
+              {
+                "title": "M6. Pleurs et rebondissements dans la finale de l&#39;émission « Les ...",
+                "timeAgo": "11h ago",
+                "source": "Ouest-France",
+                "image": {
+                  "newsUrl": "https://www.ouest-france.fr/medias/m6/pleurs-et-rebondissements-dans-la-finale-de-lemission-les-traitres-sur-m6-e1a8056a-32c5-11ee-9d47-98aefe4d15a3",
+                  "source": "Ouest-France",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcRthK2prse0MwZI-3wOKNsmqgqGmh_N_jA6rWaKntHPI-Oc-DAbsVneKah6FS-XxmxDWu9Of5v5"
+                },
+                "url": "https://www.ouest-france.fr/medias/m6/pleurs-et-rebondissements-dans-la-finale-de-lemission-les-traitres-sur-m6-e1a8056a-32c5-11ee-9d47-98aefe4d15a3",
+                "snippet": "Plus que jamais, tous les coups sont permis pour la finale de l&#39;émission « Les Traîtres », orchestrée par M6 et menée par Eric Antoine."
+              },
+              {
+                "title": "Les Traîtres sur M6 : qui a été éliminé le 2 août dernier ?",
+                "timeAgo": "2h ago",
+                "source": "24matins.fr",
+                "image": {
+                  "newsUrl": "https://www.24matins.fr/les-traitres-sur-m6-qui-a-ete-elimine-le-2-aout-dernier-1362355",
+                  "source": "24matins.fr",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcRo324f0Us4AkqIBWgVS1f2Go0SqW6Ujwwqt9IhLsiChRFdJf7iChgKMCROb4I99Vn1eFHpCvV4"
+                },
+                "url": "https://www.24matins.fr/les-traitres-sur-m6-qui-a-ete-elimine-le-2-aout-dernier-1362355",
+                "snippet": "Alors que la saison 2 des &quot;Traîtres&quot; s&#39;achève ce soir sur M6, retour sur la personnalité qui a dû quitter l&#39;aventure la semaine dernière."
+              },
+              {
+                "title": "Dans « Les Traîtres » sur M6, le philosophe Vincent Cespedes est ...",
+                "timeAgo": "2h ago",
+                "source": "Le HuffPost",
+                "image": {
+                  "newsUrl": "https://www.huffingtonpost.fr/divertissement/article/dans-les-traitres-sur-m6-le-philosophe-vincent-cespedes-est-devenu-la-bete-noire-des-telespectateurs-clx1_221577.html",
+                  "source": "Le HuffPost",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcTGfCeOhYl43H_VxiY8U2Ep0QpInui6sIgBgnyiIwpsdUOApeHgRjXbPBK-Yf8NwwZ-GiTDHtVW"
+                },
+                "url": "https://www.huffingtonpost.fr/divertissement/article/dans-les-traitres-sur-m6-le-philosophe-vincent-cespedes-est-devenu-la-bete-noire-des-telespectateurs-clx1_221577.html",
+                "snippet": "Au fil des épisodes du jeu télévisé, diffusé depuis la mi-juillet, la personnalité qui ressort le plus n&#39;est pas l&#39;ancien candidat à la présidentielle Jean&nbsp;..."
+              },
+              {
+                "title": "Les Traîtres (M6) : finale, candidats éliminés, résumés... Tout savoir ...",
+                "timeAgo": "5h ago",
+                "source": "Télé Loisirs.fr",
+                "url": "https://www.programme-tv.net/news/tv/327673-les-traitres-m6-finale-candidats-elimines-resumes-tout-savoir-sur-la-saison-2-du-jeu-deric-antoine-qui-se-termine-ce-mercredi-soir/",
+                "snippet": "Après le lancement réussi de sa première édition, l&#39;émission Les Traîtres revient dès ce mercredi 12 juillet pour une saison 2. Télé-Loisirs vous dit tout&nbsp;..."
+              },
+              {
+                "title": "« Les Traîtres » : Qui sont les finalistes de la saison 2 ?",
+                "timeAgo": "10h ago",
+                "source": "20minutes.fr",
+                "image": {
+                  "newsUrl": "https://www.20minutes.fr/arts-stars/television/4048494-20230809-traitres-finalistes-saison-2",
+                  "source": "20minutes.fr",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcSSeMdZ6xi3SQBb44GehFec7pvY0QVtOyweOuLN5Dr-xrVBDp0QzEAGIrzcwcnI7jKP1erXLmzM"
+                },
+                "url": "https://www.20minutes.fr/arts-stars/television/4048494-20230809-traitres-finalistes-saison-2",
+                "snippet": "A l&#39;issue de cette cinquième soirée, le jeu présenté par Eric Antoine livrera son verdict. Rendez-vous ce mercredi 9 août à 21h10 sur M6."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=M6#M6"
+          },
+          {
+            "title": {
+              "query": "Foot feminin",
+              "exploreLink": "/trends/explore?q=Foot+feminin&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "20K+",
+            "relatedQueries": [
+              {
+                "query": "Football féminin",
+                "exploreLink": "/trends/explore?q=Football+f%C3%A9minin&date=now+7-d&geo=FR"
+              }
+            ],
+            "image": {
+              "newsUrl": "https://www.ouest-france.fr/sport/football/dossier-football-feminin-morbihan-notre-travail-attirer-les-plus-jeunes-et-les-fideliser-3f8166d2-2c67-11ee-aebd-1cf9865dd64c",
+              "source": "Ouest-France",
+              "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcThmegypUNfMx3_EhS3FZad4hhoH064MUvxCcbjOnIY927jf8lpW3iPGPHXlIQrBHv0d9P4vI2D"
+            },
+            "articles": [
+              {
+                "title": "DOSSIER. Football féminin Morbihan : « Notre travail ? Attirer les ...",
+                "timeAgo": "1d ago",
+                "source": "Ouest-France",
+                "image": {
+                  "newsUrl": "https://www.ouest-france.fr/sport/football/dossier-football-feminin-morbihan-notre-travail-attirer-les-plus-jeunes-et-les-fideliser-3f8166d2-2c67-11ee-aebd-1cf9865dd64c",
+                  "source": "Ouest-France",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcThmegypUNfMx3_EhS3FZad4hhoH064MUvxCcbjOnIY927jf8lpW3iPGPHXlIQrBHv0d9P4vI2D"
+                },
+                "url": "https://www.ouest-france.fr/sport/football/dossier-football-feminin-morbihan-notre-travail-attirer-les-plus-jeunes-et-les-fideliser-3f8166d2-2c67-11ee-aebd-1cf9865dd64c",
+                "snippet": "Avec les Bleues, Eugénie Le Sommer dispute depuis le 20 juillet la Coupe du monde de football. L&#39;attaquante morbihannaise, qui affronte ce mardi le Maroc en&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Foot+feminin#Foot%20feminin"
+          },
+          {
+            "title": {
+              "query": "Cancer Caroline Receveur",
+              "exploreLink": "/trends/explore?q=Cancer+Caroline+Receveur&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "20K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.bfmtv.com/people/j-ai-repris-vie-caroline-receveur-donne-de-ses-nouvelles-en-plein-traitement-contre-son-cancer_AN-202308090265.html",
+              "source": "BFMTV",
+              "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcQbQklgSrDcvjsJoicFfh4Hs4GGhrAc6x8BfriFD3w0oXAwfVHkgHKZKzntSRmsoaKLugLgt6e2"
+            },
+            "articles": [
+              {
+                "title": "&quot;J&#39;ai repris vie&quot;: Caroline Receveur donne de ses nouvelles, en plein ...",
+                "timeAgo": "10h ago",
+                "source": "BFMTV",
+                "image": {
+                  "newsUrl": "https://www.bfmtv.com/people/j-ai-repris-vie-caroline-receveur-donne-de-ses-nouvelles-en-plein-traitement-contre-son-cancer_AN-202308090265.html",
+                  "source": "BFMTV",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcQbQklgSrDcvjsJoicFfh4Hs4GGhrAc6x8BfriFD3w0oXAwfVHkgHKZKzntSRmsoaKLugLgt6e2"
+                },
+                "url": "https://www.bfmtv.com/people/j-ai-repris-vie-caroline-receveur-donne-de-ses-nouvelles-en-plein-traitement-contre-son-cancer_AN-202308090265.html",
+                "snippet": "L&#39;influenceuse française a pris la parole pour la première fois depuis l&#39;annonce de son cancer du sein. Elle a eu quelques mots rassurants pour ses abonnés."
+              },
+              {
+                "title": "Caroline Receveur donne des nouvelles de son traitement contre le ...",
+                "timeAgo": "6h ago",
+                "source": "Le HuffPost",
+                "image": {
+                  "newsUrl": "https://www.huffingtonpost.fr/people/video/caroline-receveur-donne-des-nouvelles-de-son-traitement-contre-le-cancer-du-sein_221618.html",
+                  "source": "Le HuffPost",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcRsssChrteZQD2Nbdjf4ckIE6i-EU9OdRwy4zigyOE0EbLp1XdE4pfOPwL1T4K_ZTPmmjWCd1pn"
+                },
+                "url": "https://www.huffingtonpost.fr/people/video/caroline-receveur-donne-des-nouvelles-de-son-traitement-contre-le-cancer-du-sein_221618.html",
+                "snippet": "L&#39;influenceuse et ancienne star de téléréalité vient de terminer son troisième cycle de chimiothérapie, traitement entamé pour combattre un cancer du sein."
+              },
+              {
+                "title": "Caroline Receveur donne de ses nouvelles après l&#39;annonce de son ...",
+                "timeAgo": "5h ago",
+                "source": "FranceLive.fr",
+                "image": {
+                  "newsUrl": "https://www.francelive.fr/article/france-live/caroline-receveur-donne-de-ses-nouvelles-apres-lannonce-de-son-cancer-jai-recu-enormement-damour-8142371/",
+                  "source": "FranceLive.fr",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcSledmWA7zvOBo5CHtkICNOWjNayuxqcar9wFqyCkBZO2w3ERCSdjnnxH8vKBMhtco9fiZaD69s"
+                },
+                "url": "https://www.francelive.fr/article/france-live/caroline-receveur-donne-de-ses-nouvelles-apres-lannonce-de-son-cancer-jai-recu-enormement-damour-8142371/",
+                "snippet": "Caroline Receveur a annoncé fin juillet être atteinte d&#39;un cancer du sein. Ce lundi 7 août 2023, l&#39;influenceuse a donné des nouvelles rassurantes à ses fans&nbsp;..."
+              },
+              {
+                "title": "Caroline Receveur en plein combat contre le cancer : cette méthode ...",
+                "timeAgo": "2h ago",
+                "source": "Yahoo Actualités",
+                "image": {
+                  "newsUrl": "https://fr.news.yahoo.com/caroline-receveur-plein-combat-contre-181200382.html",
+                  "source": "Yahoo Actualités",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcSMKZNr1t_VEAypwZE9z6ISWbbTXRlX93oRxFZmMrSNwI_ysF9e4TMsLB6Ey15X7bFmw9PVSl9T"
+                },
+                "url": "https://fr.news.yahoo.com/caroline-receveur-plein-combat-contre-181200382.html",
+                "snippet": "Ce mardi 8 août 2023, Caroline Receveur a dévoilé sur son compte Instagram la méthode bien connue pour laquelle elle a opté..."
+              },
+              {
+                "title": "Après l&#39;annonce de son cancer, Caroline Receveur donne de ses ...",
+                "timeAgo": "1d ago",
+                "source": "Paris Match",
+                "image": {
+                  "newsUrl": "https://www.parismatch.com/people/apres-lannonce-de-son-cancer-caroline-receveur-donne-de-ses-nouvelles-228159",
+                  "source": "Paris Match",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcS2bpi607cgWHnodJfvG4Bjto3cwbA05aXCejUHCEl8CKDRvmDYRLg4FBxon5kwVeoikE8uE-wg"
+                },
+                "url": "https://www.parismatch.com/people/apres-lannonce-de-son-cancer-caroline-receveur-donne-de-ses-nouvelles-228159",
+                "snippet": "Deux semaines après l&#39;annonce de son cancer, Caroline Receveur s&#39;est confiée sur sa maladie, son traitement et surtout son moral. La jeune femme de 35 ans&nbsp;..."
+              },
+              {
+                "title": "&quot;Il me reste 3 cycles de chimio…&quot; : Caroline receveur donne des ...",
+                "timeAgo": "8h ago",
+                "source": "Télé 7 Jours",
+                "image": {
+                  "newsUrl": "https://www.programme-television.org/news/people/vie-privee/il-me-reste-3-cycles-de-chimio-caroline-receveur-donne-des-nouvelles-sur-combat-contre-le-cancer-4714598",
+                  "source": "Télé 7 Jours",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcRH0OfiGlVQGlFwIFwCS4-KulS2IpEhIoLPumo6_0VtjtiP1MnH_0yVAsU0hygchS_Nv5_aRFiL"
+                },
+                "url": "https://www.programme-television.org/news/people/vie-privee/il-me-reste-3-cycles-de-chimio-caroline-receveur-donne-des-nouvelles-sur-combat-contre-le-cancer-4714598",
+                "snippet": "Deux semaines après avoir annoncé être atteinte d&#39;un cancer du sein, l&#39;influenceuse de 35 ans donne des nouvelles sur son état de santé."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Cancer+Caroline+Receveur#Cancer%20Caroline%20Receveur"
+          },
+          {
+            "title": {
+              "query": "Bahamontes",
+              "exploreLink": "/trends/explore?q=Bahamontes&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "20K+",
+            "relatedQueries": [
+              {
+                "query": "Federico Bahamontes",
+                "exploreLink": "/trends/explore?q=Federico+Bahamontes&date=now+7-d&geo=FR"
+              }
+            ],
+            "image": {
+              "newsUrl": "https://www.topvelo.fr/mort-de-federico-bahamontes/",
+              "source": "Top Vélo",
+              "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcTDUash5ZOvX1R0xLVGTMah2xLaI04r-nDh65WeVENYZR95zxXYBBlnqFwCw6O4CGi0TepJJFym"
+            },
+            "articles": [
+              {
+                "title": "Mort de Federico Bahamontes sur Top Vélo",
+                "timeAgo": "8h ago",
+                "source": "Top Vélo",
+                "image": {
+                  "newsUrl": "https://www.topvelo.fr/mort-de-federico-bahamontes/",
+                  "source": "Top Vélo",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcTDUash5ZOvX1R0xLVGTMah2xLaI04r-nDh65WeVENYZR95zxXYBBlnqFwCw6O4CGi0TepJJFym"
+                },
+                "url": "https://www.topvelo.fr/mort-de-federico-bahamontes/",
+                "snippet": "À 95 ans, Bahamontes, le mythique « Aigle de Tolède » vient de s&#39;en aller rejoindre son Mentor, le Campionissimo Fausto Coppi."
+              },
+              {
+                "title": "Federico Bahamontes, le vainqueur du Tour de France 1959, est mort",
+                "timeAgo": "1d ago",
+                "source": "Le Monde",
+                "image": {
+                  "newsUrl": "https://www.lemonde.fr/disparitions/article/2023/08/08/federico-bahamontes-le-vainqueur-du-tour-de-france-1959-est-mort_6184772_3382.html",
+                  "source": "Le Monde",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcT8Hbbc4qTtpflhxHAN6RjfIn8iJy9tx5wlLlnppEuQFBmbgziPxCetZ2n4xiUVIMhts_YrAQ6d"
+                },
+                "url": "https://www.lemonde.fr/disparitions/article/2023/08/08/federico-bahamontes-le-vainqueur-du-tour-de-france-1959-est-mort_6184772_3382.html",
+                "snippet": "Premier Espagnol à gagner la Grande Boucle, « l&#39;Aigle de Tolède » a été l&#39;un des plus grands grimpeurs du cyclisme. Il est mort mardi 8 août, à l&#39;âge de 95&nbsp;..."
+              },
+              {
+                "title": "NECROLOGIE : Il était l&#39;Aigle de Tolède, Bahamontes est parti là ...",
+                "timeAgo": "8h ago",
+                "source": "https://gazettesports.fr/",
+                "image": {
+                  "newsUrl": "https://gazettesports.fr/2023/08/08/necrologie-il-etait-laigle-de-tolede-bahamontes-est-parti-la-haut-2/",
+                  "source": "https://gazettesports.fr/",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcToiHslKr02vpM1vXfnT5nttlpCx3PGrYfd5mqTd-ed6HuQcegm2--qFAwNQZQ1jHHzV8Qmn5xb"
+                },
+                "url": "https://gazettesports.fr/2023/08/08/necrologie-il-etait-laigle-de-tolede-bahamontes-est-parti-la-haut-2/",
+                "snippet": "Hier matin quand nous avons appris la mort de Federico Bahamontes, des tas de souvenirs nous sont revenus. D&#39;abord, Federico Bahamontes avait été en juillet&nbsp;..."
+              },
+              {
+                "title": "Cyclisme. Carnet noir - Federico Bahamontes, le Légendaire, est ...",
+                "timeAgo": "13h ago",
+                "source": "Cyclism'Actu",
+                "image": {
+                  "newsUrl": "https://www.cyclismactu.net/news-cyclisme-carnet-noir-federico-bahamontes-legendaire-est-decede-mardi-76586.html",
+                  "source": "Cyclism'Actu",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcTKuZXliLfSKXBUGPhCthFMYol5JHsiZDtl9KhiG7MC6CsSlhhiqrh_MKqcKOZwrf7iTSmrHCdY"
+                },
+                "url": "https://www.cyclismactu.net/news-cyclisme-carnet-noir-federico-bahamontes-legendaire-est-decede-mardi-76586.html",
+                "snippet": "L&#39;hommage de Daniel Mangeas à Federico Bahamontes au micro de Cyclism&#39;Actu. «L&#39;Aigle de Tolède» s&#39;est définitiveme."
+              },
+              {
+                "title": "Portfolio : Federico Bahamontes, grimpeur de légende",
+                "timeAgo": "1d ago",
+                "source": "L'Équipe.fr",
+                "image": {
+                  "newsUrl": "https://www.lequipe.fr/Cyclisme-sur-route/Actualites/Portfolio-federico-bahamontes-grimpeur-de-legende/1412516",
+                  "source": "L'Équipe.fr",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcRbKKS6G58fcRv66j4GqCJM1AFphLkfUzVqqdfpZuh7L1EV7DlDfX21qR0yNQyAZlYU5EdUel_Y"
+                },
+                "url": "https://www.lequipe.fr/Cyclisme-sur-route/Actualites/Portfolio-federico-bahamontes-grimpeur-de-legende/1412516",
+                "snippet": "Six fois meilleur grimpeur du Tour de France et vainqueur de l&#39;édition 1959, Federico Bahamontes s&#39;est éteint ce mardi à l&#39;âge de 95 ans."
+              },
+              {
+                "title": "Mort de Federico Bahamontes : &quot;Quand il attaquait, il ne restait plus ...",
+                "timeAgo": "1d ago",
+                "source": "Franceinfo",
+                "image": {
+                  "newsUrl": "https://www.francetvinfo.fr/sports/cyclisme/mort-de-federico-bahamontes-quand-il-partait-il-ne-restait-plus-grand-monde-sur-la-photo-se-souvient-bernard-thevenet_5995946.html",
+                  "source": "Franceinfo",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcSlATHyXWtBHklH9BYEmY6fOru5yq0ZxFpztQJYyeRcHxqU7vfWQRRDPeFxLAK3SPHl8C8hNx7z"
+                },
+                "url": "https://www.francetvinfo.fr/sports/cyclisme/mort-de-federico-bahamontes-quand-il-partait-il-ne-restait-plus-grand-monde-sur-la-photo-se-souvient-bernard-thevenet_5995946.html",
+                "snippet": "L&#39;Espagnol, vainqueur du Tour 1959, est décédé mardi, à l&#39;âge de 95 ans."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Bahamontes#Bahamontes"
+          },
+          {
+            "title": {
+              "query": "Jean-Michel Leulliot",
+              "exploreLink": "/trends/explore?q=Jean-Michel+Leulliot&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "20K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://actu.fr/societe/le-journaliste-jean-michel-leulliot-voix-du-sport-et-figure-de-la-tele-est-mort_59946151.html",
+              "source": "actu.fr",
+              "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcSYuaRTF58PUeRYDmxLPDmUPBHBrV5nfHWmnyClGHNkwx8h0lEbqJIcOT22EbE189FpPBp49CZz"
+            },
+            "articles": [
+              {
+                "title": "Le journaliste Jean-Michel Leulliot, voix du sport et figure de la télé ...",
+                "timeAgo": "14h ago",
+                "source": "actu.fr",
+                "image": {
+                  "newsUrl": "https://actu.fr/societe/le-journaliste-jean-michel-leulliot-voix-du-sport-et-figure-de-la-tele-est-mort_59946151.html",
+                  "source": "actu.fr",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcSYuaRTF58PUeRYDmxLPDmUPBHBrV5nfHWmnyClGHNkwx8h0lEbqJIcOT22EbE189FpPBp49CZz"
+                },
+                "url": "https://actu.fr/societe/le-journaliste-jean-michel-leulliot-voix-du-sport-et-figure-de-la-tele-est-mort_59946151.html",
+                "snippet": "D&#39;abord assis à la table dominicale de l&#39;émission Stade 2 sur Antenne 2, Jean-Michel Leulliot avait rejoint TF1, où il a fait l&#39;essentiel de sa carrière."
+              },
+              {
+                "title": "Jean-Michel Leulliot, figure de la télé des années 1970 et 1980, est ...",
+                "timeAgo": "1d ago",
+                "source": "Le Monde",
+                "image": {
+                  "newsUrl": "https://www.lemonde.fr/disparitions/article/2023/08/08/jean-michel-leulliot-figure-de-la-tele-des-annees-70-et-80-est-mort_6184810_3382.html",
+                  "source": "Le Monde",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcQ2cnjntoO2R5HnDUxVHyF_3Xy8sgzf4DjmSx3vOqk3yUDJj2XchpZ_kkUNuvU_KPRL64Yro0kZ"
+                },
+                "url": "https://www.lemonde.fr/disparitions/article/2023/08/08/jean-michel-leulliot-figure-de-la-tele-des-annees-70-et-80-est-mort_6184810_3382.html",
+                "snippet": "Le journaliste sportif avait également présenté des journaux télévisés sur TF1, où il a effectué l&#39;essentiel de sa carrière. Il s&#39;est éteint mardi à l&#39;âge&nbsp;..."
+              },
+              {
+                "title": "Le journaliste Jean-Michel Leulliot qui avait participé aux premières ...",
+                "timeAgo": "1d ago",
+                "source": "L'Équipe.fr",
+                "image": {
+                  "newsUrl": "https://www.lequipe.fr/Medias/Actualites/Le-journaliste-jean-michel-leulliot-est-mort/1412521",
+                  "source": "L'Équipe.fr",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcT8LUShGMk8bQqevs0RW7kPwfqJcP0OS3t9we5YWSoifxtUdb3bTJcCpEbRxVcQfefxhXgqaq9l"
+                },
+                "url": "https://www.lequipe.fr/Medias/Actualites/Le-journaliste-jean-michel-leulliot-est-mort/1412521",
+                "snippet": "Jean-Michel Leulliot, qui avait participé aux premières saisons de Stade 2 sur Antenne 2, est décédé dans la nuit de lundi à mardi à l&#39;âge de 84 ans."
+              },
+              {
+                "title": "Sport. Jean-Michel Leulliot, journaliste sportif phare des années 80 ...",
+                "timeAgo": "1d ago",
+                "source": "Ouest-France",
+                "image": {
+                  "newsUrl": "https://www.ouest-france.fr/sport/sport-jean-michel-leulliot-journaliste-sportif-phare-des-annees-80-est-mort-d3a24b3c-35d2-11ee-8f22-de1852f71158",
+                  "source": "Ouest-France",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcQsHggYT_pqTYJCBZeVIW37urNM6OWrXA0_wc3crityJ6fAkA6NTq_xERN4FHSIeBgx9L_IU1lR"
+                },
+                "url": "https://www.ouest-france.fr/sport/sport-jean-michel-leulliot-journaliste-sportif-phare-des-annees-80-est-mort-d3a24b3c-35d2-11ee-8f22-de1852f71158",
+                "snippet": "Véritable figure de la télé des années 70 et 80, le journaliste sportif Jean-Michel Leulliot est mort, a annoncé sa famille, ce mardi 8 juillet."
+              },
+              {
+                "title": "Mort de Jean-Michel Leulliot, une si grande voix du sport",
+                "timeAgo": "1d ago",
+                "source": "Le Parisien",
+                "image": {
+                  "newsUrl": "https://www.leparisien.fr/culture-loisirs/mort-de-jean-michel-leulliot-une-si-grande-voix-du-sport-08-08-2023-I2ILT5KR3NGHBM6YOQ2UFDAL7Y.php",
+                  "source": "Le Parisien",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcRqBe7b8Lq07y-Sh59zpTVg8WcwnoHpzvUPs_5-xDv8n7p2vdeQsA8nS9zMQYgVMW6ttnytkd4s"
+                },
+                "url": "https://www.leparisien.fr/culture-loisirs/mort-de-jean-michel-leulliot-une-si-grande-voix-du-sport-08-08-2023-I2ILT5KR3NGHBM6YOQ2UFDAL7Y.php",
+                "snippet": "Le journaliste sportif s&#39;est éteint à 84 ans. Il était notamment celui qui avait interviewé Yannick Noah sur le court juste après sa victoire à Roland&nbsp;..."
+              },
+              {
+                "title": "Disparition. Le journaliste Jean-Michel Leulliot, un ancien de Stade ...",
+                "timeAgo": "21h ago",
+                "source": "L'Alsace.fr",
+                "image": {
+                  "newsUrl": "https://www.lalsace.fr/societe/2023/08/08/mort-du-journaliste-jean-michel-leulliot-un-ancien-de-stade-2",
+                  "source": "L'Alsace.fr",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcTs_kuunrxU9qDQ7nSgj2PuYvMzjEgordXKM7_s0tRES9aME0E-Noe_1jfOOsJfNaYgFobQg5Gs"
+                },
+                "url": "https://www.lalsace.fr/societe/2023/08/08/mort-du-journaliste-jean-michel-leulliot-un-ancien-de-stade-2",
+                "snippet": "Figure du journalisme sportif télévisé dans les années 70 et 80, il est décédé à Paris à l&#39;âge de 84 ans."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Jean-Michel+Leulliot#Jean-Michel%20Leulliot"
+          },
+          {
+            "title": {
+              "query": "Bella Hadid",
+              "exploreLink": "/trends/explore?q=Bella+Hadid&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "20K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.midilibre.fr/2023/08/09/15-ans-de-souffrance-invisible-la-mannequin-bella-hadid-se-livre-sur-la-maladie-qui-la-ronge-depuis-ses-17-ans-11387712.php",
+              "source": "Midi Libre",
+              "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcRiY8RQXMFxwh-9b1pMmblcEUg7VFdLCq12OXgjD8A-owAjet3vdONNI638xFMduuj6GwMCv7DH"
+            },
+            "articles": [
+              {
+                "title": "&quot;15 ans de souffrance invisible&quot; : la mannequin Bella Hadid se livre ...",
+                "timeAgo": "4h ago",
+                "source": "Midi Libre",
+                "image": {
+                  "newsUrl": "https://www.midilibre.fr/2023/08/09/15-ans-de-souffrance-invisible-la-mannequin-bella-hadid-se-livre-sur-la-maladie-qui-la-ronge-depuis-ses-17-ans-11387712.php",
+                  "source": "Midi Libre",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcRiY8RQXMFxwh-9b1pMmblcEUg7VFdLCq12OXgjD8A-owAjet3vdONNI638xFMduuj6GwMCv7DH"
+                },
+                "url": "https://www.midilibre.fr/2023/08/09/15-ans-de-souffrance-invisible-la-mannequin-bella-hadid-se-livre-sur-la-maladie-qui-la-ronge-depuis-ses-17-ans-11387712.php",
+                "snippet": "Ce dimanche 6 août 2023, la célèbre mannequin américaine Bella Hadid s&#39;est confiée sur la maladie de Lyme, dont elle souffre depuis 15 ans."
+              },
+              {
+                "title": "Vidéo. Bella Hadid : La star s&#39;ouvre sur son combat contre la ...",
+                "timeAgo": "5h ago",
+                "source": "Sud Ouest",
+                "image": {
+                  "newsUrl": "https://www.sudouest.fr/sante/video-bella-hadid-la-star-s-ouvre-sur-son-combat-contre-la-maladie-de-lyme-16218558.php",
+                  "source": "Sud Ouest",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcSCG5wDEbEVj3YJNFIaj3Rw5wL2aJd9Q4QT26yUdxX6mmkYf4qKKH8IXetJ8FCdOxeshuzmzna2"
+                },
+                "url": "https://www.sudouest.fr/sante/video-bella-hadid-la-star-s-ouvre-sur-son-combat-contre-la-maladie-de-lyme-16218558.php",
+                "snippet": "Dans un post Instagram publié lundi 7 août, le célèbre mannequin a raconté ses années de combats contre la maladie de Lyme. Une lutte qu&#39;elle a menée&nbsp;..."
+              },
+              {
+                "title": "Bella Hadid se confie sur son état de santé : « Cela a fait de moi ce ...",
+                "timeAgo": "7h ago",
+                "source": "NRJ",
+                "image": {
+                  "newsUrl": "https://www.nrj.fr/actus/bella-hadid-se-confie-sur-son-etat-de-sante-cela-a-fait-de-moi-ce-que-je-suis-aujourdhui-71359992",
+                  "source": "NRJ",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcRP05Trd1EGAmGge25hwLpoY1qrV5z2o7gk7nd_eBSTFMp-ugTVvgm-yFO6IKQ_FlKnf5RuLl5V"
+                },
+                "url": "https://www.nrj.fr/actus/bella-hadid-se-confie-sur-son-etat-de-sante-cela-a-fait-de-moi-ce-que-je-suis-aujourdhui-71359992",
+                "snippet": "Loin du crépitement des podiums, la top model a partagé la réalité de son quotidien contre la maladie de Lyme."
+              },
+              {
+                "title": "&quot;Je reviendrai quand je serai prête&quot; : sur Instagram, Bella Hadid se ...",
+                "timeAgo": "7h ago",
+                "source": "NEONmag.fr",
+                "image": {
+                  "newsUrl": "https://www.neonmag.fr/sante-psycho/je-reviendrai-quand-je-serai-prete-sur-instagram-bella-hadid-se-confie-sur-son-etat-de-sante-561225",
+                  "source": "NEONmag.fr",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcSbWeP9woBntNK4bfDcgroPsbtCYwOiEV_ThMi_D3_vOsDC_wAvq8RDuQKSRLc6Gw-LfHahpSfi"
+                },
+                "url": "https://www.neonmag.fr/sante-psycho/je-reviendrai-quand-je-serai-prete-sur-instagram-bella-hadid-se-confie-sur-son-etat-de-sante-561225",
+                "snippet": "Dans un long texte publié sur Instagram, le mannequin Bella Hadid se confie sur son état de santé. Touchée par la maladie de Lyme, la jeune femme se livre,&nbsp;..."
+              },
+              {
+                "title": "Bella Hadid raconte comment elle a lutté contre la maladie de Lyme",
+                "timeAgo": "1d ago",
+                "source": "L'Union",
+                "image": {
+                  "newsUrl": "https://www.lunion.fr/id510148/article/2023-08-08/bella-hadid-se-confie-sur-sa-longue-maladie",
+                  "source": "L'Union",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcT2k3HHu2Lk5EFtGh-fGLdR5Jdf0IuLId2cu7jOp12Br5GUpCwN8MS1BfCCTlUiCU7qQsjvabt3"
+                },
+                "url": "https://www.lunion.fr/id510148/article/2023-08-08/bella-hadid-se-confie-sur-sa-longue-maladie",
+                "snippet": "Dans un message accompagné d&#39;extraits de son dossier médical et de photos d&#39;elle sous perfusion ou à l&#39;hôpital, Bella Hadid est revenue sur ses 15 ans de&nbsp;..."
+              },
+              {
+                "title": "Bella Hadid se confie sur sa maladie : &quot;15 ans de souffrance invisible&quot;",
+                "timeAgo": "1d ago",
+                "source": "Yahoo Actualités",
+                "image": {
+                  "newsUrl": "https://fr.news.yahoo.com/bella-hadid-confie-maladie-15-161124041.html",
+                  "source": "Yahoo Actualités",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcQfxBlVii97veFVFLO52mtxbxrN2D9ycMZy-8qhIk61MbrNR-jYDFXVfPa47ACFJDXPYnHFCq0p"
+                },
+                "url": "https://fr.news.yahoo.com/bella-hadid-confie-maladie-15-161124041.html",
+                "snippet": "Après des années d&#39;errance diagnostique et un combat silencieux contre la maladie de Lyme, la jeune mannequin Bella Hadid a partagé sur les réseaux sociaux&nbsp;..."
+              },
+              {
+                "title": "Bella Hadid : son coup de gueule sur sa santé",
+                "timeAgo": "1d ago",
+                "source": "lfm.ch",
+                "image": {
+                  "newsUrl": "https://www.lfm.ch/lifestyle/cote-people/bella-hadid-son-coup-de-gueule-sur-sa-sante/",
+                  "source": "lfm.ch",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcT24jtoUxgQEL4ePNpuSjX2hGT6tfIy__2R0nVXdiBapiN9ycHDSboI04bvM-tPFFgMCv37pdOf"
+                },
+                "url": "https://www.lfm.ch/lifestyle/cote-people/bella-hadid-son-coup-de-gueule-sur-sa-sante/",
+                "snippet": "Le mannequin Bella Hadid a rejeté les rumeurs de cure de désintoxication après avoir révélé sa longue bataille contre la maladie de Lyme."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Bella+Hadid#Bella%20Hadid"
+          },
+          {
+            "title": {
+              "query": "Camille etienne",
+              "exploreLink": "/trends/explore?q=Camille+etienne&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "10K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.radiofrance.fr/franceinter/podcasts/sous-le-soleil-de-platon/sous-le-soleil-de-platon-du-mercredi-09-aout-2023-6731108",
+              "source": "France Inter",
+              "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcSPoDFhnYR81m4Sk0p5ORiAYIitrWI5YSBKt1EuUwtLFsAy069NKGwiu3EuOtCwHhdWJJI9kwIB"
+            },
+            "articles": [
+              {
+                "title": "Camille Etienne : la peur peut-elle être bonne conseillère ?",
+                "timeAgo": "13h ago",
+                "source": "France Inter",
+                "image": {
+                  "newsUrl": "https://www.radiofrance.fr/franceinter/podcasts/sous-le-soleil-de-platon/sous-le-soleil-de-platon-du-mercredi-09-aout-2023-6731108",
+                  "source": "France Inter",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcSPoDFhnYR81m4Sk0p5ORiAYIitrWI5YSBKt1EuUwtLFsAy069NKGwiu3EuOtCwHhdWJJI9kwIB"
+                },
+                "url": "https://www.radiofrance.fr/franceinter/podcasts/sous-le-soleil-de-platon/sous-le-soleil-de-platon-du-mercredi-09-aout-2023-6731108",
+                "snippet": "Entre la peur salutaire et la peur qui paralyse, Camille Etienne a choisi. Pour la militante écologiste, penser est un acte de chair. Elle embrasse la peur&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Camille+etienne#Camille%20etienne"
+          },
+          {
+            "title": {
+              "query": "Barca",
+              "exploreLink": "/trends/explore?q=Barca&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "10K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://handnews.fr/2023/esp-lex-capitaine-gonzalo-perez-de-vargas-quittera-le-barca-en-2025/",
+              "source": "HandNews",
+              "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcSkEoHhdyzd3_JE-XDGrCBxoXGEdksBuaXNVkidsvAeJDTLlfVUp8gEqSEkzQbTJakTVXXvxGrD"
+            },
+            "articles": [
+              {
+                "title": "ESP | L&#39;ex-capitaine Gonzalo Pérez de Vargas quittera le Barça en ...",
+                "timeAgo": "1d ago",
+                "source": "HandNews",
+                "image": {
+                  "newsUrl": "https://handnews.fr/2023/esp-lex-capitaine-gonzalo-perez-de-vargas-quittera-le-barca-en-2025/",
+                  "source": "HandNews",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcSkEoHhdyzd3_JE-XDGrCBxoXGEdksBuaXNVkidsvAeJDTLlfVUp8gEqSEkzQbTJakTVXXvxGrD"
+                },
+                "url": "https://handnews.fr/2023/esp-lex-capitaine-gonzalo-perez-de-vargas-quittera-le-barca-en-2025/",
+                "snippet": "La décision de lui retirer le brassard émane de l&#39;entraîneur Carlos Ortega. Les capitaines pour la saison 2023/24 sont respectivement Dika Mem, Aitor Ariño,&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Barca#Barca"
+          },
+          {
+            "title": {
+              "query": "Sakina Karchaoui",
+              "exploreLink": "/trends/explore?q=Sakina+Karchaoui&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "10K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://fr.news.yahoo.com/photos-gucci-louis-vuitton-sakina-081800241.html",
+              "source": "Yahoo Actualités",
+              "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcSaJ8rTHAEJ9xXwxhsiii4y-JKsCJJoL9lULkWiM8Oxsir6QalFgRF4WSWStbNUVQEVw9jlidN3"
+            },
+            "articles": [
+              {
+                "title": "PHOTOS Gucci, Louis Vuitton... : Sakina Karchaoui, atout charme ...",
+                "timeAgo": "12h ago",
+                "source": "Yahoo Actualités",
+                "image": {
+                  "newsUrl": "https://fr.news.yahoo.com/photos-gucci-louis-vuitton-sakina-081800241.html",
+                  "source": "Yahoo Actualités",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcSaJ8rTHAEJ9xXwxhsiii4y-JKsCJJoL9lULkWiM8Oxsir6QalFgRF4WSWStbNUVQEVw9jlidN3"
+                },
+                "url": "https://fr.news.yahoo.com/photos-gucci-louis-vuitton-sakina-081800241.html",
+                "snippet": "Une nouvelle fois irréprochable lors de la victoire des Bleues face à au Maroc, Sakina Karchaoui réussit une belle Coupe..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Sakina+Karchaoui#Sakina%20Karchaoui"
+          },
+          {
+            "title": {
+              "query": "Nouveau variant Covid Eris",
+              "exploreLink": "/trends/explore?q=Nouveau+variant+Covid+Eris&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "10K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.capital.fr/economie-politique/covid-19-derriere-la-hausse-des-contaminations-un-nouveau-variant-1476287",
+              "source": "Capital.fr",
+              "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcSUV9Dh0u9eypoVLuYXNBp4bOVQgugcxpGXT6gsTWVXZcTyRN0vr1AWk3CtmnLnQ_tUmOCndjm8"
+            },
+            "articles": [
+              {
+                "title": "Covid-19 : derrière la hausse des contaminations, un nouveau variant",
+                "timeAgo": "14h ago",
+                "source": "Capital.fr",
+                "image": {
+                  "newsUrl": "https://www.capital.fr/economie-politique/covid-19-derriere-la-hausse-des-contaminations-un-nouveau-variant-1476287",
+                  "source": "Capital.fr",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcSUV9Dh0u9eypoVLuYXNBp4bOVQgugcxpGXT6gsTWVXZcTyRN0vr1AWk3CtmnLnQ_tUmOCndjm8"
+                },
+                "url": "https://www.capital.fr/economie-politique/covid-19-derriere-la-hausse-des-contaminations-un-nouveau-variant-1476287",
+                "snippet": "Baptisé Eris, un nouveau variant semble s&#39;imposer en France cet été. Les contaminations au Covid-19 sont reparties à la hausse ces derniers jours.,&nbsp;..."
+              },
+              {
+                "title": "Covid-19 : qu&#39;est-ce que «Eris», le nouveau variant qui gagne du ...",
+                "timeAgo": "1d ago",
+                "source": "Le Figaro",
+                "image": {
+                  "newsUrl": "https://www.lefigaro.fr/sciences/covid-19-qu-est-ce-que-eris-le-nouveau-variant-qui-gagne-du-terrain-en-france-20230808",
+                  "source": "Le Figaro",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcTxKI-zsVKX_sR5dDeCsDlBZ2PWGpbtoZjrRPCOdyi3Wpb34yALit9I3H6D7OKfyaDuZ4hqvG4j"
+                },
+                "url": "https://www.lefigaro.fr/sciences/covid-19-qu-est-ce-que-eris-le-nouveau-variant-qui-gagne-du-terrain-en-france-20230808",
+                "snippet": "FOCUS - La souche EG.5 serait désormais la plus répandue dans l&#39;Hexagone. L&#39;OMS l&#39;a ajouté mi-juillet à sa liste de variants à surveiller."
+              },
+              {
+                "title": "Covid-19 : qu&#39;est-ce que Eris, nouveau variant à l&#39;origine d&#39;une ...",
+                "timeAgo": "1d ago",
+                "source": "RTL.fr",
+                "image": {
+                  "newsUrl": "https://www.rtl.fr/actu/sante/covid-19-qu-est-ce-que-eris-nouveau-variant-a-l-origine-d-une-flambee-de-cas-cet-ete-7900287035",
+                  "source": "RTL.fr",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcRWeIEc7HYmVsBUCxnfQC3X3xRcGUiug9Y98xbRpKI2rUFTKmBuZb34YRATBsQ5BYstOGt3Rc9F"
+                },
+                "url": "https://www.rtl.fr/actu/sante/covid-19-qu-est-ce-que-eris-nouveau-variant-a-l-origine-d-une-flambee-de-cas-cet-ete-7900287035",
+                "snippet": "Les consultations pour des cas suspectés de Covid-19 se multiplient dans les hôpitaux français. En cause, une nouvelle souche qui semble se répandre en&nbsp;..."
+              },
+              {
+                "title": "Covid-19 : le variant Eris fait remonter le nombre de contaminations ...",
+                "timeAgo": "14h ago",
+                "source": "Le Point",
+                "image": {
+                  "newsUrl": "https://www.lepoint.fr/sante/covid-19-le-variant-eris-fait-remonter-le-nombre-de-contaminations-en-france-08-08-2023-2531008_40.php",
+                  "source": "Le Point",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcSI4G0naHloKC4zGaHiRcNIu0KacABUu8M19DxeYcbeiZ-07CSM6eZ3g0TnDbWpC56xXlHDmKTV"
+                },
+                "url": "https://www.lepoint.fr/sante/covid-19-le-variant-eris-fait-remonter-le-nombre-de-contaminations-en-france-08-08-2023-2531008_40.php",
+                "snippet": "Environ 35 % des cas positifs dans l&#39;Hexagone émaneraient de ce nouveau variant. S&#39;il résiste mieux aux vaccins, il n&#39;y a pas de quoi s&#39;alarmer."
+              },
+              {
+                "title": "Covid : que sait-on du nouveau variant Eris ?",
+                "timeAgo": "1d ago",
+                "source": "Le Télégramme",
+                "image": {
+                  "newsUrl": "https://www.letelegramme.fr/sante/covid-que-sait-on-du-nouveau-variant-eris-6407454.php",
+                  "source": "Le Télégramme",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcRDGUZO5LRnpoReel5kJFxOYPvCLkz-TuvgVemlWt4Ealw3KACIhgA7VlqwMiaIE0184nYkxKPo"
+                },
+                "url": "https://www.letelegramme.fr/sante/covid-que-sait-on-du-nouveau-variant-eris-6407454.php",
+                "snippet": "Dans toutes les classes d&#39;âges et notamment chez les adultes, on observe une hausse des passages, dans de faibles effectifs, pour suspicion d&#39;infection à la&nbsp;..."
+              },
+              {
+                "title": "&quot;Eris&quot;, le nouveau variant du Covid : contagiosité, nombre de cas ...",
+                "timeAgo": "2d ago",
+                "source": "Midi Libre",
+                "image": {
+                  "newsUrl": "https://www.midilibre.fr/2023/08/07/eris-le-nouveau-variant-du-covid-contagiosite-nombre-de-cas-quel-est-ce-virus-qui-descend-domicron-11383307.php",
+                  "source": "Midi Libre",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcRtjBknievEpKV3WE20_VCOxSAW878U3ctlCzHvbifgwR2WRD15n6QpAnvyNciedfd36oaTEWcj"
+                },
+                "url": "https://www.midilibre.fr/2023/08/07/eris-le-nouveau-variant-du-covid-contagiosite-nombre-de-cas-quel-est-ce-virus-qui-descend-domicron-11383307.php",
+                "snippet": "Le 19 juillet 2023, l&#39;OMS a ajouté à la liste des variants du Covid le EG.5.1, surnommé Eris. Cette nouvelle souche qui descend du variant XBB,&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Nouveau+variant+Covid+Eris#Nouveau%20variant%20Covid%20Eris"
+          },
+          {
+            "title": {
+              "query": "Journée internationale du chat",
+              "exploreLink": "/trends/explore?q=Journ%C3%A9e+internationale+du+chat&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "5K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.europe1.fr/societe/journee-mondiale-du-chat-a-paris-cet-hotel-nheberge-que-des-felins-dans-un-confort-quasi-absolu-4197736",
+              "source": "Europe1",
+              "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcSq3GdptyTsj8AyBLrFpLIx4K_-ZsxoO_w4E7U2C2lCEnGxdDGKJINrAorFSgu_4cHnyxxB0zwn"
+            },
+            "articles": [
+              {
+                "title": "Journée mondiale du chat : à Paris, cet hôtel n&#39;héberge que des ...",
+                "timeAgo": "1d ago",
+                "source": "Europe1",
+                "image": {
+                  "newsUrl": "https://www.europe1.fr/societe/journee-mondiale-du-chat-a-paris-cet-hotel-nheberge-que-des-felins-dans-un-confort-quasi-absolu-4197736",
+                  "source": "Europe1",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcSq3GdptyTsj8AyBLrFpLIx4K_-ZsxoO_w4E7U2C2lCEnGxdDGKJINrAorFSgu_4cHnyxxB0zwn"
+                },
+                "url": "https://www.europe1.fr/societe/journee-mondiale-du-chat-a-paris-cet-hotel-nheberge-que-des-felins-dans-un-confort-quasi-absolu-4197736",
+                "snippet": "Le félin préféré des Français fête ce mardi 8 août sa journée internationale. Les chats dominent depuis des années, avec les chiens, le cœur des Français."
+              },
+              {
+                "title": "Journée internationale du chat : pourquoi ce félin a ses quarts d ...",
+                "timeAgo": "1d ago",
+                "source": "actu.fr",
+                "image": {
+                  "newsUrl": "https://actu.fr/societe/journee-internationale-du-chat-pourquoi-ce-felin-a-ses-quarts-d-heure-de-folie_59942573.html",
+                  "source": "actu.fr",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcSCsbqqnjTHruNoRa2rURBJ0qzg3N9Po4dKsRMRcsZxS_BWCe9AN-fGV7LNfTKLv956PATWc_98"
+                },
+                "url": "https://actu.fr/societe/journee-internationale-du-chat-pourquoi-ce-felin-a-ses-quarts-d-heure-de-folie_59942573.html",
+                "snippet": "Les chats ont parfois des moments qu&#39;on qualifie de &quot;folie&quot;. Si ce comportement n&#39;est pas grave, il faut le surveiller car il révèle une forme d&#39;ennui."
+              },
+              {
+                "title": "Journée internationale du chat : 5 programmes félins à (re)voir",
+                "timeAgo": "1d ago",
+                "source": "SFR Actus",
+                "image": {
+                  "newsUrl": "https://actus.sfr.fr/cine-series/series/journee-internationale-du-chat-5-programmes-felins-a-re-voir-202308080005.html",
+                  "source": "SFR Actus",
+                  "imageUrl": "https://t2.gstatic.com/images?q=tbn:ANd9GcQgR4GbOfCpdQNCO9ypglY1w9uV9sLAXA3iY4MajYI3RMWHBia9lQn6hHQa7AVpsqsJ7SY7btZX"
+                },
+                "url": "https://actus.sfr.fr/cine-series/series/journee-internationale-du-chat-5-programmes-felins-a-re-voir-202308080005.html",
+                "snippet": "Sorti en 1970, le 25e long-métrage d&#39;animation des studios Disney est une véritable référence. Réalisé par Wolfgang Reitherman, le film Les Aristochats est&nbsp;..."
+              },
+              {
+                "title": "Journée internationale du chat: que savons-nous réellement de ce ...",
+                "timeAgo": "1d ago",
+                "source": "Nice-Matin",
+                "image": {
+                  "newsUrl": "https://www.nicematin.com/animaux/journee-internationale-des-chats-que-savons-nous-reellement-de-ce-compagnon-a-quatre-pattes-865745",
+                  "source": "Nice-Matin",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcToLV24uw_UDMpbaOYCfsk4HnWC8s4QbBNfqss6GUFcOAyNQ-5Q6gS_O8ee_lXvb6uKpZGsCpIe"
+                },
+                "url": "https://www.nicematin.com/animaux/journee-internationale-des-chats-que-savons-nous-reellement-de-ce-compagnon-a-quatre-pattes-865745",
+                "snippet": "Pour mieux le connaître, nous avons interrogé le Dr Claude Béata, spécialiste en médecine du comportement (attitude) des animaux de compagnie."
+              },
+              {
+                "title": "QUIZ - Journée internationale du chat : connaissez-vous par coeur ...",
+                "timeAgo": "1d ago",
+                "source": "TF1 INFO",
+                "image": {
+                  "newsUrl": "https://www.tf1info.fr/environnement-ecologie/quiz-journee-internationale-du-chat-connaissez-vous-par-coeur-votre-animal-prefere-2266073.html",
+                  "source": "TF1 INFO",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcSzsTuuDAil0ZfFcwQWl8Yyh180cI5SxmnfTJY9BorC2UTC9svpBNr1S9hCuaQpKabwVsYngOXz"
+                },
+                "url": "https://www.tf1info.fr/environnement-ecologie/quiz-journee-internationale-du-chat-connaissez-vous-par-coeur-votre-animal-prefere-2266073.html",
+                "snippet": "Créature vénérée dans l&#39;Égypte antique, compagnon agile capable de retomber sur ses pattes... Les anecdotes autour de cet animal sont nombreuses."
+              },
+              {
+                "title": "Journée internationale du chat: comment choisir le félin qui vous ...",
+                "timeAgo": "1d ago",
+                "source": "L'Union",
+                "image": {
+                  "newsUrl": "https://www.lunion.fr/id510089/article/2023-08-08/journee-internationale-du-chat-comment-choisir-au-mieux-votre-animal-de",
+                  "source": "L'Union",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcTzhytMYV27bYeBF71nnLlhuUbGmeuCFwLYVoSgcQy82PXnY8Fbzqy2KfnCVSVqmp4mQabzIgpw"
+                },
+                "url": "https://www.lunion.fr/id510089/article/2023-08-08/journee-internationale-du-chat-comment-choisir-au-mieux-votre-animal-de",
+                "snippet": "Pour un foyer avec des enfants, pensez à des chats comme le maine coon, le sacré de birmanie, l&#39;angora turc et le norvégien qui sont discrets mais joueurs. Par&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Journ%C3%A9e+internationale+du+chat#Journ%C3%A9e%20internationale%20du%20chat"
+          },
+          {
+            "title": {
+              "query": "Alex Beaupain",
+              "exploreLink": "/trends/explore?q=Alex+Beaupain&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "5K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.radiofrance.fr/franceinter/podcasts/sous-le-soleil-de-platon/sous-le-soleil-de-platon-du-mardi-08-aout-2023-6991801",
+              "source": "France Inter",
+              "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcQa7W3-kXoGjtWYjOlhgLtAEwbR97jqZ5kBQVf9IZUTO4huM6ckYMCS8rjQM9QqtFEDNioYnnsE"
+            },
+            "articles": [
+              {
+                "title": "Alex Beaupain : comment vivre avec nos morts ?",
+                "timeAgo": "1d ago",
+                "source": "France Inter",
+                "image": {
+                  "newsUrl": "https://www.radiofrance.fr/franceinter/podcasts/sous-le-soleil-de-platon/sous-le-soleil-de-platon-du-mardi-08-aout-2023-6991801",
+                  "source": "France Inter",
+                  "imageUrl": "https://t0.gstatic.com/images?q=tbn:ANd9GcQa7W3-kXoGjtWYjOlhgLtAEwbR97jqZ5kBQVf9IZUTO4huM6ckYMCS8rjQM9QqtFEDNioYnnsE"
+                },
+                "url": "https://www.radiofrance.fr/franceinter/podcasts/sous-le-soleil-de-platon/sous-le-soleil-de-platon-du-mardi-08-aout-2023-6991801",
+                "snippet": "Qu&#39;est-ce que le deuil ? Est-ce accepter la mort ou faire vivre les êtres disparus ? Grâce au deuil, nous ne sommes jamais seul, nous sommes en permanence&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Alex+Beaupain#Alex%20Beaupain"
+          },
+          {
+            "title": {
+              "query": "Lorànt Deutsch",
+              "exploreLink": "/trends/explore?q=Lor%C3%A0nt+Deutsch&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "5K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://fr.news.yahoo.com/sport/lor%C3%A0nt-deutsch-jour-o%C3%B9-livr%C3%A9-130404285.html",
+              "source": "Yahoo Sport",
+              "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcQwj-THab0xgSFpTOA6dSi9tJ02IFqhYmWKClGG6k4QtgPzcxDJ-CqC2o8b1CP5IJDupK9u0IwM"
+            },
+            "articles": [
+              {
+                "title": "Lorànt Deutsch : ce jour où il a livré des pizzas à Budapest",
+                "timeAgo": "13h ago",
+                "source": "Yahoo Sport",
+                "image": {
+                  "newsUrl": "https://fr.news.yahoo.com/sport/lor%C3%A0nt-deutsch-jour-o%C3%B9-livr%C3%A9-130404285.html",
+                  "source": "Yahoo Sport",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcQwj-THab0xgSFpTOA6dSi9tJ02IFqhYmWKClGG6k4QtgPzcxDJ-CqC2o8b1CP5IJDupK9u0IwM"
+                },
+                "url": "https://fr.news.yahoo.com/sport/lor%C3%A0nt-deutsch-jour-o%C3%B9-livr%C3%A9-130404285.html",
+                "snippet": "Alors, à Budapest, l&#39;animateur est devenu l&#39;un des premiers livreurs Pizza Hut du pays. &quot;Je débarquais chez les gens, avec ce produit, nouveau, et avec mon&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Lor%C3%A0nt+Deutsch#Lor%C3%A0nt%20Deutsch"
+          },
+          {
+            "title": {
+              "query": "Monfils",
+              "exploreLink": "/trends/explore?q=Monfils&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "5K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.welovetennis.fr/insolite/monfils-defie-alcaraz-au-djokovic-game-le-spectacle-est-dingo",
+              "source": "We Love Tennis !",
+              "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcSTMMxsiJU9n7r7mNVaW4w8Hq8MLfhrdx0LoHslHmUtA1hwh6uLt2vPB2Jj0YwGm2G2LW0nSxGx"
+            },
+            "articles": [
+              {
+                "title": "Monfils défie Alcaraz au « Djokovic Game », le spectacle est « dingo »",
+                "timeAgo": "13h ago",
+                "source": "We Love Tennis !",
+                "image": {
+                  "newsUrl": "https://www.welovetennis.fr/insolite/monfils-defie-alcaraz-au-djokovic-game-le-spectacle-est-dingo",
+                  "source": "We Love Tennis !",
+                  "imageUrl": "https://t3.gstatic.com/images?q=tbn:ANd9GcSTMMxsiJU9n7r7mNVaW4w8Hq8MLfhrdx0LoHslHmUtA1hwh6uLt2vPB2Jj0YwGm2G2LW0nSxGx"
+                },
+                "url": "https://www.welovetennis.fr/insolite/monfils-defie-alcaraz-au-djokovic-game-le-spectacle-est-dingo",
+                "snippet": "Alors qu&#39;il pensait avoir fini son entrainement du jour, Gaël Monfils a défié Carlos Alcaraz Comme « Carlitos » aime les défis, il a repris très rapidement&nbsp;..."
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Monfils#Monfils"
+          },
+          {
+            "title": {
+              "query": "Romelu Lukaku",
+              "exploreLink": "/trends/explore?q=Romelu+Lukaku&date=now+7-d&geo=FR"
+            },
+            "formattedTraffic": "2K+",
+            "relatedQueries": [],
+            "image": {
+              "newsUrl": "https://www.internazionale.fr/articles/inter-milan/piero-ausilio-se-livre-sur-balogun-et-%C3%A9trille-romelu-lukaku-r19359/",
+              "source": "internazionale.fr",
+              "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcQJUUwSXE3ZATqLoak4OKke3eBeRJ7kVJjxfDKw4RJSDlw0SPNud-SvCSG9F6wE6TFUxVXLGz_6TA"
+            },
+            "articles": [
+              {
+                "title": "Piero Ausilio se livre sur Balogun et étrille Romelu Lukaku",
+                "timeAgo": "3h ago",
+                "source": "internazionale.fr",
+                "image": {
+                  "newsUrl": "https://www.internazionale.fr/articles/inter-milan/piero-ausilio-se-livre-sur-balogun-et-%C3%A9trille-romelu-lukaku-r19359/",
+                  "source": "internazionale.fr",
+                  "imageUrl": "https://t1.gstatic.com/images?q=tbn:ANd9GcQJUUwSXE3ZATqLoak4OKke3eBeRJ7kVJjxfDKw4RJSDlw0SPNud-SvCSG9F6wE6TFUxVXLGz_6TA"
+                },
+                "url": "https://www.internazionale.fr/articles/inter-milan/piero-ausilio-se-livre-sur-balogun-et-%C3%A9trille-romelu-lukaku-r19359/",
+                "snippet": ""
+              }
+            ],
+            "shareUrl": "https://trends.google.com/trends/trendingsearches/daily?geo=FR&tt=Romelu+Lukaku#Romelu%20Lukaku"
+          }
+        ]
+      }
+    ],
+    "endDateForNextRequest": "20230807",
+    "rssFeedPageUrl": "https://trends.google.com/trends/trendingsearches/daily/rss?geo=FR"
+  }
+}

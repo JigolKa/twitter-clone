@@ -39,11 +39,6 @@ const items: ItemData[] = [
     text: "Trends",
     path: "/trends",
   },
-  {
-    icon: MessageCircle,
-    text: "Private messages",
-    path: "/messages",
-  },
 ];
 
 type PropsWithItem = ItemProps & {
@@ -67,18 +62,25 @@ function Item({ preset: _preset, ...rest }: PropsWithItem | PropsWithNode) {
     : rest.path && rest.path === router.asPath
     ? "current"
     : void 0;
-  const iconProps = { height: 24, width: 24, className: "text-gray-500" };
+  const iconProps = {
+    height: 24,
+    width: 24,
+    className:
+      preset === "current"
+        ? "text-gray-900 font-extrabold stroke-[2px]"
+        : "text-gray-500",
+  };
 
   const node = (
     <div
       {...merge(
         cx(
-          "group flex gap-3 items-center tracking-tight cursor-pointer rounded-full py-4  px-8 transition min-w-[18rem] font-bold text-lg",
+          "group flex gap-3 items-center tracking-tight cursor-pointer rounded-full py-4  px-8 transition min-w-[18rem] font-semibold text-lg hover:bg-gray-200/70",
           {
             search:
               "text-gray-600 bg-gray-100 hover:bg-gray-50 transition border-2 border-spacing-2 mb-4 border-gray-300 rounded-lg",
-            undefined: "text-gray-800 hover:bg-gray-200/70",
-            current: "[&>*]:text-white bg-blue-600",
+            undefined: "text-gray-800",
+            current: "!font-extrabold",
           }[preset ?? "undefined"]
         ),
         rest
@@ -108,7 +110,7 @@ export default function Sidebar() {
   const session = useSession();
 
   return (
-    <div className="relative min-h-full">
+    <div className="min-h-full">
       <div className="max-w-xl bg-white pl-[16rem] w-full p-8 px-4 sticky top-0 left-0 max-h-[100vh] border-r overflow-auto">
         <div className="flex min-h-[calc(100vh-4rem)] flex-col justify-between h-full">
           <div className="tracking-tight">
@@ -120,20 +122,22 @@ export default function Sidebar() {
                 width={40}
               />
               <h1 className="text-2xl font-bold tracking-tighter">
-                Twitter clone
+                Twitter Clone
               </h1>
             </div>
-
-            {/* <Item
-              item={{ icon: SearchIcon, text: "Chercher", path: "/search" }}
-              preset="search"
-              type="item"
-            /> */}
 
             <div className="flex flex-col gap-2 mt-6">
               {items.map((v) => (
                 <Item item={v} key={v.text} type="item" />
               ))}
+              {session.data ? (
+                <Item
+                  html={<span className="text-white text-lg">Tweet</span>}
+                  className="!bg-blue-600 hover:!bg-blue-700 flex justify-center"
+                  type="node"
+                  path="/tweet"
+                />
+              ) : null}
             </div>
           </div>
 

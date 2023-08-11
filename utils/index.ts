@@ -74,3 +74,13 @@ export function nestedCheck<K extends string, T>(
 export function serialize<T>(data: T): T {
   return JSON.parse(JSON.stringify(data)) as T;
 }
+
+export function URLParams(
+  obj: Record<string, string | number | boolean>
+): string {
+  return Object.keys(obj)
+    .map((key) => {
+      return encodeURIComponent(key) + "=" + encodeURIComponent(obj[key]);
+    })
+    .join("&");
+}

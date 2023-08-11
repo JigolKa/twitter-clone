@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth";
 import { FetchedTweetSample } from "~/components/Tweet";
 import prisma from "~/prisma/db";
-import { authOptions } from "../auth/[...nextauth]";
+import { authOptions } from "../../auth/[...nextauth]";
 
 export const feedInclude = {
   likes: { select: { email: true } },
@@ -27,8 +27,6 @@ export default async function handler(
     take: 15,
     include: feedInclude,
   });
-
-  // await new Promise((res) => setTimeout(res, 5000));
 
   return res.json(
     tweets.map((v) => ({

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -20,10 +21,15 @@ export default function Profile() {
     setSubscribed(data?.followedBy.includes(session.data.user.id) ?? false);
   }, [session, data]);
 
-  const subscribe = () =>
+  const subscribe = () => {
+    if (!session.data) {
+      return signIn();
+    }
+
     axios
       .post(`/api/user/${data?.id}/sub`)
       .then(() => setSubscribed((p) => !p));
+  };
 
   const isAuthor = session.data?.user?.id === data?.id;
 

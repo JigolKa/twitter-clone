@@ -29,6 +29,14 @@ import { cx, merge, nestedCheck } from "~/utils";
 import { useSession } from "~/utils/hooks";
 import { Button } from "./ui/button";
 import { Skeleton } from "./ui/skeleton";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
 
 const iconProps: Record<string, number> = { height: 18, width: 18 };
 
@@ -106,10 +114,6 @@ function DetailedHeader({
 
   const isAuthor = session.data?.user?.id === tweet.author.id;
 
-  useEffect(() => {
-    console.log("🚀 ~ file: Tweet.tsx:113 ~ isAuthor:", isAuthor);
-  });
-
   return (
     <div {...merge("flex w-full justify-between items-center", rest)}>
       <Link
@@ -149,10 +153,23 @@ function DetailedHeader({
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-[200px]">
-            <DropdownMenuItem>
-              <Share className="mr-2 h-4 w-4" />
-              Share
-            </DropdownMenuItem>
+            <Dialog>
+              <DialogTrigger>
+                <DropdownMenuItem>
+                  <Share className="mr-2 h-4 w-4" />
+                  Share
+                </DropdownMenuItem>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Are you sure absolutely sure?</DialogTitle>
+                  <DialogDescription>
+                    This action cannot be undone. This will permanently delete
+                    your account and remove your data from our servers.
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
             {!isAuthor && (
               <DropdownMenuItem className="text-red-600">
                 <Flag className="mr-2 h-4 w-4" />
@@ -337,7 +354,7 @@ export function TweetElement({
         ) : null}
 
         {tweet.hits && (
-          <ActionButton className="hover:!bg-transparent">
+          <ActionButton className="hover:!bg-transparent cursor-context-menu">
             <LineChart {...iconProps} />
             <span>{tweet.hits}</span>
           </ActionButton>
