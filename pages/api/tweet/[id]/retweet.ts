@@ -9,11 +9,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log("retweet called");
-
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method Not Authorized" });
-  }
+  if (req.method !== "POST")
+    return res.status(405).send(`Cannot ${req.method} this endpoint`);
 
   const { id } = req.query;
   const session = await getServerSession(req, res, authOptions);

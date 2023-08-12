@@ -1,4 +1,5 @@
 import axios from "axios";
+import { signIn } from "next-auth/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
@@ -7,7 +8,6 @@ import { Button } from "~/components/ui/button";
 import { Label } from "~/components/ui/label";
 import { Textarea } from "~/components/ui/textarea";
 import { useSession } from "~/utils/hooks";
-import { signIn } from "next-auth/react";
 
 export default function Tweet() {
   const router = useRouter();

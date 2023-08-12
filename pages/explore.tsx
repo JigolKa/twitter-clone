@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BookTemplate, CircleSlash2, Loader2, Search, X } from "lucide-react";
+import { CircleSlash2, Loader2, Search, X } from "lucide-react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";

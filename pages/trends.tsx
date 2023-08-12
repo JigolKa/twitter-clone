@@ -1,9 +1,9 @@
 import Head from "next/head";
-import { useSWR } from "~/utils/hooks";
-import { Trend } from "./api/trends";
 import Image from "next/image";
 import Link from "next/link";
 import { URLParams } from "~/utils";
+import { useSWR } from "~/utils/hooks";
+import { Trend } from "./api/trends";
 
 export default function Trends() {
   const { data } = useSWR<Trend[]>(

@@ -1,28 +1,21 @@
 import { BasicProps } from "~/types";
-import { merge } from "~/utils";
-import { FetchedTweetSample, TweetElement } from "./Tweet";
+import { merge, omit } from "~/utils";
+import { FetchedTweetSample, SimpleTweetProps, TweetElement } from "./Tweet";
 
 type FeedProps = BasicProps & {
   tweets: FetchedTweetSample[];
-  mutateKey?: string;
-  disableBodyLink?: boolean;
+  tweetProps?: Partial<SimpleTweetProps>;
 };
 
-export default function Feed({
-  tweets,
-  mutateKey,
-  disableBodyLink,
-  ...rest
-}: FeedProps) {
+export default function Feed({ tweets, tweetProps, ...rest }: FeedProps) {
   return (
     <div {...merge("flex flex-col divide-y max-w-3xl", rest)}>
       {tweets.map((v) => (
         <TweetElement
           tweet={v}
-          disableBodyLink={disableBodyLink}
           key={v.id}
           preset="feed"
-          mutateKey={mutateKey}
+          {...(tweetProps ? omit(tweetProps, "tweet", "preset") : {})}
         />
       ))}
     </div>

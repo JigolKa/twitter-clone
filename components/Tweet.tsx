@@ -6,9 +6,11 @@ import {
   Heart,
   LineChart,
   MessageCircle,
+  Pencil,
   Repeat2,
   Share,
   Trash,
+  Trash2,
 } from "lucide-react";
 import { Session } from "next-auth";
 import { signIn } from "next-auth/react";
@@ -23,20 +25,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
+import { BASE_URL } from "~/config";
 import { DetailedTweet } from "~/pages/tweet/[id]";
 import { BasicProps } from "~/types";
 import { cx, merge, nestedCheck } from "~/utils";
 import { useSession } from "~/utils/hooks";
 import { Button } from "./ui/button";
 import { Skeleton } from "./ui/skeleton";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "./ui/dialog";
 
 const iconProps: Record<string, number> = { height: 18, width: 18 };
 
@@ -51,6 +46,7 @@ export type DetailedTweetProps = TweetProps & {
 type TweetProps = BasicProps & {
   mutateKey?: string;
   disableBodyLink?: boolean;
+  canBeEdited?: boolean;
 };
 
 export interface FetchedTweetSample extends Tweet {
@@ -107,10 +103,19 @@ function DetailedHeader({
     );
   }, [session, tweet]);
 
-  const subscribe = () =>
+  const subscribe = () => {
+    if (!session.data) return signIn();
+
     axios
       .post(`/api/user/${tweet.author.id}/sub`)
       .then(() => setSubscribed((p) => !p));
+  };
+
+  const share = () => {
+    navigator.clipboard.writeText(`${BASE_URL}/tweet/${tweet.id}`);
+
+    toast.success("Link copied to clipboard!");
+  };
 
   const isAuthor = session.data?.user?.id === tweet.author.id;
 
@@ -153,34 +158,25 @@ function DetailedHeader({
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-[200px]">
-            <Dialog>
-              <DialogTrigger>
-                <DropdownMenuItem>
-                  <Share className="mr-2 h-4 w-4" />
-                  Share
-                </DropdownMenuItem>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Are you sure absolutely sure?</DialogTitle>
-                  <DialogDescription>
-                    This action cannot be undone. This will permanently delete
-                    your account and remove your data from our servers.
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
+            <DropdownMenuItem onClick={share}>
+              <Share className="mr-2 h-4 w-4" />
+              Share
+            </DropdownMenuItem>
             {!isAuthor && (
-              <DropdownMenuItem className="text-red-600">
-                <Flag className="mr-2 h-4 w-4" />
-                Report
-              </DropdownMenuItem>
+              <Link href={`/tweet/${tweet.id}/report`}>
+                <DropdownMenuItem className="text-red-600">
+                  <Flag className="mr-2 h-4 w-4" />
+                  Report
+                </DropdownMenuItem>
+              </Link>
             )}
             {isAuthor && (
-              <DropdownMenuItem className="text-red-600">
-                <Trash className="mr-2 h-4 w-4" />
-                Delete
-              </DropdownMenuItem>
+              <Link href={`/tweet/${tweet.id}/manage#actions`}>
+                <DropdownMenuItem className="text-red-600">
+                  <Trash className="mr-2 h-4 w-4" />
+                  Delete
+                </DropdownMenuItem>
+              </Link>
             )}
           </DropdownMenuContent>
         </DropdownMenu>
@@ -284,6 +280,7 @@ export function TweetElement({
     </p>
   );
   const tweetLink = `/tweet/${tweet.id}`;
+  const isAuthor = tweet.author.id === data.user.id;
 
   return (
     <div
@@ -354,10 +351,19 @@ export function TweetElement({
         ) : null}
 
         {tweet.hits && (
-          <ActionButton className="hover:!bg-transparent cursor-context-menu">
+          <ActionButton className="hover:!bg-transparent !cursor-context-menu">
             <LineChart {...iconProps} />
             <span>{tweet.hits}</span>
           </ActionButton>
+        )}
+
+        {(rest.canBeEdited ?? isAuthor) && (
+          <Link href={`/tweet/${tweet.id}/manage`}>
+            <ActionButton>
+              <Pencil {...iconProps} />
+              <span>Manage</span>
+            </ActionButton>
+          </Link>
         )}
       </div>
     </div>

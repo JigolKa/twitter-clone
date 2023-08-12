@@ -82,8 +82,10 @@ export default function Tweet({ hits }: TweetProps) {
 
       {data ? (
         <Feed
-          disableBodyLink
-          mutateKey={`/api/tweet/${router.query.id}`}
+          tweetProps={{
+            disableBodyLink: true,
+            mutateKey: `/api/tweet/${router.query.id}`,
+          }}
           tweets={data.comments}
           className="mt-2"
         />

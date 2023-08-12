@@ -1,6 +1,5 @@
 import gst from "google-trends-api";
 import { NextApiRequest, NextApiResponse } from "next";
-import { omit } from "~/utils";
 
 export default async function handler(
   req: NextApiRequest,

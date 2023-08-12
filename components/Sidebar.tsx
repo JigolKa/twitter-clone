@@ -1,17 +1,9 @@
-import {
-  Flame,
-  Home,
-  LogIn,
-  LucideIcon,
-  MessageCircle,
-  Search,
-  Settings,
-} from "lucide-react";
+import { Flame, Home, LogIn, LucideIcon, Search, Settings } from "lucide-react";
 import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { BasicProps } from "~/types";
 import { cx, merge } from "~/utils";
 
