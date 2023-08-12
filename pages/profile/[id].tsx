@@ -33,19 +33,29 @@ export default function Profile() {
 
   const isAuthor = session.data?.user?.id === data?.id;
 
+  const image = (
+    <Image
+      height={56}
+      width={56}
+      className="rounded-full"
+      src={data?.image!}
+      alt={`${data?.name}'s profile picture`}
+    />
+  );
+
   return (
-    <div className="relative">
+    <div className="">
       <div className="h-80 w-full bg-[url('https://placehold.co/600x400/dddddd/dddddd')] bg-center bg-cover bg-no-repeat"></div>
-      <div className="absolute top-32 left-0 w-full px-8 py-4 bg-white min-h-[260px]">
+      <div className="-mt-32 w-full px-8 py-4 bg-white min-h-[260px]">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">
-            <Image
-              height={56}
-              width={56}
-              className="rounded-full"
-              src={data?.image!}
-              alt={`${data?.name}'s profile picture`}
-            />
+            {data?.image ? (
+              <Link href={data?.image!} target="_blank">
+                {image}
+              </Link>
+            ) : (
+              image
+            )}
 
             <h1 className="text-2xl tracking-tight font-bold">{data?.name}</h1>
           </div>

@@ -4,7 +4,7 @@ import prisma from "~/prisma/db";
 
 const fuseOptions: Fuse.IFuseOptions<unknown> = {
   keys: ["message", "author.name", "comments.message", "likes.name"],
-  threshold: 0.9,
+  threshold: 0.5,
   includeMatches: true,
   minMatchCharLength: 3,
 };
@@ -32,7 +32,7 @@ export default async function handler(
 
   return res.json(
     fuse
-      .search((req.query.q as string) ?? "")
+      .search(decodeURIComponent(req.query.q as string))
       .sort((a, b) => a.refIndex - b.refIndex)
       .map((v) => v.item)
       .slice(0, 12)

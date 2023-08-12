@@ -11,7 +11,7 @@ import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { BasicProps } from "~/types";
 import { cx, merge } from "~/utils";
 
@@ -56,10 +56,10 @@ function Item({ preset: _preset, ...rest }: PropsWithItem | PropsWithNode) {
   const preset = isItem
     ? _preset
       ? _preset
-      : router.asPath === rest.item.path
+      : router.pathname === rest.item.path
       ? "current"
       : void 0
-    : rest.path && rest.path === router.asPath
+    : rest.path && rest.path === router.pathname
     ? "current"
     : void 0;
   const iconProps = {
@@ -111,7 +111,7 @@ export default function Sidebar() {
 
   return (
     <div className="min-h-full">
-      <div className="max-w-xl bg-white pl-[16rem] w-full p-8 px-4 sticky top-0 left-0 max-h-[100vh] border-r overflow-auto">
+      <div className="lg:max-w-lg 2xl:max-w-2xl bg-white lg:pl-[13rem] xl:pl-[16rem] w-full p-8 px-4 sticky top-0 left-0 max-h-[100vh] border-r overflow-hidden">
         <div className="flex min-h-[calc(100vh-4rem)] flex-col justify-between h-full">
           <div className="tracking-tight">
             <div className="flex gap-4 items-center mb-8">

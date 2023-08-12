@@ -7,7 +7,10 @@ import { authOptions } from "../../auth/[...nextauth]";
 export const feedInclude = {
   likes: { select: { email: true } },
   comments: { select: { id: true } },
-  retweets: { select: { user: { select: { email: true } } } },
+  retweets: {
+    where: { isDeleted: false },
+    select: { user: { select: { email: true } } },
+  },
   author: {
     select: {
       id: true,

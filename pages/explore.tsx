@@ -1,21 +1,37 @@
 import axios from "axios";
-import { Loader2, Search, X } from "lucide-react";
+import { BookTemplate, CircleSlash2, Loader2, Search, X } from "lucide-react";
 import Head from "next/head";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
+import { toast } from "react-hot-toast";
 import Feed from "~/components/Feed";
 import { FetchedTweetSample } from "~/components/Tweet";
 import { BasicProps } from "~/types";
 import { URLParams, merge } from "~/utils";
 
 export default function Explore() {
-  const [tweets, setTweets] = useState<FetchedTweetSample[]>();
+  const [tweets, setTweets] = useState<FetchedTweetSample[] | null>();
   const [isLoading, setLoading] = useState(false);
+  const router = useRouter();
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    (async () => {
+      if (!router.query.q || !inputRef.current) return;
+
+      inputRef.current.value = router.query.q as string;
+
+      await search({ q: encodeURIComponent(router.query.q as string) });
+    })();
+  }, [router.query]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const data = {
-      q: (event.target as unknown as { q: HTMLInputElement }).q.value,
+      q: encodeURIComponent(
+        (event.target as unknown as { q: HTMLInputElement }).q.value
+      ),
     };
 
     await search(data);
@@ -24,15 +40,18 @@ export default function Explore() {
   const search = async (data: Record<string, string>) => {
     setLoading(true);
 
-    const response = await axios.get(`/api/tweet/search?${URLParams(data)}`, {
-      timeout: 15000,
-    });
+    const response = await axios.get<FetchedTweetSample[]>(
+      `/api/tweet/search?${URLParams(data)}`,
+      {
+        timeout: 15000,
+      }
+    );
 
     if (response.status === 200) {
-      setTweets(response.data);
+      setTweets(response.data.length > 0 ? response.data : null);
       setLoading(false);
     } else {
-      alert("zhda");
+      toast.error("An error occured. Please try again later.");
     }
   };
 
@@ -59,6 +78,7 @@ export default function Explore() {
           id="q"
           required
           minLength={3}
+          ref={inputRef}
         />
         <button
           type="submit"
@@ -74,15 +94,22 @@ export default function Explore() {
             <Feed tweets={tweets} className="mt-6" />
 
             <Infos className="!mt-2 !h-48">
-              <X className="mr-2 h-12 w-12" />
+              <X className="h-12 w-12" />
               <span className="text-center leading-snug">
                 No more results to display
               </span>
             </Infos>
           </>
+        ) : tweets === null ? (
+          <Infos>
+            <CircleSlash2 className="h-12 w-12" />
+            <span className="text-center leading-snug">
+              Your search did not <br /> return any results
+            </span>
+          </Infos>
         ) : (
           <Infos>
-            <Search className="mr-2 h-12 w-12" />
+            <Search className="h-12 w-12" />
             <span className="text-center leading-snug">
               Search for something <br /> to get results
             </span>
@@ -90,7 +117,7 @@ export default function Explore() {
         )
       ) : (
         <Infos>
-          <Loader2 className="mr-2 h-12 w-12 animate-spin" />
+          <Loader2 className="h-12 w-12 animate-spin" />
           <span>Loading...</span>
         </Infos>
       )}

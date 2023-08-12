@@ -3,6 +3,7 @@ import { useSWR } from "~/utils/hooks";
 import { Trend } from "./api/trends";
 import Image from "next/image";
 import Link from "next/link";
+import { URLParams } from "~/utils";
 
 export default function Trends() {
   const { data } = useSWR<Trend[]>(
@@ -29,7 +30,7 @@ export default function Trends() {
           <Link
             key={v.title}
             className="rounded-sm px-6 py-4 shadow-md bg-gray-50 hover:bg-gray-100 transition font-semibold flex items-center gap-4"
-            href={`/explore/`}
+            href={`/explore?${URLParams({ q: v.title })}`}
           >
             <Image
               src={v.image}
