@@ -112,11 +112,7 @@ export default function Profile() {
 
         {data ? (
           <Feed
-            tweets={
-              data?.tweets.sort(
-                (a, b) => toUnix(a.createdAt) - toUnix(b.createdAt)
-              ) ?? []
-            }
+            tweets={data?.tweets ?? []}
             tweetProps={{
               profileName: !isAuthor ? data?.name! : "You",
               mutateKey: mutate,

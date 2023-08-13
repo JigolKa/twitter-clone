@@ -94,3 +94,28 @@ export function toUnix(date: Date | string) {
     (typeof date === "string" ? new Date(date) : date).getTime() / 1000
   ).toFixed(0);
 }
+
+var rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
+
+const units: { [key in Intl.RelativeTimeFormatUnit]?: number } = {
+  year: 24 * 60 * 60 * 1000 * 365,
+  month: (24 * 60 * 60 * 1000 * 365) / 12,
+  day: 24 * 60 * 60 * 1000,
+  hour: 60 * 60 * 1000,
+  minute: 60 * 1000,
+  second: 1000,
+};
+
+export function getRelativeTime(d1: Date, d2 = new Date()) {
+  var elapsed = +d1 - +d2;
+
+  const keys = Object.keys(units);
+  for (let i = 0; i < keys.length; i++) {
+    const unit = keys[i] as Intl.RelativeTimeFormatUnit;
+    if (Math.abs(elapsed) > (units[unit] ?? 0) || unit == "second") {
+      return rtf.format(Math.round(elapsed / (units[unit] ?? 1)), unit);
+    }
+  }
+
+  return "Now";
+}

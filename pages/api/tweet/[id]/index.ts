@@ -37,7 +37,12 @@ export default async function handler(
               },
             },
           },
-          retweets: { select: { user: { select: { email: true } } } },
+          retweets: {
+            where: {
+              isDeleted: false,
+            },
+            select: { user: { select: { email: true } } },
+          },
           author: {
             select: {
               id: true,

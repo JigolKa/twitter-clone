@@ -75,7 +75,11 @@ export default function Tweet({ hits }: HitsProps) {
       </Head>
 
       {data ? (
-        <TweetElement tweet={{ ...data, hits }} preset="detailed" />
+        <TweetElement
+          tweet={{ ...data, hits }}
+          mutateKey={mutate}
+          preset="detailed"
+        />
       ) : (
         <TweetSkeleton preset="detailed" />
       )}
@@ -86,7 +90,7 @@ export default function Tweet({ hits }: HitsProps) {
           <Feed
             tweetProps={{
               disableBodyLink: true,
-              mutateKey: `/api/tweet/${router.query.id}`,
+              mutateKey: mutate,
             }}
             tweets={data.comments}
             className="mt-2"

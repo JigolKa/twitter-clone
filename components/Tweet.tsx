@@ -27,7 +27,7 @@ import {
 import { BASE_URL } from "~/config";
 import { DetailedTweet } from "~/pages/tweet/[id]";
 import { BasicProps } from "~/types";
-import { cx, merge, nestedCheck } from "~/utils";
+import { cx, getRelativeTime, merge, nestedCheck } from "~/utils";
 import { useSession } from "~/utils/hooks";
 import { Button } from "./ui/button";
 import { Skeleton } from "./ui/skeleton";
@@ -190,25 +190,33 @@ function DetailedHeader({
 
 function SimpleHeader({ tweet }: Pick<SimpleTweetProps, "tweet">) {
   return (
-    <Link
-      className="flex items-center gap-2 max-w-fit group"
-      href={`/profile/${tweet.author.id}`}
-    >
-      <Image
-        src={
-          tweet.author.image ??
-          "https://avatars.githubusercontent.com/u/0000000?v=4"
-        }
-        alt={`${tweet.author.name}'s profile picture`}
-        title={`${tweet.author.name}'s profile picture`}
-        width={32}
-        height={32}
-        className="rounded-full"
-      />
-      <span className="text-gray-700 group-hover:underline">
-        {tweet.author.name}
-      </span>
-    </Link>
+    <>
+      <Link
+        className="flex items-center gap-2 max-w-fit group"
+        href={`/profile/${tweet.author.id}`}
+      >
+        <Image
+          src={
+            tweet.author.image ??
+            "https://avatars.githubusercontent.com/u/0000000?v=4"
+          }
+          alt={`${tweet.author.name}'s profile picture`}
+          title={`${tweet.author.name}'s profile picture`}
+          width={32}
+          height={32}
+          className="rounded-full"
+        />
+        <span className="text-gray-700 group-hover:underline">
+          {tweet.author.name}
+        </span>
+        <span className="text-gray-700 text-sm">
+          •&nbsp;&nbsp;
+          {getRelativeTime(
+            new Date(tweet[tweet.isRetweet ? "updatedAt" : "createdAt"])
+          )}
+        </span>
+      </Link>
+    </>
   );
 }
 

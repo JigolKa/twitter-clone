@@ -16,6 +16,7 @@ export default async function handler(
     },
     include: {
       retweets: {
+        where: { isDeleted: false },
         include: {
           tweet: { include: feedInclude },
         },
@@ -53,11 +54,17 @@ export default async function handler(
     ...user,
     following: user.following.map((v) => v.id),
     followedBy: user.followedBy.map((v) => v.id),
-    tweets: [...user.tweets, ...user.retweets].map((v) =>
-      "isDeleted" in v
-        ? { ...unwrap(v.tweet), isRetweet: true }
-        : { ...unwrap(v), isRetweet: false }
-    ) as FetchedTweetSample[],
+    tweets: [...user.tweets, ...user.retweets]
+      .map((v) =>
+        "isDeleted" in v
+          ? { ...unwrap(v.tweet), isRetweet: true }
+          : { ...unwrap(v), isRetweet: false }
+      )
+      .sort(
+        (a, b) =>
+          +b[b.isRetweet ? "updatedAt" : "createdAt"] -
+          +a[a.isRetweet ? "updatedAt" : "createdAt"]
+      ) as FetchedTweetSample[],
   };
 
   res.json(json);
