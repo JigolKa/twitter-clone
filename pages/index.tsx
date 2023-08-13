@@ -15,7 +15,6 @@ export default function Home() {
       </Head>
 
       <h1 className="text-4xl font-bold tracking-tighter">Home</h1>
-      {session.data && <button onClick={() => signOut()}>sign out</button>}
 
       {data ? (
         <Feed className="mt-6" tweets={data} />

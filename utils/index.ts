@@ -88,3 +88,9 @@ export function URLParams(
 export function capitalize(str: string) {
   return str[0].toUpperCase() + str.slice(1);
 }
+
+export function toUnix(date: Date | string) {
+  return +(
+    (typeof date === "string" ? new Date(date) : date).getTime() / 1000
+  ).toFixed(0);
+}

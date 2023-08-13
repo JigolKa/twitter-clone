@@ -1,8 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { FetchedTweetSample } from "~/components/Tweet";
 import prisma from "~/prisma/db";
-import { UnwrapPromise } from "~/types";
+import { UnwrapArray, UnwrapPromise } from "~/types";
 import { feedInclude } from "../../tweet/feed";
+import { userInfos } from "../../tweet/[id]";
+import { omit } from "~/utils";
 
 export default async function handler(
   req: NextApiRequest,
@@ -15,6 +17,11 @@ export default async function handler(
       id: id as string,
     },
     include: {
+      retweets: {
+        include: {
+          tweet: { include: feedInclude },
+        },
+      },
       tweets: {
         take: 15,
         where: {
@@ -39,14 +46,20 @@ export default async function handler(
     return res.status(404).json({ message: "User not found" });
   }
 
+  const unwrap = (v: UnwrapArray<typeof user.tweets>) => ({
+    ...v,
+    retweets: v.retweets.map((k) => ({ email: k.user.email })),
+  });
+
   const json = {
     ...user,
     following: user.following.map((v) => v.id),
     followedBy: user.followedBy.map((v) => v.id),
-    tweets: user.tweets.map((v) => ({
-      ...v,
-      retweets: v.retweets.map((k) => ({ email: k.user.email })),
-    })) as FetchedTweetSample[],
+    tweets: [...user.tweets, ...user.retweets].map((v) =>
+      "isDeleted" in v
+        ? { ...unwrap(v.tweet), isRetweet: true }
+        : { ...unwrap(v), isRetweet: false }
+    ) as FetchedTweetSample[],
   };
 
   res.json(json);

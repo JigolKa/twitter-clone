@@ -18,7 +18,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-import { mutate } from "swr";
+import { KeyedMutator, mutate } from "swr";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -44,9 +44,10 @@ export type DetailedTweetProps = TweetProps & {
   preset: "detailed";
 };
 type TweetProps = BasicProps & {
-  mutateKey?: string;
+  mutateKey?: string | KeyedMutator<any>;
   disableBodyLink?: boolean;
   canBeEdited?: boolean;
+  profileName?: string;
 };
 
 export interface FetchedTweetSample extends Tweet {
@@ -65,10 +66,11 @@ export interface FetchedTweetSample extends Tweet {
     name?: string;
   };
   hits?: number;
+  isRetweet?: boolean;
 }
 
 const factory =
-  (data: Session | null, mutateKey?: string) =>
+  (data: Session | null, mutateKey?: TweetProps["mutateKey"]) =>
   (url: string, setter: Dispatch<SetStateAction<boolean>>) =>
   () => {
     if (!data?.user) {
@@ -78,7 +80,11 @@ const factory =
     setter((p) => !p);
     axios
       .post(url)
-      .finally(() => mutate(mutateKey ?? "/api/tweet/feed"))
+      .finally(() =>
+        typeof mutateKey === "function"
+          ? mutateKey()
+          : mutate(mutateKey ?? "/api/tweet/feed")
+      )
       .catch((e) => {
         console.log("🚀 ~ file: Feed.tsx:49 ~ e:", e);
 
@@ -171,7 +177,7 @@ function DetailedHeader({
               </Link>
             )}
             {isAuthor && (
-              <Link href={`/tweet/${tweet.id}/manage#actions`}>
+              <Link href={`/tweet/${tweet.id}/manage`}>
                 <DropdownMenuItem className="text-red-600">
                   <Trash className="mr-2 h-4 w-4" />
                   Delete
@@ -246,6 +252,7 @@ export function TweetElement({
   tweet,
   mutateKey,
   disableBodyLink,
+  profileName,
   ...rest
 }: DetailedTweetProps | SimpleTweetProps) {
   const { data } = useSession();
@@ -280,7 +287,7 @@ export function TweetElement({
     </p>
   );
   const tweetLink = `/tweet/${tweet.id}`;
-  const isAuthor = tweet.author.id === data.user.id;
+  const isAuthor = tweet.author.id === data?.user.id;
 
   return (
     <div
@@ -292,6 +299,12 @@ export function TweetElement({
         rest
       )}
     >
+      {tweet.isRetweet ? (
+        <div className="flex gap-2 mb-3 text-sm text-gray-700 items-center">
+          <Repeat2 {...iconProps} />
+          <span>{profileName} retweeted</span>
+        </div>
+      ) : null}
       {preset === "feed" ? (
         <SimpleHeader tweet={tweet} />
       ) : (

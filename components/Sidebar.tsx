@@ -1,9 +1,18 @@
-import { Flame, Home, LogIn, LucideIcon, Search, Settings } from "lucide-react";
-import { signIn, useSession } from "next-auth/react";
+import {
+  Flame,
+  Home,
+  LogIn,
+  LogOut,
+  LucideIcon,
+  Search,
+  Settings,
+} from "lucide-react";
+import { signIn, useSession, signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
+import { toast } from "react-hot-toast";
 import { BasicProps } from "~/types";
 import { cx, merge } from "~/utils";
 
@@ -137,10 +146,10 @@ export default function Sidebar() {
             <div className="gap-2 flex flex-col">
               <Item
                 item={{
-                  icon: Settings,
-                  text: "Settings",
-                  path: "/account/settings",
+                  icon: LogOut,
+                  text: "Sign out",
                 }}
+                onClick={() => signOut()}
                 type="item"
               />
               <Item

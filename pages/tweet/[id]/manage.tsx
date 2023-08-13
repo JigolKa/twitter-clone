@@ -73,6 +73,8 @@ export default function Manage() {
   };
 
   useEffect(() => {
+    if ((session.status as string) === "loading") return;
+
     if (!session?.data?.user) {
       signIn();
     } else if (!isAuthor) {

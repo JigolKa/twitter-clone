@@ -8,11 +8,14 @@ import Feed from "~/components/Feed";
 import { Button } from "~/components/ui/button";
 import { useSWR, useSession } from "~/utils/hooks";
 import { Profile } from "../api/user/[id]";
+import { toUnix } from "~/utils";
 
 export default function Profile() {
   const { query } = useRouter();
   const session = useSession();
-  const { data } = useSWR<Profile>(query.id ? `/api/user/${query.id}` : null);
+  const { data, mutate } = useSWR<Profile>(
+    query.id ? `/api/user/${query.id}` : null
+  );
   const [isSubscribed, setSubscribed] = useState(false);
 
   useEffect(() => {
@@ -85,7 +88,18 @@ export default function Profile() {
         <h1 className="text-2xl font-bold tracking-tight mt-8">
           {data?.name}&apos;s Tweets
         </h1>
-        <Feed tweets={data?.tweets ?? []} className="mt-4" />
+        <Feed
+          tweets={
+            data?.tweets.sort(
+              (a, b) => toUnix(a.createdAt) - toUnix(b.createdAt)
+            ) ?? []
+          }
+          tweetProps={{
+            profileName: !isAuthor ? data?.name! : "You",
+            mutateKey: mutate,
+          }}
+          className="mt-4"
+        />
       </div>
     </div>
   );
