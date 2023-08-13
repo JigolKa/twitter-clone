@@ -3,8 +3,6 @@ import { FetchedTweetSample } from "~/components/Tweet";
 import prisma from "~/prisma/db";
 import { UnwrapArray, UnwrapPromise } from "~/types";
 import { feedInclude } from "../../tweet/feed";
-import { userInfos } from "../../tweet/[id]";
-import { omit } from "~/utils";
 
 export default async function handler(
   req: NextApiRequest,

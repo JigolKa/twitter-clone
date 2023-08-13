@@ -22,6 +22,7 @@ export function createRedisInstance() {
     const redis = new Redis(options);
 
     redis.on("error", (error) => {
+      // eslint-disable-next-line no-console
       console.warn("[Redis] Error connecting", error);
     });
 

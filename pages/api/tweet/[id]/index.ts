@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { DetailedTweet } from "~/pages/tweet/[id]";
 import { getServerSession } from "next-auth";
+import { DetailedTweet } from "~/pages/tweet/[id]";
 import prisma from "~/prisma/db";
 import { authOptions } from "../../auth/[...nextauth]";
 

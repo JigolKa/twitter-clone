@@ -1,4 +1,4 @@
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Head from "next/head";
 import Feed from "~/components/Feed";
 import { FetchedTweetSample, TweetSkeleton } from "~/components/Tweet";

@@ -45,10 +45,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, isLoading, variant, size, asChild = false, ...rest }, ref) => {
     const Comp = asChild ? Slot : "button";
 
-    React.useEffect(() => {
-      console.log("Button state changed", isLoading);
-    }, [isLoading]);
-
     const props = {
       className: cn(buttonVariants({ variant, size, className })),
       ref,

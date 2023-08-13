@@ -1,20 +1,12 @@
-import {
-  Flame,
-  Home,
-  LogIn,
-  LogOut,
-  LucideIcon,
-  Search,
-  Settings,
-} from "lucide-react";
-import { signIn, useSession, signOut } from "next-auth/react";
+import { Flame, Home, LogIn, LogOut, LucideIcon, Search } from "lucide-react";
+import { signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
-import { toast } from "react-hot-toast";
 import { BasicProps } from "~/types";
 import { cx, merge } from "~/utils";
+import { useSession } from "~/utils/hooks";
 
 type ItemProps = BasicProps & { preset?: "search" | "current" };
 
@@ -142,7 +134,7 @@ export default function Sidebar() {
             </div>
           </div>
 
-          {session.data ? (
+          {session.data?.user ? (
             <div className="gap-2 flex flex-col">
               <Item
                 item={{
@@ -171,7 +163,7 @@ export default function Sidebar() {
                     </h4>
                   </>
                 }
-                path="/account"
+                path={`/profile/${session.data.user.id}`}
               />
             </div>
           ) : (

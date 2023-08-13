@@ -370,6 +370,7 @@ const functions: Record<Flag, () => Promise<Prisma.BatchPayload>> = {
     const flag = flags[i];
     const payload = await functions[flag]();
 
+    // eslint-disable-next-line no-console
     console.log(flag, "gave", payload);
   }
 })();

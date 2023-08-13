@@ -5,10 +5,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Feed from "~/components/Feed";
+import { TweetSkeleton } from "~/components/Tweet";
 import { Button } from "~/components/ui/button";
+import { Skeleton } from "~/components/ui/skeleton";
+import { toUnix } from "~/utils";
 import { useSWR, useSession } from "~/utils/hooks";
 import { Profile } from "../api/user/[id]";
-import { toUnix } from "~/utils";
 
 export default function Profile() {
   const { query } = useRouter();
@@ -47,60 +49,88 @@ export default function Profile() {
   );
 
   return (
-    <div className="">
+    <>
       <div className="h-80 w-full bg-[url('https://placehold.co/600x400/dddddd/dddddd')] bg-center bg-cover bg-no-repeat"></div>
       <div className="-mt-32 w-full px-8 py-4 bg-white min-h-[260px]">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-4">
-            {data?.image ? (
-              <Link href={data?.image!} target="_blank">
-                {image}
-              </Link>
+            {data ? (
+              data?.image ? (
+                <Link href={data?.image!} target="_blank">
+                  {image}
+                </Link>
+              ) : (
+                image
+              )
             ) : (
-              image
+              <Skeleton className="h-14 w-14 rounded-full" />
             )}
 
-            <h1 className="text-2xl tracking-tight font-bold">{data?.name}</h1>
+            {data ? (
+              <h1 className="text-2xl tracking-tight font-bold">
+                {data?.name}
+              </h1>
+            ) : (
+              <Skeleton className="h-4 w-48" />
+            )}
           </div>
 
-          {!isAuthor ? (
-            <Button
-              variant={isSubscribed ? "outline" : "default"}
-              onClick={subscribe}
-              className="rounded-full"
-            >
-              {isSubscribed ? "Subscribed" : "Subscribe"}
-            </Button>
-          ) : (
-            <Link href={"/account/settings"}>
-              <Button variant="outline">Settings</Button>
-            </Link>
-          )}
+          {data &&
+            (!isAuthor ? (
+              <Button
+                variant={isSubscribed ? "outline" : "default"}
+                onClick={subscribe}
+                className="rounded-full"
+              >
+                {isSubscribed ? "Subscribed" : "Subscribe"}
+              </Button>
+            ) : (
+              <Link href={"/account/settings"}>
+                <Button variant="outline">Settings</Button>
+              </Link>
+            ))}
         </div>
-
-        <p className="text-gray-700 max-w-prose mt-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
-          ex nisi reprehenderit dolor quas voluptates architecto, officia porro.
-          Nesciunt impedit debitis atque officiis hic fugit voluptatibus
-          similique recusandae dolorem cupiditate.
-        </p>
+        {data ? (
+          <p className="text-gray-700 max-w-prose mt-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus ex nisi reprehenderit dolor quas voluptates architecto,
+            officia porro. Nesciunt impedit debitis atque officiis hic fugit
+            voluptatibus similique recusandae dolorem cupiditate.
+          </p>
+        ) : (
+          <div className="mt-4 grid gap-3">
+            {new Array(2).fill(0).map((_, i) => (
+              <Skeleton key={i} className="w-full h-3" />
+            ))}
+            <Skeleton className="w-2/3 h-3" />
+          </div>
+        )}
 
         <h1 className="text-2xl font-bold tracking-tight mt-8">
-          {data?.name}&apos;s Tweets
+          {data ? `${data?.name}'s Tweets` : "This profile's Tweets"}
         </h1>
-        <Feed
-          tweets={
-            data?.tweets.sort(
-              (a, b) => toUnix(a.createdAt) - toUnix(b.createdAt)
-            ) ?? []
-          }
-          tweetProps={{
-            profileName: !isAuthor ? data?.name! : "You",
-            mutateKey: mutate,
-          }}
-          className="mt-4"
-        />
+
+        {data ? (
+          <Feed
+            tweets={
+              data?.tweets.sort(
+                (a, b) => toUnix(a.createdAt) - toUnix(b.createdAt)
+              ) ?? []
+            }
+            tweetProps={{
+              profileName: !isAuthor ? data?.name! : "You",
+              mutateKey: mutate,
+            }}
+            className="mt-4"
+          />
+        ) : (
+          <div className="grid gap-8 mt-4">
+            {new Array(10).fill(0).map((_, i) => (
+              <TweetSkeleton preset="feed" key={i} />
+            ))}
+          </div>
+        )}
       </div>
-    </div>
+    </>
   );
 }

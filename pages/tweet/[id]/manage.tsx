@@ -1,4 +1,8 @@
 import axios from "axios";
+import { PenSquare, Trash2 } from "lucide-react";
+import { GetServerSidePropsContext } from "next";
+import { signIn } from "next-auth/react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "react-hot-toast";
@@ -14,14 +18,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "~/components/ui/dialog";
+import { Textarea } from "~/components/ui/textarea";
+import { createRedisInstance } from "~/lib/redis";
 import { capitalize } from "~/utils";
 import { useSWR, useSession } from "~/utils/hooks";
-import { DetailedTweet } from ".";
-import { PenSquare, Trash2 } from "lucide-react";
-import { Textarea } from "~/components/ui/textarea";
-import { signIn } from "next-auth/react";
+import { DetailedTweet, HitsProps } from ".";
 
-export default function Manage() {
+export default function Manage({ hits }: HitsProps) {
   const router = useRouter();
   const session = useSession();
   const { data: tweet, mutate } = useSWR<DetailedTweet>(
@@ -75,33 +78,30 @@ export default function Manage() {
   useEffect(() => {
     if ((session.status as string) === "loading") return;
 
-    if (!session?.data?.user) {
+    if (
+      (session.status as string) === "unauthenticated" ||
+      !session?.data?.user
+    ) {
       signIn();
     } else if (!isAuthor) {
       router.push("/");
     }
-  }, [isAuthor]);
+  }, [isAuthor, session.status]);
 
   return isAuthor && tweet ? (
     <>
+      <Head>
+        <title>Manage my tweet - Twitter Clone</title>
+      </Head>
+
       <h1 className="text-4xl font-bold tracking-tighter">Manage my tweet</h1>
 
-      <h2 className="mt-8 font-bold text-xl">Selected {kind}:</h2>
       <TweetElement
         preset="feed"
-        tweet={tweet}
+        tweet={{ ...tweet, hits }}
         canBeEdited={false}
         className="hover:!bg-transparent mt-2"
       />
-
-      {!isComment && (
-        <>
-          <h2 className="mt-8 font-bold font-xl">Tweet&apos;s comments</h2>
-          <Feed tweets={tweet.comments} className="mt-2" />
-        </>
-      )}
-
-      <h2 className="font-bold mt-8 text-xl">Possible actions</h2>
 
       <div className="flex gap-6 mt-4" id="actions">
         <Dialog>
@@ -161,6 +161,28 @@ export default function Manage() {
           </DialogContent>
         </Dialog>
       </div>
+
+      {!isComment && (
+        <>
+          <h2 className="mt-8 font-bold font-xl">Comments</h2>
+          <Feed tweets={tweet.comments} className="mt-2" />
+        </>
+      )}
     </>
   ) : null;
+}
+
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+  const redis = createRedisInstance();
+
+  const id = ctx.query.id as string;
+
+  const value = await redis.get(id);
+  await redis.quit();
+
+  return {
+    props: {
+      hits: value ? +value : 0,
+    },
+  };
 }

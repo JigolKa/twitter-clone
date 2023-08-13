@@ -125,7 +125,7 @@ export default function Explore() {
   );
 }
 
-function Infos({ children, ...rest }: BasicProps) {
+export function Infos({ children, ...rest }: BasicProps) {
   return (
     <div {...merge("mt-6 h-96 w-full flex items-center justify-center", rest)}>
       <div className="flex flex-col gap-2 items-center">{children}</div>

@@ -54,10 +54,8 @@ export default async function handler(
     email?: string;
     id?: string;
   }[];
-  console.log("🚀 ~ file: fav.ts:43 ~ emails:", emails);
 
   const isLiked = emails.filter((v) => v.email === user.email).length > 0;
-  console.log("🚀 ~ file: fav.ts:60 ~ isLiked:", isLiked);
 
   if (isLiked) {
     emails = emails.filter((v) => v.email !== user.email);

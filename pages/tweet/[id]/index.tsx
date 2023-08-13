@@ -1,4 +1,5 @@
 import axios from "axios";
+import { CircleSlash2 } from "lucide-react";
 import { GetServerSidePropsContext } from "next";
 import { signIn, useSession } from "next-auth/react";
 import Head from "next/head";
@@ -14,6 +15,7 @@ import {
 import { Button } from "~/components/ui/button";
 import { Textarea } from "~/components/ui/textarea";
 import { createRedisInstance } from "~/lib/redis";
+import { Infos } from "~/pages/explore";
 import { useSWR } from "~/utils/hooks";
 
 export type DetailedTweet = Omit<FetchedTweetSample, "comments"> & {
@@ -26,11 +28,11 @@ export type DetailedTweet = Omit<FetchedTweetSample, "comments"> & {
   comments: FetchedTweetSample[];
 };
 
-interface TweetProps {
+export interface HitsProps {
   hits: number;
 }
 
-export default function Tweet({ hits }: TweetProps) {
+export default function Tweet({ hits }: HitsProps) {
   const router = useRouter();
   const { data, mutate } = useSWR<DetailedTweet>(
     router.query ? `/api/tweet/${router.query.id}` : null
@@ -53,7 +55,6 @@ export default function Tweet({ hits }: TweetProps) {
       })
       .finally(() => mutate())
       .catch((e) => {
-        console.error(e);
         toast.error("An error occured. Please try again later");
       });
 
@@ -81,14 +82,21 @@ export default function Tweet({ hits }: TweetProps) {
       <h2 className="text-3xl tracking-tight font-bold mt-8">Comments</h2>
 
       {data ? (
-        <Feed
-          tweetProps={{
-            disableBodyLink: true,
-            mutateKey: `/api/tweet/${router.query.id}`,
-          }}
-          tweets={data.comments}
-          className="mt-2"
-        />
+        data.comments.length > 0 ? (
+          <Feed
+            tweetProps={{
+              disableBodyLink: true,
+              mutateKey: `/api/tweet/${router.query.id}`,
+            }}
+            tweets={data.comments}
+            className="mt-2"
+          />
+        ) : (
+          <Infos className="!h-48">
+            <CircleSlash2 height={28} width={28} />
+            <span className="block font-semibold text-lg">No comments yet</span>
+          </Infos>
+        )
       ) : (
         <div className="grid gap-8 mt-4">
           {new Array(4).fill(0).map((_, i) => (
@@ -132,7 +140,6 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   const id = ctx.query.id as string;
 
   const value = await redis.get(id);
-  console.log("🚀 ~ file: [id].tsx:86 ~ getServerSideProps ~ value:", value);
 
   if (!value) {
     await redis.set(id, 1);

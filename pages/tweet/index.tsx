@@ -2,7 +2,7 @@ import axios from "axios";
 import { signIn } from "next-auth/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { Button } from "~/components/ui/button";
 import { Label } from "~/components/ui/label";
@@ -12,6 +12,7 @@ import { useSession } from "~/utils/hooks";
 export default function Tweet() {
   const router = useRouter();
   const session = useSession();
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     if ((session.status as string) === "loading") return;
@@ -24,6 +25,8 @@ export default function Tweet() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    setLoading(true);
+
     const data = {
       message: (event.target as unknown as { message: HTMLInputElement })
         .message.value,
@@ -31,11 +34,12 @@ export default function Tweet() {
 
     const response = await axios.post("/api/tweet", data);
 
+    setLoading(false);
+
     if (response.status === 200) {
-      return router.push(`/tweet/${response.data.tweetId}`);
+      return router.push(`/tweet/${response.data.id}`);
     } else {
       toast.error("An error occured. Please try again later.");
-      console.error(response);
     }
   };
 
@@ -56,7 +60,7 @@ export default function Tweet() {
         </div>
 
         <div className="flex justify-end mt-4">
-          <Button>Tweet</Button>
+          <Button isLoading={isLoading}>Tweet</Button>
         </div>
       </form>
     </>

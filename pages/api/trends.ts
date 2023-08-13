@@ -9,9 +9,7 @@ export default async function handler(
     {
       geo: req.query.geo || "FR",
     },
-    function (err: unknown, results: string) {
-      console.log(arguments);
-
+    function (_: unknown, results: string) {
       const today = (JSON.parse(results) as { default: Results }).default
         .trendingSearchesDays;
 
@@ -26,11 +24,7 @@ export default async function handler(
         )
         .flat();
 
-      if (err) {
-        console.log(err);
-      } else {
-        res.json(json);
-      }
+      res.json(json);
     }
   );
 }

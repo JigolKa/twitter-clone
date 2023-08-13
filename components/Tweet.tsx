@@ -10,7 +10,6 @@ import {
   Repeat2,
   Share,
   Trash,
-  Trash2,
 } from "lucide-react";
 import { Session } from "next-auth";
 import { signIn } from "next-auth/react";
@@ -86,8 +85,6 @@ const factory =
           : mutate(mutateKey ?? "/api/tweet/feed")
       )
       .catch((e) => {
-        console.log("🚀 ~ file: Feed.tsx:49 ~ e:", e);
-
         setter((p) => !p);
         toast(e);
       });
@@ -159,7 +156,7 @@ function DetailedHeader({
 
         <DropdownMenu open={isMenuOpen} onOpenChange={setMenuOpen}>
           <DropdownMenuTrigger asChild>
-            <Button size="icon" variant="outline">
+            <Button size="icon" variant="outline" className="rounded-sm">
               <GripHorizontalIcon className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
