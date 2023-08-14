@@ -11,6 +11,7 @@ import { Skeleton } from "~/components/ui/skeleton";
 import { toUnix } from "~/utils";
 import { useSWR, useSession } from "~/utils/hooks";
 import { Profile } from "../api/user/[id]";
+import Head from "next/head";
 
 export default function Profile() {
   const { query } = useRouter();
@@ -48,8 +49,14 @@ export default function Profile() {
     />
   );
 
+  const title = `${data ? data.name : "Loading"} - Twitter Clone`;
+
   return (
     <>
+      <Head>
+        <title>{title}</title>
+      </Head>
+
       <div className="h-80 w-full bg-[url('https://placehold.co/600x400/dddddd/dddddd')] bg-center bg-cover bg-no-repeat"></div>
       <div className="-mt-32 w-full px-8 py-4 bg-white min-h-[260px]">
         <div className="flex justify-between items-center">

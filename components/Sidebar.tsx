@@ -154,9 +154,9 @@ export default function Sidebar() {
                         session.data.user?.image ||
                         "https://avatars.githubusercontent.com/u/0000000?v=4"
                       }
-                      height={36}
-                      width={36}
-                      className="bg-blue-600 rounded-full shrink-0 ring-2 ring-blue-600 group-hover:ring-blue-900"
+                      height={40}
+                      width={40}
+                      className="bg-blue-600 rounded-full shrink-0"
                     ></Image>
                     <h4 className="font-bold tracking-tight text-md">
                       {session.data.user?.name}

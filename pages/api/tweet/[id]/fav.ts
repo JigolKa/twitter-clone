@@ -12,11 +12,7 @@ export default async function handler(
   }
 
   const { id } = req.query;
-  const session = await getServerSession(
-    req as NextApiRequest,
-    res as NextApiResponse,
-    authOptions
-  );
+  const session = await getServerSession(req, res, authOptions);
 
   if (!session || typeof session.user === "undefined") {
     return res.status(403).json({ message: "Forbidden" });
@@ -50,17 +46,16 @@ export default async function handler(
     },
   }))!;
 
-  let emails = Array.from(new Set(tweet.likes)) as {
-    email?: string;
+  let ids = Array.from(new Set(tweet.likes.map((v) => ({ id: v.id })))) as {
     id?: string;
   }[];
 
-  const isLiked = emails.filter((v) => v.email === user.email).length > 0;
+  const isLiked = ids.filter((v) => v.id === user.id).length > 0;
 
   if (isLiked) {
-    emails = emails.filter((v) => v.email !== user.email);
+    ids = ids.filter((v) => v.id !== user.id);
   } else {
-    emails.push({ id: user.id });
+    ids.push({ id: user.id });
   }
 
   const updatedTweet = await prisma.tweet.update({
@@ -69,7 +64,7 @@ export default async function handler(
     },
     data: {
       likes: {
-        set: emails,
+        set: ids,
       },
     },
     include: {

@@ -19,14 +19,21 @@ export default async function handler(
     return res.status(403).json({ message: "Forbidden" });
   }
 
-  const user = (await prisma.user.findFirst({
+  const user = await prisma.user.findFirst({
     where: {
       email: session.user.email!,
     },
     include: {
       retweets: true,
     },
-  }))!;
+  });
+
+  if (!user) {
+    console.error(session);
+    return res
+      .status(404)
+      .json({ message: "Your account is not linked properly." });
+  }
 
   const retweet = await prisma.retweet.findFirst({
     where: {
@@ -49,12 +56,9 @@ export default async function handler(
       },
     });
   } else {
-    updatedRetweet = await prisma.retweet.update({
+    updatedRetweet = await prisma.retweet.delete({
       where: {
         id: retweet.id,
-      },
-      data: {
-        isDeleted: !retweet.isDeleted,
       },
     });
   }

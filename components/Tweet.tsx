@@ -66,27 +66,27 @@ export interface FetchedTweetSample extends Tweet {
   };
   hits?: number;
   isRetweet?: boolean;
+  isLiked: boolean;
+  isRetweeted: boolean;
 }
 
 const factory =
   (data: Session | null, mutateKey?: TweetProps["mutateKey"]) =>
-  (url: string, setter: Dispatch<SetStateAction<boolean>>) =>
+  (url: string) =>
   () => {
     if (!data?.user) {
       return signIn();
     }
 
-    setter((p) => !p);
     axios
       .post(url)
-      .finally(() =>
+      .then(() =>
         typeof mutateKey === "function"
           ? mutateKey()
           : mutate(mutateKey ?? "/api/tweet/feed")
       )
-      .catch((e) => {
-        setter((p) => !p);
-        toast(e);
+      .catch(() => {
+        toast.error("An error occured. Please try again later.");
       });
   };
 
@@ -189,8 +189,10 @@ function DetailedHeader({
 }
 
 function SimpleHeader({ tweet }: Pick<SimpleTweetProps, "tweet">) {
+  const title = `${tweet.author.name}'s profile picture`;
+
   return (
-    <>
+    <div className="flex gap-2 items-center">
       <Link
         className="flex items-center gap-2 max-w-fit group"
         href={`/profile/${tweet.author.id}`}
@@ -200,8 +202,8 @@ function SimpleHeader({ tweet }: Pick<SimpleTweetProps, "tweet">) {
             tweet.author.image ??
             "https://avatars.githubusercontent.com/u/0000000?v=4"
           }
-          alt={`${tweet.author.name}'s profile picture`}
-          title={`${tweet.author.name}'s profile picture`}
+          alt={title}
+          title={title}
           width={32}
           height={32}
           className="rounded-full"
@@ -209,14 +211,17 @@ function SimpleHeader({ tweet }: Pick<SimpleTweetProps, "tweet">) {
         <span className="text-gray-700 group-hover:underline">
           {tweet.author.name}
         </span>
-        <span className="text-gray-700 text-sm">
-          •&nbsp;&nbsp;
+      </Link>
+
+      <div className="text-gray-700 text-sm flex gap-2 items-center">
+        <span>•</span>
+        <span>
           {getRelativeTime(
             new Date(tweet[tweet.isRetweet ? "updatedAt" : "createdAt"])
           )}
         </span>
-      </Link>
-    </>
+      </div>
+    </div>
   );
 }
 
@@ -261,23 +266,11 @@ export function TweetElement({
   ...rest
 }: DetailedTweetProps | SimpleTweetProps) {
   const { data } = useSession();
-  const userEmail = data?.user?.email;
-
-  const [isLiked, setLike] = useState(
-    userEmail && tweet.likes
-      ? nestedCheck(tweet.likes, "email", userEmail)
-      : false
-  );
-  const [isRetweeted, setRetweet] = useState(
-    userEmail && tweet.retweets
-      ? nestedCheck(tweet.retweets, "email", userEmail)
-      : false
-  );
 
   const innerFactory = factory(data, mutateKey);
 
-  const like = innerFactory(`/api/tweet/${tweet.id}/fav`, setLike);
-  const retweet = innerFactory(`/api/tweet/${tweet.id}/retweet`, setRetweet);
+  const like = innerFactory(`/api/tweet/${tweet.id}/fav`);
+  const retweet = innerFactory(`/api/tweet/${tweet.id}/retweet`);
 
   const body = (
     <p
@@ -344,7 +337,7 @@ export function TweetElement({
 
         {tweet.retweets ? (
           <ActionButton
-            className={cx(isRetweeted && "text-green-600")}
+            className={cx(tweet.isRetweeted && "text-green-600")}
             onClick={retweet}
           >
             <Repeat2
@@ -352,7 +345,7 @@ export function TweetElement({
                 (cum, cur) => ({ ...cum, [cur]: iconProps[cur] + 2 }),
                 {} as Record<string, number>
               )}
-              className={cx(isRetweeted && "fill-green-600")}
+              className={cx(tweet.isRetweeted && "fill-green-600")}
             />
             <span>{tweet.retweets.length}</span>
           </ActionButton>
@@ -360,10 +353,13 @@ export function TweetElement({
 
         {tweet.likes ? (
           <ActionButton
-            className={cx(isLiked && "text-red-600")}
+            className={cx(tweet.isLiked && "text-red-600")}
             onClick={like}
           >
-            <Heart {...iconProps} className={cx(isLiked && "fill-red-600")} />
+            <Heart
+              {...iconProps}
+              className={cx(tweet.isLiked && "fill-red-600")}
+            />
             <span>{tweet.likes.length}</span>
           </ActionButton>
         ) : null}
