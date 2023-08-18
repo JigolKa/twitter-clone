@@ -1,8 +1,8 @@
 import Fuse from "fuse.js";
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "~/prisma/db";
-import { feedInclude } from "./feed";
 import { FetchedTweetSample } from "~/types";
+import { feedInclude } from "./feed";
 
 const fuseOptions: Fuse.IFuseOptions<unknown> = {
   keys: ["message", "author.name", "comments.message", "likes.name"],

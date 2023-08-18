@@ -4,7 +4,7 @@ import { GetServerSidePropsContext } from "next";
 import { signIn, useSession } from "next-auth/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { toast } from "react-hot-toast";
 import Feed from "~/components/Feed";
 import { TweetElement, TweetSkeleton } from "~/components/Tweet";
@@ -15,12 +15,15 @@ import { createRedisInstance } from "~/lib/redis";
 import { Infos } from "~/pages/explore";
 import { DetailedTweet } from "~/types";
 import { useSWR } from "~/utils/hooks";
+import { mutate as globalMutate } from "swr";
+import { FeedContext } from "~/contexts/FeedContext";
 
 export interface HitsProps {
   hits: number;
 }
 
 export default function Tweet({ hits }: HitsProps) {
+  const ctx = useContext(FeedContext);
   const router = useRouter();
   const { data, mutate } = useSWR<DetailedTweet>(
     router.query ? `/api/tweet/${router.query.id}` : null
@@ -28,25 +31,27 @@ export default function Tweet({ hits }: HitsProps) {
   const [message, setMessage] = useState("");
   const [isLoading, setLoading] = useState(false);
   const { data: user } = useSession();
-  const toggle = () => setLoading((p) => !p);
 
   const comment = () => {
-    if (!user) {
+    if (!user || !data) {
       return signIn();
     }
 
-    toggle();
+    setLoading(true);
 
     axios
       .post(`/api/tweet/${router.query.id}/comment`, {
         message,
       })
-      .finally(() => mutate())
       .catch((e) => {
         toast.error(TOAST_ERROR_MESSAGE);
+      })
+      .finally(() => {
+        mutate();
+        ctx?.triggerRefresh?.();
       });
 
-    toggle();
+    setLoading(false);
   };
 
   return (
@@ -73,30 +78,13 @@ export default function Tweet({ hits }: HitsProps) {
       )}
       <h2 className="text-3xl tracking-tight font-bold mt-8">Comments</h2>
 
-      {data ? (
-        data.comments.length > 0 ? (
-          <Feed
-            isLegacy
-            tweetProps={{
-              disableBodyLink: true,
-              callback: () => mutate(),
-            }}
-            tweets={data.comments}
-            className="mt-2"
-          />
-        ) : (
-          <Infos className="!h-48">
-            <CircleSlash2 height={28} width={28} />
-            <span className="block font-semibold text-lg">No comments yet</span>
-          </Infos>
-        )
-      ) : (
-        <div className="grid gap-8 mt-4">
-          {new Array(4).fill(0).map((_, i) => (
-            <TweetSkeleton preset="feed" key={i} />
-          ))}
-        </div>
-      )}
+      <Feed
+        tweetProps={{
+          disableBodyLink: true,
+        }}
+        fetchUrl={data ? `/api/tweet/${data.id}/feed` : null}
+        className="mt-2"
+      />
 
       {data && (
         <>
@@ -111,13 +99,8 @@ export default function Tweet({ hits }: HitsProps) {
               onChange={(e) => setMessage(e.currentTarget.value)}
             />
             <div className="w-full flex justify-end">
-              <Button
-                isLoading={isLoading}
-                onClick={() => {
-                  comment();
-                }}
-              >
-                Submit
+              <Button isLoading={isLoading} onClick={comment}>
+                Comment
               </Button>
             </div>
           </div>

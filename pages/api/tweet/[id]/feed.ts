@@ -1,36 +1,24 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "~/prisma/db";
-import { FetchedTweetSample } from "~/types";
 import { getServerSession } from "~/utils/hooks";
 import { authOptions } from "../../auth/[...nextauth]";
-
-export const feedInclude = {
-  likes: { select: { email: true } },
-  comments: { select: { id: true } },
-  retweets: {
-    where: { isDeleted: false },
-    select: { user: { select: { email: true } } },
-  },
-  author: {
-    select: {
-      id: true,
-      image: true,
-      name: true,
-    },
-  },
-};
+import { feedInclude } from "../feed";
+import { FetchedTweetSample } from "~/types";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  const { per_page, page, id } = req.query;
   const session = await getServerSession(req, res, authOptions);
-  const { per_page, page } = req.query;
 
   const tweets = await prisma.tweet.findMany({
     take: per_page ? +per_page : 15,
     skip: page && per_page ? +page * +per_page : 0,
     include: feedInclude,
+    where: {
+      rootTweetId: id as string,
+    },
   });
 
   const user = session?.user
@@ -63,8 +51,6 @@ export default async function handler(
     isLiked: isLoggedIn && likes ? likes.includes(v.id) : false,
     isRetweeted: isLoggedIn && retweets ? retweets.includes(v.id) : false,
   })) as FetchedTweetSample[];
-
-  // await new Promise((res) => setTimeout(res, 2000));
 
   return res.json(json);
 }

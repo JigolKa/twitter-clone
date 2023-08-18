@@ -19,12 +19,12 @@ import {
   DialogTrigger,
 } from "~/components/ui/dialog";
 import { Textarea } from "~/components/ui/textarea";
+import { TOAST_ERROR_MESSAGE } from "~/config";
 import { createRedisInstance } from "~/lib/redis";
+import { DetailedTweet } from "~/types";
 import { capitalize } from "~/utils";
 import { useSWR, useSession } from "~/utils/hooks";
 import { HitsProps } from ".";
-import { DetailedTweet } from "~/types";
-import { TOAST_ERROR_MESSAGE } from "~/config";
 
 export default function Manage({ hits }: HitsProps) {
   const router = useRouter();
@@ -33,7 +33,8 @@ export default function Manage({ hits }: HitsProps) {
     router.query && session.data?.user ? `/api/tweet/${router.query.id}` : null
   );
   const [isLoading, setLoading] = useState(false);
-  const isAuthor = session.data?.user?.id === tweet?.author.id;
+  const isAuthor =
+    session && tweet ? session.data?.user?.id === tweet?.author.id : null;
   const isComment = tweet?.rootTweetId;
   const kind = isComment ? "comment" : "tweet";
   const editRef = useRef<HTMLTextAreaElement>(null);
@@ -80,17 +81,14 @@ export default function Manage({ hits }: HitsProps) {
   };
 
   useEffect(() => {
-    if ((session.status as string) === "loading") return;
+    if (isAuthor === null) return;
 
-    if (
-      (session.status as string) === "unauthenticated" ||
-      !session?.data?.user
-    ) {
+    if (!session?.data?.user) {
       signIn();
     } else if (!isAuthor) {
       router.push("/");
     }
-  }, [isAuthor, session.status]);
+  }, [isAuthor]);
 
   return isAuthor && tweet ? (
     <>
@@ -166,12 +164,15 @@ export default function Manage({ hits }: HitsProps) {
         </Dialog>
       </div>
 
-      {!isComment && (
-        <>
-          <h2 className="mt-8 font-bold font-xl">Comments</h2>
-          <Feed isLegacy tweets={tweet.comments} className="mt-2" />
-        </>
-      )}
+      {/* {!isComment && ( */}
+      <>
+        <h2 className="mt-8 font-bold font-xl">Comments</h2>
+        <Feed
+          fetchUrl={tweet ? `/api/tweet/${tweet.id}/feed` : null}
+          className="mt-2"
+        />
+      </>
+      {/* )} */}
     </>
   ) : null;
 }

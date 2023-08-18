@@ -13,12 +13,7 @@ export default function Home() {
 
       <h1 className="text-4xl font-bold tracking-tighter">Home</h1>
 
-      <Feed
-        className="mt-6"
-        fetching={{
-          fetchUrl: "/api/tweet/feed",
-        }}
-      />
+      <Feed className="mt-6" fetchUrl="/api/tweet/feed" />
     </>
   );
 }

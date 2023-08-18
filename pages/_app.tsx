@@ -6,6 +6,7 @@ import Sidebar from "~/components/Sidebar";
 import "~/styles/globals.css";
 import { AppProps } from "~/types";
 import "../styles/loading.scss";
+import FeedProvider from "~/contexts/FeedContext";
 // import { Provider } from "next-auth/client";
 
 Router.events.on("routeChangeStart", nProgress.start);
@@ -15,13 +16,15 @@ Router.events.on("routeChangeComplete", nProgress.done);
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <SessionProvider>
-      <Toaster position="bottom-right" reverseOrder={false} />
-      <div className="flex min-w-[100vw]">
-        <Sidebar />
-        <div className="pl-8 py-6 lg:pl-[4.5rem] lg:py-[3rem] w-full max-w-3xl">
-          <Component {...pageProps} />
+      <FeedProvider>
+        <Toaster position="bottom-right" reverseOrder={false} />
+        <div className="flex min-w-[100vw]">
+          <Sidebar />
+          <div className="pl-8 py-6 lg:pl-[4.5rem] lg:py-[3rem] w-full max-w-3xl">
+            <Component {...pageProps} />
+          </div>
         </div>
-      </div>
+      </FeedProvider>
     </SessionProvider>
   );
 }

@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "~/prisma/db";
+import { DetailedTweet } from "~/types";
 import { getServerSession } from "~/utils/hooks";
 import { authOptions } from "../../auth/[...nextauth]";
-import { DetailedTweet } from "~/types";
 
 export const userInfos = {
   id: true,
@@ -51,25 +51,13 @@ export default async function handler(
         },
         include: {
           likes: { select: { email: true } },
-          comments: {
-            include: {
-              retweets: { select: { user: { select: { email: true } } } },
-              likes: { select: { email: true } },
-              author: {
-                select: {
-                  id: true,
-                  image: true,
-                  name: true,
-                },
-              },
-            },
-          },
           retweets: {
             where: {
               isDeleted: false,
             },
             select: { user: { select: { email: true } } },
           },
+          comments: { select: { id: true } },
           author: {
             select: {
               id: true,
@@ -93,12 +81,6 @@ export default async function handler(
       return res.json({
         ...tweet,
         retweets: tweet?.retweets.map((v) => ({ email: v.user.email })),
-        comments: tweet?.comments.map((v) => ({
-          ...v,
-          retweets: v.retweets.map((k) => ({ email: k.user.email })),
-          isLiked: isLoggedIn ? likes.includes(v.id) : false,
-          isRetweeted: isLoggedIn ? retweets.includes(v.id) : false,
-        })),
         isLiked: isLoggedIn ? likes.includes(id) : false,
         isRetweeted: isLoggedIn ? retweets.includes(id) : false,
       } as DetailedTweet);

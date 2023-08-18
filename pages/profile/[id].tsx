@@ -126,12 +126,8 @@ export default function Profile() {
           <Feed
             tweetProps={{
               profileName: !isAuthor ? data?.name! : "You",
-              callback: () => mutate(),
             }}
-            fetching={{
-              isSkipSupported: true,
-              fetchUrl: `/api/user/${query.id}/feed`,
-            }}
+            fetchUrl={`/api/user/${query.id}/feed`}
             className="mt-4"
           />
         ) : (

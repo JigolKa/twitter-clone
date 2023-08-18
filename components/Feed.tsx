@@ -1,14 +1,11 @@
-import axios from "axios";
 import { CircleSlash2, XIcon } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { toast } from "react-hot-toast";
-import { debounce } from "ts-debounce";
-import { TOAST_ERROR_MESSAGE } from "~/config";
+import { useContext, useEffect } from "react";
+import useSWRInfinite from "swr/infinite";
 import { Infos } from "~/pages/explore";
 import { BasicProps, FetchedTweetSample, SimpleTweetProps } from "~/types";
-import { URLParams, fetcher, merge, omit } from "~/utils";
+import { fetcher, merge, omit } from "~/utils";
 import { TweetElement, TweetSkeleton } from "./Tweet";
-import useSWRInfinite from "swr/infinite";
+import { FeedContext } from "~/contexts/FeedContext";
 
 type FeedProps = BasicProps & {
   tweetProps?: Partial<SimpleTweetProps>;
@@ -17,9 +14,7 @@ type LegacyFeedProps = FeedProps & {
   tweets: FetchedTweetSample[];
 } & { isLegacy: true };
 type FeedFetchingProps = FeedProps & {
-  fetching: {
-    fetchUrl: string;
-  };
+  fetchUrl: string | null;
 } & { isLegacy?: false };
 const PAGE_SIZE = 15;
 
@@ -27,12 +22,14 @@ export default function Feed({
   tweetProps,
   ...rest
 }: LegacyFeedProps | FeedFetchingProps) {
+  const ctx = useContext(FeedContext);
+
   const { size, setSize, data, isLoading, isValidating, mutate } =
     useSWRInfinite<FetchedTweetSample[]>(
       (i) =>
-        !rest.isLegacy
+        !rest.isLegacy && rest.fetchUrl
           ? `${
-              rest.fetching.fetchUrl || "/api/tweet/feed"
+              rest.fetchUrl || "/api/tweet/feed"
             }?per_page=${PAGE_SIZE}&page=${i}`
           : null,
       fetcher
@@ -57,6 +54,8 @@ export default function Feed({
         document.documentElement.scrollHeight - 50;
       if (isBottom) setSize(size + 1);
     };
+
+    ctx?.setFn(() => mutate);
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -118,55 +117,3 @@ function FeedLoader(props: BasicProps & { count?: number }) {
     </div>
   );
 }
-
-/**
- * 
-  const [index, setIndex] = useState<number | undefined>(0);
-  const [isLoading, setLoading] = useState(true);
-  const [tweets, setTweets] = useState<FetchedTweetSample[]>([]);
- * 
- * 
-  useEffect(() => void fetch(), []);
-
-  const fetch = debounce(() => {
-    if (
-      rest.isLegacy ||
-      typeof index === "undefined" ||
-      (isLoading && tweets.length)
-    )
-      return;
-    setLoading(true);
-
-    axios
-      .get<FetchedTweetSample[]>(
-        rest.fetching.fetchUrl + `?${URLParams({ skip: index * 15 })}`
-      )
-      .then(({ data }) => {
-        if (data.length < 15) setIndex(undefined); // no more tweets to fetch
-
-        setTweets((p) => [...p, ...data]);
-        setIndex((p) => (p ? p + 1 : undefined));
-      })
-      .catch(() => toast.error(TOAST_ERROR_MESSAGE));
-
-    setLoading(false);
-  }, 500);
-
-  const mutate = async () => {
-    setLoading(true);
-    if (rest.isLegacy) return;
-
-    const len = tweets.length;
-
-    try {
-      const response = await axios.get<FetchedTweetSample[]>(
-        rest.fetching.fetchUrl + `?${URLParams({ take: len })}`
-      );
-
-      setTweets(response.data);
-    } catch (error) {
-      toast.error(TOAST_ERROR_MESSAGE);
-    }
-    setLoading(false);
-  };
- */

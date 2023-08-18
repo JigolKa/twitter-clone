@@ -79,5 +79,5 @@ export type DetailedTweet = Omit<FetchedTweetSample, "comments"> & {
     }[];
   };
   hits?: number;
-  comments: FetchedTweetSample[];
+  comments: { id: string }[];
 };
