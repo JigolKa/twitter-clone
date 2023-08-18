@@ -1,12 +1,9 @@
 import { useSession } from "next-auth/react";
 import Head from "next/head";
 import Feed from "~/components/Feed";
-import { FetchedTweetSample, TweetSkeleton } from "~/components/Tweet";
-import { useSWR } from "~/utils/hooks";
 
 export default function Home() {
   const session = useSession();
-  const { data } = useSWR<FetchedTweetSample[]>("/api/tweet/feed");
 
   return (
     <>
@@ -16,15 +13,12 @@ export default function Home() {
 
       <h1 className="text-4xl font-bold tracking-tighter">Home</h1>
 
-      {data ? (
-        <Feed className="mt-6" tweets={data} />
-      ) : (
-        <div className="grid gap-8 mt-4">
-          {new Array(10).fill(0).map((_, i) => (
-            <TweetSkeleton preset="feed" key={i} />
-          ))}
-        </div>
-      )}
+      <Feed
+        className="mt-6"
+        fetching={{
+          fetchUrl: "/api/tweet/feed",
+        }}
+      />
     </>
   );
 }

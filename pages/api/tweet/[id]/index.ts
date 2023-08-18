@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { DetailedTweet } from "~/pages/tweet/[id]";
 import prisma from "~/prisma/db";
-import { authOptions } from "../../auth/[...nextauth]";
 import { getServerSession } from "~/utils/hooks";
+import { authOptions } from "../../auth/[...nextauth]";
+import { DetailedTweet } from "~/types";
 
 export const userInfos = {
   id: true,
@@ -80,6 +80,10 @@ export default async function handler(
           },
         },
       });
+
+      if (!tweet) {
+        return res.status(404).json({ message: "Not Found" });
+      }
 
       const isLoggedIn = session?.user && session?.user !== null;
 

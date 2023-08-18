@@ -22,7 +22,9 @@ import { Textarea } from "~/components/ui/textarea";
 import { createRedisInstance } from "~/lib/redis";
 import { capitalize } from "~/utils";
 import { useSWR, useSession } from "~/utils/hooks";
-import { DetailedTweet, HitsProps } from ".";
+import { HitsProps } from ".";
+import { DetailedTweet } from "~/types";
+import { TOAST_ERROR_MESSAGE } from "~/config";
 
 export default function Manage({ hits }: HitsProps) {
   const router = useRouter();
@@ -41,18 +43,20 @@ export default function Manage({ hits }: HitsProps) {
 
   const deleteTweet = async () => {
     setLoading(true);
-    const response = await axios.post(`/api/tweet/${router.query.id}/delete`);
 
-    setLoading(false);
-    closeDialog();
-    if (response.status !== 200) {
-      toast.error("An error occured. Please try again later.");
-    } else {
+    try {
+      const response = await axios.post(`/api/tweet/${router.query.id}/delete`);
+
       toast.success(`${capitalize(kind)} deleted! Redirecting...`);
       setTimeout(() => {
         router.push("/");
       }, 2000);
+    } catch (error) {
+      toast.error(TOAST_ERROR_MESSAGE);
     }
+
+    setLoading(false);
+    closeDialog();
   };
 
   const editTweet = async () => {
@@ -61,18 +65,18 @@ export default function Manage({ hits }: HitsProps) {
 
     setLoading(true);
 
-    const response = await axios.patch(`/api/tweet/${router.query.id}`, {
-      message: editRef.current.value,
-    });
+    try {
+      const response = await axios.patch(`/api/tweet/${router.query.id}`, {
+        message: editRef.current.value,
+      });
+      mutate();
+      toast.success(`${capitalize(kind)} edited!`);
+    } catch (error) {
+      toast.error(TOAST_ERROR_MESSAGE);
+    }
 
     setLoading(false);
     closeDialog();
-    if (response.status !== 200) {
-      toast.error("An error occured. Please try again later.");
-    } else {
-      mutate();
-      toast.success(`${capitalize(kind)} edited!`);
-    }
   };
 
   useEffect(() => {
@@ -165,7 +169,7 @@ export default function Manage({ hits }: HitsProps) {
       {!isComment && (
         <>
           <h2 className="mt-8 font-bold font-xl">Comments</h2>
-          <Feed tweets={tweet.comments} className="mt-2" />
+          <Feed isLegacy tweets={tweet.comments} className="mt-2" />
         </>
       )}
     </>

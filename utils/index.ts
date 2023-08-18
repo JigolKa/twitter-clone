@@ -1,5 +1,8 @@
+import { AxiosResponse } from "axios";
 import { NextApiRequest } from "next";
 import { JSXElementConstructor } from "react";
+import { mutate } from "swr";
+import { TweetProps } from "~/types";
 
 export function shuffle<T>(arr: T[]): T[] {
   const newArray = [...arr];
@@ -78,11 +81,11 @@ export function serialize<T>(data: T): T {
 export function URLParams(
   obj: Record<string, string | number | boolean>
 ): string {
-  return Object.keys(obj)
-    .map((key) => {
-      return encodeURIComponent(key) + "=" + encodeURIComponent(obj[key]);
-    })
-    .join("&");
+  const arr = Object.keys(obj).map((key) => {
+    return encodeURIComponent(key) + "=" + encodeURIComponent(obj[key]);
+  });
+
+  return arr.join("&");
 }
 
 export function capitalize(str: string) {
@@ -118,4 +121,28 @@ export function getRelativeTime(d1: Date, d2 = new Date()) {
   }
 
   return "Now";
+}
+
+export function processCallback(
+  res: AxiosResponse,
+  cb: TweetProps["callback"]
+) {
+  console.log("🚀 ~ file: index.ts:130 ~ cb:", cb, typeof cb);
+
+  switch (typeof cb) {
+    case "string": {
+      mutate(cb ?? "/api/tweet/feed");
+      break;
+    }
+
+    case "function": {
+      cb(res);
+      break;
+    }
+
+    default:
+      break;
+  }
+
+  return void 1;
 }

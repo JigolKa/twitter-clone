@@ -16,21 +16,44 @@ export default async function handler(
       const json = today
         .map((j) =>
           j.trendingSearches.map((v) => ({
-            traffic: v.formattedTraffic,
+            traffic: transformTraffic(v.formattedTraffic),
             queries: v.relatedQueries.map((k) => k.query),
             image: v.image.imageUrl,
             title: v.title.query,
           }))
         )
-        .flat();
+        .flat()
+        .sort((a, b) => b.traffic - a.traffic);
 
       res.json(json);
     }
   );
 }
 
+type TrafficUnit = "K" | "M";
+function transformTraffic(v: string): number {
+  let traffic = 0;
+  const map: Record<TrafficUnit, number> = {
+    K: 1_000,
+    M: 1_000_000,
+  };
+
+  for (const key in map) {
+    const element = map[key as TrafficUnit];
+
+    if (v.includes(key.toString())) {
+      v = v.replace(`${key}+`, "");
+      traffic = +v * element;
+
+      return traffic;
+    }
+  }
+
+  return NaN;
+}
+
 export interface Trend {
-  traffic: string;
+  traffic: number;
   queries: string[];
   image: string;
   title: string;

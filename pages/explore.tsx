@@ -5,8 +5,8 @@ import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "react-hot-toast";
 import Feed from "~/components/Feed";
-import { FetchedTweetSample } from "~/components/Tweet";
-import { BasicProps } from "~/types";
+import { TOAST_ERROR_MESSAGE } from "~/config";
+import { BasicProps, FetchedTweetSample } from "~/types";
 import { URLParams, merge } from "~/utils";
 
 export default function Explore() {
@@ -51,7 +51,7 @@ export default function Explore() {
       setTweets(response.data.length > 0 ? response.data : null);
       setLoading(false);
     } else {
-      toast.error("An error occured. Please try again later.");
+      toast.error(TOAST_ERROR_MESSAGE);
     }
   };
 
@@ -91,7 +91,7 @@ export default function Explore() {
       {!isLoading ? (
         tweets && tweets.length > 0 ? (
           <>
-            <Feed tweets={tweets} className="mt-6" />
+            <Feed tweets={tweets} isLegacy className="mt-6" />
 
             <Infos className="!mt-2 !h-48">
               <X className="h-12 w-12" />
@@ -128,7 +128,7 @@ export default function Explore() {
 export function Infos({ children, ...rest }: BasicProps) {
   return (
     <div {...merge("mt-6 h-96 w-full flex items-center justify-center", rest)}>
-      <div className="flex flex-col gap-2 items-center">{children}</div>
+      <div className="flex flex-col gap-3 items-center">{children}</div>
     </div>
   );
 }

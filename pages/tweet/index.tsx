@@ -7,6 +7,7 @@ import { toast } from "react-hot-toast";
 import { Button } from "~/components/ui/button";
 import { Label } from "~/components/ui/label";
 import { Textarea } from "~/components/ui/textarea";
+import { TOAST_ERROR_MESSAGE } from "~/config";
 import { useSession } from "~/utils/hooks";
 
 export default function Tweet() {
@@ -39,7 +40,7 @@ export default function Tweet() {
     if (response.status === 200) {
       return router.push(`/tweet/${response.data.id}`);
     } else {
-      toast.error("An error occured. Please try again later.");
+      toast.error(TOAST_ERROR_MESSAGE);
     }
   };
 

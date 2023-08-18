@@ -7,26 +7,14 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import Feed from "~/components/Feed";
-import {
-  FetchedTweetSample,
-  TweetElement,
-  TweetSkeleton,
-} from "~/components/Tweet";
+import { TweetElement, TweetSkeleton } from "~/components/Tweet";
 import { Button } from "~/components/ui/button";
 import { Textarea } from "~/components/ui/textarea";
+import { TOAST_ERROR_MESSAGE } from "~/config";
 import { createRedisInstance } from "~/lib/redis";
 import { Infos } from "~/pages/explore";
+import { DetailedTweet } from "~/types";
 import { useSWR } from "~/utils/hooks";
-
-export type DetailedTweet = Omit<FetchedTweetSample, "comments"> & {
-  author: {
-    followedBy: {
-      email: string;
-    }[];
-  };
-  hits?: number;
-  comments: FetchedTweetSample[];
-};
 
 export interface HitsProps {
   hits: number;
@@ -55,7 +43,7 @@ export default function Tweet({ hits }: HitsProps) {
       })
       .finally(() => mutate())
       .catch((e) => {
-        toast.error("An error occured. Please try again later");
+        toast.error(TOAST_ERROR_MESSAGE);
       });
 
     toggle();
@@ -77,7 +65,7 @@ export default function Tweet({ hits }: HitsProps) {
       {data ? (
         <TweetElement
           tweet={{ ...data, hits }}
-          mutateKey={mutate}
+          callback={() => mutate()}
           preset="detailed"
         />
       ) : (
@@ -88,9 +76,10 @@ export default function Tweet({ hits }: HitsProps) {
       {data ? (
         data.comments.length > 0 ? (
           <Feed
+            isLegacy
             tweetProps={{
               disableBodyLink: true,
-              mutateKey: mutate,
+              callback: () => mutate(),
             }}
             tweets={data.comments}
             className="mt-2"

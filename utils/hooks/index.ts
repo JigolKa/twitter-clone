@@ -1,8 +1,8 @@
+import { getServerSession as NextAuthGetServerSession } from "next-auth";
 import {
   useSession as NextAuthUseSession,
   SessionContextValue,
 } from "next-auth/react";
-import { getServerSession as NextAuthGetServerSession } from "next-auth";
 import { useState } from "react";
 import swr from "swr";
 import { fetcher } from "..";

@@ -1,5 +1,5 @@
+import { Search } from "lucide-react";
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import { URLParams } from "~/utils";
 import { useSWR } from "~/utils/hooks";
@@ -25,24 +25,28 @@ export default function Trends() {
         Trends in your country
       </h1>
 
-      <div className="grid grid-cols-2 w-full gap-4 mt-6">
-        {data?.map((v) => (
-          <Link
+      <ul className="mt-6">
+        {data?.map((v, i) => (
+          <div
             key={v.title}
-            className="rounded-sm px-6 py-4 shadow-md bg-gray-50 hover:bg-gray-100 transition font-semibold flex items-center gap-4"
-            href={`/explore?${URLParams({ q: v.title })}`}
+            className="flex justify-between items-center py-4 px-3 first:border-t-0 border-t border-t-gray-200 transition hover:bg-gray-100"
           >
-            <Image
-              src={v.image}
-              alt=""
-              height={48}
-              width={48}
-              className="rounded-sm"
-            />
-            <span className="text-lg">{v.title}</span>
-          </Link>
+            <div className="flex gap-4 items-center">
+              <h4 className="text-gray-700">{i + 1}.</h4>
+              <span className="text-lg">{v.title}</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <span>{v.traffic.toLocaleString()}+ searches</span>
+              <Link
+                href={`/explore?${URLParams({ q: v.title })}`}
+                title="Search it"
+              >
+                <Search />
+              </Link>
+            </div>
+          </div>
         ))}
-      </div>
+      </ul>
     </>
   );
 }

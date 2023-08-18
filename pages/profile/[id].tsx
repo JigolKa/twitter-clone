@@ -1,5 +1,6 @@
 import axios from "axios";
 import { signIn } from "next-auth/react";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -7,16 +8,15 @@ import { useEffect, useState } from "react";
 import Feed from "~/components/Feed";
 import { TweetSkeleton } from "~/components/Tweet";
 import { Button } from "~/components/ui/button";
+import { Separator } from "~/components/ui/separator";
 import { Skeleton } from "~/components/ui/skeleton";
-import { toUnix } from "~/utils";
 import { useSWR, useSession } from "~/utils/hooks";
-import { Profile } from "../api/user/[id]";
-import Head from "next/head";
+import { ProfileInfo } from "../api/user/[id]";
 
 export default function Profile() {
   const { query } = useRouter();
   const session = useSession();
-  const { data, mutate } = useSWR<Profile>(
+  const { data, mutate } = useSWR<ProfileInfo>(
     query.id ? `/api/user/${query.id}` : null
   );
   const [isSubscribed, setSubscribed] = useState(false);
@@ -34,7 +34,8 @@ export default function Profile() {
 
     axios
       .post(`/api/user/${data?.id}/sub`)
-      .then(() => setSubscribed((p) => !p));
+      .then(() => setSubscribed((p) => !p))
+      .finally(mutate);
   };
 
   const isAuthor = session.data?.user?.id === data?.id;
@@ -92,7 +93,7 @@ export default function Profile() {
                 {isSubscribed ? "Subscribed" : "Subscribe"}
               </Button>
             ) : (
-              <Link href={"/account/settings"}>
+              <Link href={"/profile/settings"}>
                 <Button variant="outline">Settings</Button>
               </Link>
             ))}
@@ -112,17 +113,24 @@ export default function Profile() {
             <Skeleton className="w-2/3 h-3" />
           </div>
         )}
+        <Separator className="mt-2" />
+        <div className="flex mt-4 w-full gap-6 text-gray-700">
+          <span>{data?.following.length ?? 0} following</span>
+          <span>{data?.followedBy.length ?? 0} followers</span>
+        </div>
 
         <h1 className="text-2xl font-bold tracking-tight mt-8">
           {data ? `${data?.name}'s Tweets` : "This profile's Tweets"}
         </h1>
-
         {data ? (
           <Feed
-            tweets={data?.tweets ?? []}
             tweetProps={{
               profileName: !isAuthor ? data?.name! : "You",
-              mutateKey: mutate,
+              callback: () => mutate(),
+            }}
+            fetching={{
+              isSkipSupported: true,
+              fetchUrl: `/api/user/${query.id}/feed`,
             }}
             className="mt-4"
           />

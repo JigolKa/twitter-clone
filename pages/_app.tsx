@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Toaster position="bottom-right" reverseOrder={false} />
       <div className="flex min-w-[100vw]">
         <Sidebar />
-        <div className="pl-[4.5rem] py-[3rem] w-full max-w-3xl">
+        <div className="pl-8 py-6 lg:pl-[4.5rem] lg:py-[3rem] w-full max-w-3xl">
           <Component {...pageProps} />
         </div>
       </div>
