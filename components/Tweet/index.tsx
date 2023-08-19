@@ -84,7 +84,7 @@ export function TweetElement({
   const body = (
     <p
       className={cx(
-        "mt-2 text-lg",
+        "mt-3 lg:mt-2 lg:text-lg",
         `pl-[${preset === "feed" ? 2 : 3}.5rem]`,
         0 &&
           "relative before:absolute before:left-[1rem] before:top-0 before:h-full before:w-[1px] before:bg-gray-300"
@@ -101,7 +101,7 @@ export function TweetElement({
       {...merge(
         cx(
           "w-full bg-white transition first:rounded-t last:rounded-b",
-          preset === "feed" && "hover:bg-gray-50 p-4"
+          preset === "feed" && "hover:bg-gray-50 p-2 pt-3.5 lg:p-4"
         ),
         rest
       )}
@@ -128,7 +128,7 @@ export function TweetElement({
         body
       )}
 
-      <div className="flex mt-4 items-center gap-12 max-w-fit w-full justify-between">
+      <div className="flex mt-3 lg:mt-4 items-center gap-12 max-w-fit w-full justify-between">
         {tweet.comments &&
           (preset === "feed" ? (
             <Link href={tweetLink}>

@@ -2,11 +2,12 @@ import { SessionProvider } from "next-auth/react";
 import { Router } from "next/router";
 import nProgress from "nprogress";
 import { Toaster } from "react-hot-toast";
+import MobileHeader from "~/components/MobileHeader";
 import Sidebar from "~/components/Sidebar";
+import FeedProvider from "~/contexts/FeedContext";
 import "~/styles/globals.css";
 import { AppProps } from "~/types";
 import "../styles/loading.scss";
-import FeedProvider from "~/contexts/FeedContext";
 // import { Provider } from "next-auth/client";
 
 Router.events.on("routeChangeStart", nProgress.start);
@@ -18,9 +19,10 @@ export default function App({ Component, pageProps }: AppProps) {
     <SessionProvider>
       <FeedProvider>
         <Toaster position="bottom-right" reverseOrder={false} />
-        <div className="flex min-w-[100vw]">
+        <div className="flex-col lg:flex-row flex">
           <Sidebar />
-          <div className="pl-8 py-6 lg:pl-[4.5rem] lg:py-[3rem] w-full max-w-3xl">
+          <MobileHeader />
+          <div className="xl:ml-[26rem] lg:ml-[21.5rem] py-4 lg:py-8 px-6 xl:px-8 lg:max-w-2xl xl:max-w-3xl w-full">
             <Component {...pageProps} />
           </div>
         </div>

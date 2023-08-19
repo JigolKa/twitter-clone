@@ -8,20 +8,13 @@ import {
 } from "lucide-react";
 import { useContext, useEffect, useState } from "react";
 import useSWRInfinite from "swr/infinite";
+import { FeedContext } from "~/contexts/FeedContext";
 import { Infos } from "~/pages/explore";
 import { BasicProps, FetchedTweetSample, SimpleTweetProps } from "~/types";
 import { capitalize, fetcher, merge, omit } from "~/utils";
-import { TweetElement, TweetSkeleton } from "./Tweet";
-import { FeedContext } from "~/contexts/FeedContext";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select";
-import { Button } from "./ui/button";
 import { Sort } from "~/utils/sort";
+import { TweetElement, TweetSkeleton } from "./Tweet";
+import { Button } from "./ui/button";
 
 type FeedProps = BasicProps & {
   tweetProps?: Partial<SimpleTweetProps>;
@@ -86,7 +79,7 @@ export default function Feed({
 
   function FeedRenderer({ tweets }: { tweets: FetchedTweetSample[] }) {
     return (
-      <div className="flex flex-col divide-y max-w-3xl mt-2">
+      <div className="flex flex-col divide-y mt-6 lg:mt-3">
         {tweets.map((v) => (
           <TweetElement
             tweet={v}
@@ -102,28 +95,32 @@ export default function Feed({
     );
   }
 
+  const sortNode = (
+    <div className="flex w-full justify-between items-center">
+      <h2 className="text-xl font-semibold hidden sm:block">Sort:</h2>
+      <div className="flex items-center justify-between sm:justify-normal sm:gap-3 w-full sm:w-fit">
+        {sorts.map((v) => (
+          <Button
+            variant={v.text === sort ? undefined : "outline"}
+            onClick={() => {
+              if (v.text === sort) return;
+              setSort(v.text);
+            }}
+            key={v.text}
+          >
+            <v.icon className="mr-2 h-4 w-4" />
+            {capitalize(v.text)}
+          </Button>
+        ))}
+      </div>
+    </div>
+  );
+
   return !rest.isLegacy ? (
     !isLoading ? (
       tweets.length > 0 ? (
-        <div {...rest}>
-          <div className="flex w-full justify-between items-center">
-            <h2 className="text-xl font-semibold">Sort:</h2>
-            <div className="flex items-center gap-3">
-              {sorts.map((v) => (
-                <Button
-                  variant={v.text === sort ? undefined : "outline"}
-                  onClick={() => {
-                    if (v.text === sort) return;
-                    setSort(v.text);
-                  }}
-                  key={v.text}
-                >
-                  <v.icon className="mr-2 h-4 w-4" />
-                  {capitalize(v.text)}
-                </Button>
-              ))}
-            </div>
-          </div>
+        <div {...omit(rest, "fetchUrl")}>
+          {sortNode}
           <FeedRenderer tweets={tweets ?? []} />
           {isLoadingMore && <FeedLoader count={6} />}
           {isReachingEnd && (
@@ -142,7 +139,10 @@ export default function Feed({
         </Infos>
       )
     ) : (
-      <FeedLoader />
+      <div {...omit(rest, "fetchUrl")}>
+        {sortNode}
+        <FeedLoader />
+      </div>
     )
   ) : (
     <FeedRenderer tweets={rest.tweets} />
@@ -151,7 +151,7 @@ export default function Feed({
 
 function FeedLoader(props: BasicProps & { count?: number }) {
   return (
-    <div {...merge("grid gap-8 mt-4", props)}>
+    <div {...merge("grid gap-8 mt-6", props)}>
       {new Array(props.count || 10).fill(0).map((_, i) => (
         <TweetSkeleton preset="feed" key={i} />
       ))}

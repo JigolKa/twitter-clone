@@ -125,7 +125,7 @@ export function SimpleHeader({ tweet }: Pick<SimpleTweetProps, "tweet">) {
   return (
     <div className="flex gap-2 items-center">
       <Link
-        className="flex items-center gap-2 max-w-fit group"
+        className="flex items-center gap-3 lg:gap-2 max-w-fit group"
         href={`/profile/${tweet.author.id}`}
       >
         <Image
@@ -137,7 +137,7 @@ export function SimpleHeader({ tweet }: Pick<SimpleTweetProps, "tweet">) {
           title={title}
           width={32}
           height={32}
-          className="rounded-full"
+          className="rounded-full lg:h-8 lg:w-8 w-7 h-7"
         />
         <span className="text-gray-700 group-hover:underline">
           {tweet.author.name}

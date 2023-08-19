@@ -2,7 +2,7 @@ import { AxiosResponse } from "axios";
 import { NextApiRequest } from "next";
 import { JSXElementConstructor } from "react";
 import { mutate } from "swr";
-import { FetchedTweetSample, TweetProps } from "~/types";
+import { TweetProps } from "~/types";
 import { Sort } from "./sort";
 
 export function shuffle<T>(arr: T[]): T[] {

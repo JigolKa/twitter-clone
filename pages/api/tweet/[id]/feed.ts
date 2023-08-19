@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "~/prisma/db";
-import { getServerSession } from "~/utils/hooks";
-import { authOptions } from "../../auth/[...nextauth]";
-import { feedInclude } from "../feed";
 import { FetchedTweetSample } from "~/types";
 import { retrieveParameters } from "~/utils";
+import { getServerSession } from "~/utils/hooks";
 import { sortTweets } from "~/utils/sort";
+import { authOptions } from "../../auth/[...nextauth]";
+import { feedInclude } from "../feed";
 
 export default async function handler(
   req: NextApiRequest,

@@ -1,10 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "~/prisma/db";
 import { FetchedTweetSample } from "~/types";
-import { getServerSession } from "~/utils/hooks";
-import { authOptions } from "../../auth/[...nextauth]";
 import { retrieveParameters } from "~/utils";
+import { getServerSession } from "~/utils/hooks";
 import { sortTweets } from "~/utils/sort";
+import { authOptions } from "../../auth/[...nextauth]";
 
 export const feedInclude = {
   likes: { select: { email: true } },

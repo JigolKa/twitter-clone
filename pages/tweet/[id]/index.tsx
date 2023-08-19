@@ -1,5 +1,4 @@
 import axios from "axios";
-import { CircleSlash2 } from "lucide-react";
 import { GetServerSidePropsContext } from "next";
 import { signIn, useSession } from "next-auth/react";
 import Head from "next/head";
@@ -11,12 +10,10 @@ import { TweetElement, TweetSkeleton } from "~/components/Tweet";
 import { Button } from "~/components/ui/button";
 import { Textarea } from "~/components/ui/textarea";
 import { TOAST_ERROR_MESSAGE } from "~/config";
+import { FeedContext } from "~/contexts/FeedContext";
 import { createRedisInstance } from "~/lib/redis";
-import { Infos } from "~/pages/explore";
 import { DetailedTweet } from "~/types";
 import { useSWR } from "~/utils/hooks";
-import { mutate as globalMutate } from "swr";
-import { FeedContext } from "~/contexts/FeedContext";
 
 export interface HitsProps {
   hits: number;
