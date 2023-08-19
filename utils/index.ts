@@ -2,7 +2,8 @@ import { AxiosResponse } from "axios";
 import { NextApiRequest } from "next";
 import { JSXElementConstructor } from "react";
 import { mutate } from "swr";
-import { TweetProps } from "~/types";
+import { FetchedTweetSample, TweetProps } from "~/types";
+import { Sort } from "./sort";
 
 export function shuffle<T>(arr: T[]): T[] {
   const newArray = [...arr];
@@ -123,12 +124,24 @@ export function getRelativeTime(d1: Date, d2 = new Date()) {
   return "Now";
 }
 
+interface Query extends Record<string, string | number> {
+  take: number;
+  skip: number;
+  sort: Sort;
+}
+export function retrieveParameters(query: NextApiRequest["query"]) {
+  const { per_page, page } = query;
+  return {
+    ...query,
+    take: per_page ? +per_page : 15,
+    skip: page && per_page ? +page * +per_page : 0,
+  } as Query;
+}
+
 export function processCallback(
   res: AxiosResponse,
   cb: TweetProps["callback"]
 ) {
-  console.log("🚀 ~ file: index.ts:130 ~ cb:", cb, typeof cb);
-
   switch (typeof cb) {
     case "string": {
       mutate(cb ?? "/api/tweet/feed");

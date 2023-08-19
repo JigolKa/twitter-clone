@@ -4,12 +4,14 @@ import { FetchedTweetSample, UnwrapArray } from "~/types";
 import { getServerSession } from "~/utils/hooks";
 import { authOptions } from "../../auth/[...nextauth]";
 import { feedInclude } from "../../tweet/feed";
+import { sortTweets } from "~/utils/sort";
+import { retrieveParameters } from "~/utils";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { id, per_page, page } = req.query;
+  const { take, skip, sort, id } = retrieveParameters(req.query);
 
   const session = await getServerSession(req, res, authOptions);
 
@@ -48,7 +50,6 @@ export default async function handler(
   const isLoggedIn = session?.user && session?.user !== null;
   const likes = user.likes.map((v) => v.id);
   const retweets = user.retweets.map((v) => v.tweetId);
-  const skip = page && per_page ? +page * +per_page : 0;
 
   const json = [...user.tweets, ...user.retweets]
     .map((v) => {
@@ -70,7 +71,7 @@ export default async function handler(
     })
     .sort((a, b) => +b.createdAt - +a.createdAt) as FetchedTweetSample[];
 
-  res.json(json.slice(skip, skip + +(per_page || 15)));
+  res.json(sortTweets(json, sort).slice(skip, skip + take));
   res.end();
 
   return json;

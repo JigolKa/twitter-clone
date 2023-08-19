@@ -4,17 +4,17 @@ import { getServerSession } from "~/utils/hooks";
 import { authOptions } from "../../auth/[...nextauth]";
 import { feedInclude } from "../feed";
 import { FetchedTweetSample } from "~/types";
+import { retrieveParameters } from "~/utils";
+import { sortTweets } from "~/utils/sort";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { per_page, page, id } = req.query;
+  const { take, skip, id, sort } = retrieveParameters(req.query);
   const session = await getServerSession(req, res, authOptions);
 
   const tweets = await prisma.tweet.findMany({
-    take: per_page ? +per_page : 15,
-    skip: page && per_page ? +page * +per_page : 0,
     include: feedInclude,
     where: {
       rootTweetId: id as string,
@@ -52,5 +52,5 @@ export default async function handler(
     isRetweeted: isLoggedIn && retweets ? retweets.includes(v.id) : false,
   })) as FetchedTweetSample[];
 
-  return res.json(json);
+  return res.json(sortTweets(json, sort).slice(skip, skip + take));
 }

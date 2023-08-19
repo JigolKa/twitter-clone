@@ -3,6 +3,8 @@ import prisma from "~/prisma/db";
 import { FetchedTweetSample } from "~/types";
 import { getServerSession } from "~/utils/hooks";
 import { authOptions } from "../../auth/[...nextauth]";
+import { retrieveParameters } from "~/utils";
+import { sortTweets } from "~/utils/sort";
 
 export const feedInclude = {
   likes: { select: { email: true } },
@@ -25,12 +27,13 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const session = await getServerSession(req, res, authOptions);
-  const { per_page, page } = req.query;
+  const { take, skip, sort } = retrieveParameters(req.query);
 
   const tweets = await prisma.tweet.findMany({
-    take: per_page ? +per_page : 15,
-    skip: page && per_page ? +page * +per_page : 0,
     include: feedInclude,
+    where: {
+      rootTweet: null,
+    },
   });
 
   const user = session?.user
@@ -66,5 +69,5 @@ export default async function handler(
 
   // await new Promise((res) => setTimeout(res, 2000));
 
-  return res.json(json);
+  return res.json(sortTweets(json, sort).slice(skip, skip + take));
 }

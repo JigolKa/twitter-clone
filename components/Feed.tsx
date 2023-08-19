@@ -1,11 +1,27 @@
-import { CircleSlash2, XIcon } from "lucide-react";
-import { useContext, useEffect } from "react";
+import {
+  ArrowUpDown,
+  BadgePlus,
+  CircleSlash2,
+  Flame,
+  LucideIcon,
+  XIcon,
+} from "lucide-react";
+import { useContext, useEffect, useState } from "react";
 import useSWRInfinite from "swr/infinite";
 import { Infos } from "~/pages/explore";
 import { BasicProps, FetchedTweetSample, SimpleTweetProps } from "~/types";
-import { fetcher, merge, omit } from "~/utils";
+import { capitalize, fetcher, merge, omit } from "~/utils";
 import { TweetElement, TweetSkeleton } from "./Tweet";
 import { FeedContext } from "~/contexts/FeedContext";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
+import { Button } from "./ui/button";
+import { Sort } from "~/utils/sort";
 
 type FeedProps = BasicProps & {
   tweetProps?: Partial<SimpleTweetProps>;
@@ -18,11 +34,18 @@ type FeedFetchingProps = FeedProps & {
 } & { isLegacy?: false };
 const PAGE_SIZE = 15;
 
+const sorts: { text: Sort; icon: LucideIcon }[] = [
+  { text: "default", icon: ArrowUpDown },
+  { text: "new", icon: BadgePlus },
+  { text: "hot", icon: Flame },
+];
+
 export default function Feed({
   tweetProps,
   ...rest
 }: LegacyFeedProps | FeedFetchingProps) {
   const ctx = useContext(FeedContext);
+  const [sort, setSort] = useState<Sort>("default");
 
   const { size, setSize, data, isLoading, isValidating, mutate } =
     useSWRInfinite<FetchedTweetSample[]>(
@@ -30,7 +53,7 @@ export default function Feed({
         !rest.isLegacy && rest.fetchUrl
           ? `${
               rest.fetchUrl || "/api/tweet/feed"
-            }?per_page=${PAGE_SIZE}&page=${i}`
+            }?per_page=${PAGE_SIZE}&page=${i}&sort=${sort}`
           : null,
       fetcher
     );
@@ -63,7 +86,7 @@ export default function Feed({
 
   function FeedRenderer({ tweets }: { tweets: FetchedTweetSample[] }) {
     return (
-      <div {...merge("flex flex-col divide-y max-w-3xl", rest)}>
+      <div className="flex flex-col divide-y max-w-3xl mt-2">
         {tweets.map((v) => (
           <TweetElement
             tweet={v}
@@ -82,7 +105,25 @@ export default function Feed({
   return !rest.isLegacy ? (
     !isLoading ? (
       tweets.length > 0 ? (
-        <>
+        <div {...rest}>
+          <div className="flex w-full justify-between items-center">
+            <h2 className="text-xl font-semibold">Sort:</h2>
+            <div className="flex items-center gap-3">
+              {sorts.map((v) => (
+                <Button
+                  variant={v.text === sort ? undefined : "outline"}
+                  onClick={() => {
+                    if (v.text === sort) return;
+                    setSort(v.text);
+                  }}
+                  key={v.text}
+                >
+                  <v.icon className="mr-2 h-4 w-4" />
+                  {capitalize(v.text)}
+                </Button>
+              ))}
+            </div>
+          </div>
           <FeedRenderer tweets={tweets ?? []} />
           {isLoadingMore && <FeedLoader count={6} />}
           {isReachingEnd && (
@@ -91,7 +132,7 @@ export default function Feed({
               <span className="block font-semibold text-lg">No more tweet</span>
             </Infos>
           )}
-        </>
+        </div>
       ) : (
         <Infos className="!h-36">
           <CircleSlash2 height={28} width={28} />
