@@ -72,7 +72,7 @@ export function Item({
     <div
       {...merge(
         cx(
-          "group flex gap-3 items-center tracking-tight cursor-pointer rounded-full py-4 px-4 lg:px-8 transition font-semibold text-lg hover:bg-gray-200/70",
+          "group flex gap-3 items-center tracking-tight cursor-pointer rounded-full py-4 px-6 lg:px-8 transition font-semibold text-lg hover:bg-gray-200/70",
           {
             undefined: "text-gray-800",
             current: "!font-extrabold",
@@ -115,7 +115,7 @@ export function InnerSidebar(props: BasicProps) {
   return (
     <div
       {...merge(
-        "flex min-h-[calc(100vh-4rem)] flex-col justify-between h-full lg:py-0 lg:pb-0 pb-12 py-4",
+        "flex min-h-[calc(100vh-4rem)] flex-col justify-between h-full lg:py-0 lg:pb-0 pb-9 py-4",
         props
       )}
     >

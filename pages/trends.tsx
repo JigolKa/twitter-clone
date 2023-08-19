@@ -29,14 +29,16 @@ export default function Trends() {
         {data?.map((v, i) => (
           <div
             key={v.title}
-            className="flex justify-between items-center py-4 px-3 first:border-t-0 border-t border-t-gray-200 transition hover:bg-gray-100"
+            className="flex justify-between items-center py-4 lg:px-3 first:border-t-0 border-t border-t-gray-200 transition hover:bg-gray-100"
           >
-            <div className="flex gap-4 items-center">
+            <div className="flex gap-3 lg:gap-4 items-center">
               <h4 className="text-gray-700">{i + 1}.</h4>
-              <span className="text-lg">{v.title}</span>
+              <span className="lg:text-lg">{v.title}</span>
             </div>
-            <div className="flex items-center gap-4">
-              <span>{v.traffic.toLocaleString()}+ searches</span>
+            <div className="flex items-center gap-2 lg:gap-4 text-sm lg:text-md">
+              <span className="max-w-min lg:max-w-fit block">
+                {`${v.traffic.toLocaleString()}+ searches`}
+              </span>
               <Link
                 href={`/explore?${URLParams({ q: v.title })}`}
                 title="Search it"

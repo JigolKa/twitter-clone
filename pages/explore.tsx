@@ -73,7 +73,7 @@ export default function Explore() {
       >
         <input
           type="text"
-          className="w-[92.5%] px-6 py-2 !outline-none peer"
+          className="lg:w-[92.5%] w-[90%] px-6 py-2 !outline-none peer"
           name="q"
           id="q"
           required
@@ -82,7 +82,7 @@ export default function Explore() {
         />
         <button
           type="submit"
-          className="w-[7.5%] peer-focus-within:stroke-blue-600 cursor-pointer"
+          className="lg:w-[7.5%] w-[10%] peer-focus-within:stroke-blue-600 cursor-pointer"
         >
           <Search height={28} width={28} />
         </button>
