@@ -13,7 +13,7 @@ export default function MobileHeader() {
       <Logo />
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="outline">
+          <Button size="icon" variant="outline">
             <Grip className="h-4 w-4" />
           </Button>
         </SheetTrigger>
