@@ -103,7 +103,7 @@ export function Item({
 
 export default function Sidebar() {
   return (
-    <div className="hidden lg:block w-80 xl:w-96 fixed top-0 left-0 bg-white h-full p-4 py-6 xl:p-8 border-r">
+    <div className="hidden lg:block w-80 xl:w-96 sticky top-0 left-0 bg-white h-full p-4 py-6 xl:p-8 border-r">
       <InnerSidebar />
     </div>
   );

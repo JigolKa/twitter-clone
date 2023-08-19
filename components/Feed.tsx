@@ -79,7 +79,7 @@ export default function Feed({
 
   function FeedRenderer({ tweets }: { tweets: FetchedTweetSample[] }) {
     return (
-      <div className="flex flex-col divide-y mt-6 lg:mt-3">
+      <div className="flex flex-col divide-y mt-6 lg:mt-3 w-full">
         {tweets.map((v) => (
           <TweetElement
             tweet={v}
@@ -151,7 +151,7 @@ export default function Feed({
 
 function FeedLoader(props: BasicProps & { count?: number }) {
   return (
-    <div {...merge("grid gap-8 mt-6", props)}>
+    <div {...merge("grid gap-8 mt-6 w-full", props)}>
       {new Array(props.count || 10).fill(0).map((_, i) => (
         <TweetSkeleton preset="feed" key={i} />
       ))}

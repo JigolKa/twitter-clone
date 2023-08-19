@@ -19,10 +19,10 @@ export default function App({ Component, pageProps }: AppProps) {
     <SessionProvider>
       <FeedProvider>
         <Toaster position="bottom-right" reverseOrder={false} />
-        <div className="flex-col lg:flex-row flex">
+        <div className="flex-col lg:flex-row flex max-w-6xl relative mx-auto">
           <Sidebar />
           <MobileHeader />
-          <div className="xl:ml-[26rem] lg:ml-[21.5rem] py-4 lg:py-8 px-6 xl:px-8 lg:max-w-2xl xl:max-w-3xl w-full">
+          <div className="py-4 lg:py-8 px-6 xl:px-8 lg:max-w-2xl xl:max-w-3xl w-full">
             <Component {...pageProps} />
           </div>
         </div>

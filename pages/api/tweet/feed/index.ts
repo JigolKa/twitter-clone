@@ -67,7 +67,7 @@ export default async function handler(
     isRetweeted: isLoggedIn && retweets ? retweets.includes(v.id) : false,
   })) as FetchedTweetSample[];
 
-  // await new Promise((res) => setTimeout(res, 2000));
+  // await new Promise((res) => setTimeout(res, 999000));
 
   return res.json(sortTweets(json, sort).slice(skip, skip + take));
 }
