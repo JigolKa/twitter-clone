@@ -6,7 +6,7 @@ import { feedInclude } from "./feed";
 
 const fuseOptions: Fuse.IFuseOptions<unknown> = {
   keys: ["message", "author.name", "comments.message", "likes.name"],
-  threshold: 0.5,
+  // threshold: 0.5,
   includeMatches: true,
   minMatchCharLength: 3,
 };
