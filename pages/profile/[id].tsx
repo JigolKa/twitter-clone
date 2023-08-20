@@ -99,12 +99,13 @@ export default function Profile() {
             ))}
         </div>
         {data ? (
-          <p className="text-gray-700 max-w-prose mt-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus ex nisi reprehenderit dolor quas voluptates architecto,
-            officia porro. Nesciunt impedit debitis atque officiis hic fugit
-            voluptatibus similique recusandae dolorem cupiditate.
-          </p>
+          data.biography ? (
+            <p className="text-gray-700 max-w-prose mt-4">{data.biography}</p>
+          ) : (
+            <span className="block mt-4 text-gray-500 italic">
+              No biography entered.
+            </span>
+          )
         ) : (
           <div className="mt-4 grid gap-3">
             {new Array(2).fill(0).map((_, i) => (

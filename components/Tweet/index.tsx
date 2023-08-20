@@ -128,7 +128,7 @@ export function TweetElement({
         body
       )}
 
-      <div className="flex mt-3 lg:mt-4 items-center gap-12 max-w-fit w-full justify-between">
+      <div className="flex mt-3 lg:mt-4 items-center gap-6 lg:gap-12 max-w-fit w-full justify-between">
         {tweet.comments &&
           (preset === "feed" ? (
             <Link href={tweetLink}>
