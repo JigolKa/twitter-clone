@@ -23,7 +23,7 @@ export type CrossServerRequest =
 
 export type AppProps = _AppProps & {
   Component: _AppProps["Component"] & {
-    container?: boolean;
+    hasSidebar?: boolean;
   };
 };
 export type Component = AppProps["Component"];

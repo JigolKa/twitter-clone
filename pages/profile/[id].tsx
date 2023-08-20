@@ -83,20 +83,19 @@ export default function Profile() {
             )}
           </div>
 
-          {data &&
-            (!isAuthor ? (
-              <Button
-                variant={isSubscribed ? "outline" : "default"}
-                onClick={subscribe}
-                className="rounded-full"
-              >
-                {isSubscribed ? "Subscribed" : "Subscribe"}
-              </Button>
-            ) : (
+          {data && !isAuthor && (
+            <Button
+              variant={isSubscribed ? "outline" : "default"}
+              onClick={subscribe}
+              className="rounded-full"
+            >
+              {isSubscribed ? "Subscribed" : "Subscribe"}
+            </Button> /**: (
               <Link href={"/profile/settings"}>
                 <Button variant="outline">Settings</Button>
               </Link>
-            ))}
+            ) */
+          )}
         </div>
         {data ? (
           data.biography ? (

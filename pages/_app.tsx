@@ -19,13 +19,17 @@ export default function App({ Component, pageProps }: AppProps) {
     <SessionProvider>
       <FeedProvider>
         <Toaster position="bottom-right" reverseOrder={false} />
-        <div className="flex-col lg:flex-row flex max-w-6xl relative mx-auto">
-          <Sidebar />
-          <MobileHeader />
-          <div className="py-4 lg:py-8 px-6 xl:px-8 lg:max-w-2xl xl:max-w-3xl w-full">
-            <Component {...pageProps} />
+        {typeof Component.hasSidebar === "undefined" || Component.hasSidebar ? (
+          <div className="flex-col lg:flex-row flex max-w-6xl relative mx-auto">
+            <Sidebar />
+            <MobileHeader />
+            <div className="py-4 lg:py-8 px-6 xl:px-8 lg:max-w-2xl xl:max-w-3xl w-full">
+              <Component {...pageProps} />
+            </div>
           </div>
-        </div>
+        ) : (
+          <Component {...pageProps} />
+        )}
       </FeedProvider>
     </SessionProvider>
   );
