@@ -8,6 +8,7 @@ import FeedProvider from "~/contexts/FeedContext";
 import "~/styles/globals.css";
 import { AppProps } from "~/types";
 import "../styles/loading.scss";
+import { Analytics } from "@vercel/analytics/react";
 // import { Provider } from "next-auth/client";
 
 Router.events.on("routeChangeStart", nProgress.start);
@@ -18,6 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <SessionProvider>
       <FeedProvider>
+        <Analytics />
         <Toaster position="bottom-right" reverseOrder={false} />
         {typeof Component.hasSidebar === "undefined" || Component.hasSidebar ? (
           <div className="flex-col lg:flex-row flex max-w-6xl relative mx-auto">
