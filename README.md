@@ -1,26 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Twitter Clone
 
-## Getting Started
+## Install dependencies
 
-First, run the development server:
+```bash
+npm install
+```
+
+## Set up your .env variables
+
+1. This project uses Redis for the analytics on each post. You'll need to provide these 3 variables:
+   You can adjust the [configuration](/lib/redis.ts) if needed
+
+```
+REDIS_PASSWORD=""
+REDIS_HOST=""
+REDIS_PORT=""
+```
+
+2. To generate the `NEXTAUTH_SECRET` variable, just type the below command and copy the output string.
+
+```
+openssl rand -hex 32
+```
+
+3. To set up authentication, you're not forced to follow my configuration.
+   You can remove some providers, add others...
+   However, if you want to setup Github, Discord and Google, make sure to read [this useful blog post](https://refine.dev/blog/nextauth-google-github-authentication-nextjs/#for-googleprovider-make-sure-you-have-a-google-account) (This cover the Google and Github providers).
+
+   To set up Discord, go [here](https://discord.com/developers/applications), then create a new application.
+   Once created, go in the `OAuth2 > General` tab. You will see a client ID and a client secret appear. You may need to click on the `Reset Secret` to make your secret visible.
+
+4. The Prisma schema has been built for a CockroachDB database, but you are free to change this (Don't forget to make the appropriate changes in the schema).
+
+## Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
@@ -30,9 +46,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

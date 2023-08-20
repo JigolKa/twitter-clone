@@ -1,21 +1,21 @@
-import type {
-  GetServerSidePropsContext,
-  InferGetServerSidePropsType,
-} from "next";
-import { getProviders, signIn } from "next-auth/react";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "../api/auth/[...nextauth]";
-import { Component } from "~/types";
-import { cx } from "~/utils";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDiscord,
   faGithub,
   faGoogle,
 } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type {
+  GetServerSidePropsContext,
+  InferGetServerSidePropsType,
+} from "next";
+import { getServerSession } from "next-auth/next";
+import { getProviders, signIn } from "next-auth/react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { TOAST_ERROR_MESSAGE } from "~/config";
-import Link from "next/link";
+import { Component } from "~/types";
+import { cx } from "~/utils";
+import { authOptions } from "../api/auth/[...nextauth]";
 
 const errors: Record<string, string> = {
   OAuthAccountNotLinked:
