@@ -48,7 +48,7 @@ export default function Feed({
               rest.fetchUrl || "/api/tweet/feed"
             }?per_page=${PAGE_SIZE}&page=${i}&sort=${sort}`
           : null,
-      fetcher
+      fetcher,
     );
 
   const tweets = (
@@ -123,12 +123,6 @@ export default function Feed({
           {sortNode}
           <FeedRenderer tweets={tweets ?? []} />
           {isLoadingMore && <FeedLoader count={6} />}
-          {isReachingEnd && (
-            <Infos className="!h-36">
-              <XIcon height={40} width={40} />
-              <span className="block font-semibold text-lg">No more tweet</span>
-            </Infos>
-          )}
         </div>
       ) : (
         <Infos className="!h-36">
